@@ -1,0 +1,42 @@
+# CI for ProjectPlus-Without-The-Bullshit. The jobs live in
+# ChiefGyk3D/git-your-ship-together; this file says only what is specific to
+# this repository: a docs site with two generator scripts and no package.
+#
+# The "test" is that the generated files are current and the site builds
+# strictly: edit a page without re-running the scripts and the gate goes red.
+# `ci / CI green` is the check to require in branch protection.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  ci:
+    uses: ChiefGyk3D/git-your-ship-together/.github/workflows/python-ci.yml@a5b834a6e03e0bf7187eeebfa84685498d73b139 # v1.14.0
+    permissions:
+      contents: read
+      id-token: write   # the shared workflow declares it; no secret is fetched here
+    with:
+      python-versions: '["3.12"]'
+      coverage-python-version: "3.12"
+      install-command: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+      test-command: |
+        python3 scripts/build_mindmap.py
+        python3 scripts/build_anki.py
+        git diff --exit-code -- docs/mindmap-full.html docs/mindmap.md anki/projectplus.csv
+        mkdocs build --strict
+      lint-command: ruff check scripts
+      docker-build: false
+      egress-policy: block

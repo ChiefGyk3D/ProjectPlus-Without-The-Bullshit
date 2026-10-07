@@ -38,8 +38,20 @@ python3 scripts/build_anki.py
 pip install -r requirements.txt && mkdocs serve   # preview at http://127.0.0.1:8000
 ```
 
-The site builds on every push and pull request and deploys from `main`
-through the shared [docs-pages workflow](https://github.com/ChiefGyk3D/git-your-ship-together/blob/main/.github/workflows/docs-pages.yml).
+## CI
+
+All of it comes from [git-your-ship-together](https://github.com/ChiefGyk3D/git-your-ship-together),
+pinned to a release SHA and bumped by Dependabot:
+
+| Workflow | Shared workflow | What it does here |
+| --- | --- | --- |
+| `ci.yml` | `python-ci.yml` | `ruff` on the scripts, regenerates the mind map and flashcards and fails if they were stale, `mkdocs build --strict`. `ci / CI green` is the branch-protection gate. |
+| `docs.yml` | `docs-pages.yml` | Builds the site on every push and PR, deploys to GitHub Pages from `main` |
+| `security.yml` | `security.yml` | CodeQL (python, actions), gitleaks, pip-audit, dependency review, Scorecard |
+| `dependabot-auto-merge.yml` | `dependabot-auto-merge.yml` | Merges Dependabot bumps up to minor once CI is green |
+
+The repository is in that project's `baseline/repos.txt`, so its settings are audited weekly against
+[BASELINE.md](https://github.com/ChiefGyk3D/git-your-ship-together/blob/main/BASELINE.md).
 
 ## Sources
 

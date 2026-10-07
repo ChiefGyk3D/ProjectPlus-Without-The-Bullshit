@@ -27,7 +27,7 @@ for page in sorted(DOCS.glob("0[1-6]-*.md")):
     text = page.read_text().split("\n")
     section = page.stem
     for i, ln in enumerate(text):
-        if ln.startswith("## ") or ln.startswith("### "):
+        if ln.startswith(("## ", "### ")):
             section = ln.lstrip("# ").strip()
         if not ln.startswith("|") or re.match(r"^\|\s*-", ln):
             continue

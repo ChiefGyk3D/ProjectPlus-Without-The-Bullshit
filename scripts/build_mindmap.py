@@ -7,7 +7,6 @@ Reads docs/01-*.md through docs/05-*.md and writes:
 Run from the repository root. No dependencies beyond the standard library;
 markmap itself loads from jsDelivr when the page is viewed.
 """
-import html
 import re
 from pathlib import Path
 
