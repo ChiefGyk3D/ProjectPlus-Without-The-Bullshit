@@ -1,5 +1,7 @@
-# CompTIA Project+ PK0-005 Comprehensive Study Guide
+# Project+ Without The Bullshit
 
+
+A CompTIA Project+ PK0-005 study guide for people who already know how to run projects and just need the cert.
 Last updated 2026-10-06. Maintained by [ChiefGyk3D](https://github.com/ChiefGyk3D). Licensed MIT.
 
 ## How to use this guide
