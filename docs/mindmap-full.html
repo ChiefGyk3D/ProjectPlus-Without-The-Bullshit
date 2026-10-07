@@ -19,394 +19,735 @@
 </style>
 </head>
 <body>
-<div id="hint">Click a node to expand or collapse. Scroll to zoom, drag to pan.</div>
+<div id="hint">Click a circle to expand or collapse. Click a term to open its definition; click the term text to jump to its section. Scroll to zoom, drag to pan.</div>
 <div class="markmap">
 <script type="text/template">
 ---
 markmap:
   colorFreezeLevel: 2
   initialExpandLevel: 2
-  maxWidth: 320
+  maxWidth: 360
   spacingVertical: 8
   paddingX: 12
 ---
 # CompTIA Project+ PK0-005
 ## 1.0 Project Management Concepts
 #### 1.1 Characteristics of a project, methodologies and frameworks
-- Start and finish
-- Unique
-- Reason / purpose
-- Part of a program
-- Part of a portfolio
-- Waterfall
-- Agile
-- Scrum
-- Kanban
-- Extreme Programming (XP)
-- Scaled Agile Framework (SAFe)
-- DevOps
-- DevSecOps
-- PRINCE2 (PRojects IN Controlled Environments)
-- Software Development Life Cycle (SDLC)
+- [Start and finish](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Meaning:** Defined beginning and end, with dates and deliverables <br> **Example:** Migrate email to the cloud by 30 June
+- [Unique](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Meaning:** Each project differs in objectives, constraints and requirements <br> **Example:** A one-off ERP rollout for a single client
+- [Reason / purpose](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Meaning:** Exists to meet a business need or goal <br> **Example:** Reduce help-desk calls by 20%
+- [Part of a program](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Meaning:** A program groups related projects managed together for combined benefit <br> **Example:** Data center move: network, servers and apps projects
+- [Part of a portfolio](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Meaning:** A portfolio is all programs and projects an organization funds, aligned to strategy <br> **Example:** Everything IT is funding this year
+- [Waterfall](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Linear and sequential. Each phase finishes before the next starts. Changes late in the project are costly. <br> **Terms to know:** Requirements, design, implementation, testing, deployment, maintenance. Predictive. Heavy documentation.
+- [Agile](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Iterative and incremental delivery of working product, with customer feedback every cycle. <br> **Terms to know:** Sprint/iteration, backlog, self-organizing team, adaptive planning, continuous improvement, deliver value early.
+- [Scrum](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Agile framework using time-boxed sprints (commonly 2 to 4 weeks, never longer than 1 month in the Scrum Guide). <br> **Terms to know:** Roles: Product Owner (maximizes value, owns product backlog), Scrum Master (facilitator, removes impediments), Development Team (builds the increment). Events: sprint planning, daily scrum/stand-up, sprint review, sprint retrospective. Artifacts: product backlog, sprint backlog, increment.
+- [Kanban](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Visual pull system. Cards move across columns on a board. <br> **Terms to know:** Visualize work, limit work in progress (WIP), manage flow, cycle time, throughput, continuous delivery with no fixed iterations.
+- [Extreme Programming (XP)](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Agile engineering practices for high-quality code. <br> **Terms to know:** Pair programming (driver and observer), test-driven development (TDD), continuous integration, simple design, refactoring, small releases, collective code ownership, on-site customer.
+- [Scaled Agile Framework (SAFe)](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Applies Agile and Lean at enterprise scale. <br> **Terms to know:** Agile Release Train (ART, 50 to 125 people), Program Increment (PI, about 8 to 12 weeks), Lean Portfolio Management, Portfolio Kanban.
+- [DevOps](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Joins development and operations to shorten delivery with automation and shared ownership. <br> **Terms to know:** Continuous integration (CI), continuous delivery/deployment (CD), infrastructure as code (IaC), monitoring and feedback, breaking down silos.
+- [DevSecOps](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** DevOps with security built into every stage. <br> **Terms to know:** Shift left (test security early), security as code, automated security testing, threat modeling, continuous monitoring.
+- [PRINCE2 (PRojects IN Controlled Environments)](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** Process-based, stage-by-stage method with strong governance. <br> **Terms to know:** 7 principles (continued business justification, learn from experience, defined roles, manage by stages, manage by exception, focus on products, tailor to suit). 7 themes (business case, organization, quality, plans, risk, change, progress). 7 processes (starting up, initiating, directing, controlling a stage, managing product delivery, managing stage boundaries, closing). Project Board, product-based planning.
+- [Software Development Life Cycle (SDLC)](01-concepts/#11-characteristics-of-a-project-methodologies-and-frameworks)
+  - **Core idea:** The phases software goes through, regardless of method. <br> **Terms to know:** Planning, analysis, design, implementation/coding, testing, deployment, maintenance and support.
 #### 1.2 Agile vs Waterfall
-- Tolerance for change (requirements, budget, schedule)
-- Approach
-- Best when
-- Culture
-- Industry fit
-- Product ownership
-- Roles
-- Team size
-- Resource commitment
-- Communication
-- Delivery
-- Budget and schedule
+- [Tolerance for change (requirements, budget, schedule)](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** High. Requirements change between sprints. <br> **Waterfall:** Low. Changes are costly and may restart earlier phases.
+- [Approach](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Adaptive, iterative <br> **Waterfall:** Predictive, sequential
+- [Best when](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Requirements are unclear or evolving <br> **Waterfall:** Requirements are stable and well understood
+- [Culture](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Collaborative, transparent, empowered teams <br> **Waterfall:** Hierarchical, clear role boundaries
+- [Industry fit](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Software, product development, fast-moving markets <br> **Waterfall:** Construction, aerospace, defense, heavily regulated work
+- [Product ownership](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Dedicated Product Owner prioritizes the backlog <br> **Waterfall:** Sponsor and stakeholders define scope up front
+- [Roles](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Cross-functional, self-organizing (Scrum Master, Product Owner, Developers) <br> **Waterfall:** Specialized, separate teams (design, dev, test) with a PM directing
+- [Team size](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Small (often 5 to 9) <br> **Waterfall:** Often larger, specialists per phase
+- [Resource commitment](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Ongoing, near full-time during sprints <br> **Waterfall:** Heavy at the phase where the skill is needed
+- [Communication](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Frequent and informal: daily stand-up, planning, review, retrospective <br> **Waterfall:** Formal documentation and milestone meetings
+- [Delivery](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Working increments every sprint <br> **Waterfall:** One main delivery at the end
+- [Budget and schedule](01-concepts/#12-agile-vs-waterfall)
+  - **Agile:** Time and cost fixed, scope flexible <br> **Waterfall:** Scope fixed, time and cost estimated
 #### 1.3 Change control process
-- Change request
-- Change control log
-- Change control board (CCB)
-- Impact assessment
-- Product change vs project change
-- Scope creep
-- Gold plating
-- Baseline
+- [Change request](01-concepts/#13-change-control-process)
+  - Formal proposal to alter scope, schedule, budget or deliverables
+- [Change control log](01-concepts/#13-change-control-process)
+  - Register of all CRs with requester, date, status and decision
+- [Change control board (CCB)](01-concepts/#13-change-control-process)
+  - Group with authority to approve or reject significant changes
+- [Impact assessment](01-concepts/#13-change-control-process)
+  - Analysis of what a change affects across the project constraints
+- [Product change vs project change](01-concepts/#13-change-control-process)
+  - Product change alters what is delivered (a feature). Project change alters how it is delivered (schedule, budget, resources, plan).
+- [Scope creep](01-concepts/#13-change-control-process)
+  - Uncontrolled growth in scope with no change control and no matching time or budget
+- [Gold plating](01-concepts/#13-change-control-process)
+  - Adding extras the customer did not ask for
+- [Baseline](01-concepts/#13-change-control-process)
+  - Approved version of scope, schedule or cost used as the comparison point
 #### 1.4 Risk management
-- Known risk
-- Unknown risk
-- Risk register
-- Risk owner
-- Risk trigger
-- Contingency plan
-- Fallback plan
-- Residual risk
-- Secondary risk
-- Risk appetite / tolerance
-- Accept
-- Avoid
-- Mitigate
-- Transfer
-- Enhance
-- Exploit
-- Share
+- [Known risk](01-concepts/#14-risk-management)
+  - Identified and analyzed, so it can be planned for
+- [Unknown risk](01-concepts/#14-risk-management)
+  - Not yet identified. Covered by management reserve, not by a specific plan.
+- [Risk register](01-concepts/#14-risk-management)
+  - Central log of risks: description, probability, impact, owner, response, status
+- [Risk owner](01-concepts/#14-risk-management)
+  - Person accountable for monitoring a risk and carrying out its response
+- [Risk trigger](01-concepts/#14-risk-management)
+  - Warning sign that a risk is about to occur
+- [Contingency plan](01-concepts/#14-risk-management)
+  - Planned response that runs *if* the risk occurs
+- [Fallback plan](01-concepts/#14-risk-management)
+  - Backup used if the first response does not work
+- [Residual risk](01-concepts/#14-risk-management)
+  - Risk left after a response
+- [Secondary risk](01-concepts/#14-risk-management)
+  - New risk created by the response itself
+- [Risk appetite / tolerance](01-concepts/#14-risk-management)
+  - How much risk the organization accepts
+- [Accept](01-concepts/#14-risk-management)
+  - **Negative risk (threat):** Acknowledge and monitor, maybe set aside reserve <br> **Positive risk (opportunity):** Take the benefit if it comes, no effort to chase it
+- [Avoid](01-concepts/#14-risk-management)
+  - **Negative risk (threat):** Change the plan to remove the threat
+- [Mitigate](01-concepts/#14-risk-management)
+  - **Negative risk (threat):** Reduce probability or impact
+- [Transfer](01-concepts/#14-risk-management)
+  - **Negative risk (threat):** Shift the impact to a third party (insurance, outsourcing, warranty)
+- [Enhance](01-concepts/#14-risk-management)
+  - **Positive risk (opportunity):** Raise probability or impact of the opportunity
+- [Exploit](01-concepts/#14-risk-management)
+  - **Positive risk (opportunity):** Make sure the opportunity definitely happens
+- [Share](01-concepts/#14-risk-management)
+  - **Positive risk (opportunity):** Partner with another party who can capture it better
 #### 1.5 Issue management
-- Issue log
-- Escalation path
-- Ownership
-- Root cause analysis (RCA)
-- Work-around
-- Contingency plan
-- Resolution plan
+- [Issue log](01-concepts/#15-issue-management)
+  - Tracker of issues: description, status, priority, owner, due date, resolution
+- [Escalation path](01-concepts/#15-issue-management)
+  - The defined chain of people to contact when the team cannot resolve an issue
+- [Ownership](01-concepts/#15-issue-management)
+  - Each issue is assigned to a named person who is accountable
+- [Root cause analysis (RCA)](01-concepts/#15-issue-management)
+  - Finding the underlying reason, not the symptom (5 Whys, fishbone diagram)
+- [Work-around](01-concepts/#15-issue-management)
+  - Temporary fix that keeps work moving but does not remove the cause
+- [Contingency plan](01-concepts/#15-issue-management)
+  - Predefined response executed when a known risk becomes an issue
+- [Resolution plan](01-concepts/#15-issue-management)
+  - Steps, owner and date to fix the issue
 #### 1.6 Schedule development and management
-- Hard logic / mandatory
-- Soft logic / discretionary
-- External
-- Internal
-- Finish-to-start (FS)
-- Start-to-start (SS)
-- Finish-to-finish (FF)
-- Start-to-finish (SF)
-- Milestone
-- Estimating techniques
-- Three-point / PERT estimate
-- Story points
-- Epic > story > task
-- Sprint goal
-- Velocity
-- Backlog prioritization
-- Critical path
-- Float / slack
-- Crashing
-- Fast tracking
-- Resource loading
-- Resource leveling
-- Contingency reserve / buffer
-- Management reserve
-- Cadence
-- Baseline
-- Revise baseline vs rebaseline
+- [Hard logic / mandatory](01-concepts/#16-schedule-development-and-management)
+  - **Meaning:** Physically or contractually required order <br> **Example:** Build the server before installing software on it
+- [Soft logic / discretionary](01-concepts/#16-schedule-development-and-management)
+  - **Meaning:** Preferred order by best practice <br> **Example:** Do UI design before database tuning
+- [External](01-concepts/#16-schedule-development-and-management)
+  - **Meaning:** Depends on something outside the project <br> **Example:** Vendor delivers hardware
+- [Internal](01-concepts/#16-schedule-development-and-management)
+  - **Meaning:** Depends on another project task or team <br> **Example:** Testing waits for development
+- [Finish-to-start (FS)](01-concepts/#16-schedule-development-and-management)
+  - **Rule:** B cannot start until A finishes <br> **Frequency:** Most common
+- [Start-to-start (SS)](01-concepts/#16-schedule-development-and-management)
+  - **Rule:** B cannot start until A starts <br> **Frequency:** Parallel work
+- [Finish-to-finish (FF)](01-concepts/#16-schedule-development-and-management)
+  - **Rule:** B cannot finish until A finishes <br> **Frequency:** Documentation ends with the build
+- [Start-to-finish (SF)](01-concepts/#16-schedule-development-and-management)
+  - **Rule:** B cannot finish until A starts <br> **Frequency:** Rare (shift handover)
+- [Milestone](01-concepts/#16-schedule-development-and-management)
+  - Zero-duration marker of an important event or deliverable
+- [Estimating techniques](01-concepts/#16-schedule-development-and-management)
+  - Analogous (from similar past projects), parametric (unit rate, such as hours per line of code), bottom-up (sum of work packages), three-point, expert judgment
+- [Three-point / PERT estimate](01-concepts/#16-schedule-development-and-management)
+  - Weighted average of optimistic (O), most likely (M) and pessimistic (P)
+- [Story points](01-concepts/#16-schedule-development-and-management)
+  - Relative size estimate for agile work (Fibonacci scale, planning poker)
+- [Epic > story > task](01-concepts/#16-schedule-development-and-management)
+  - Epic is a large body of work. A story is a user-facing slice. A task is a unit of work to finish a story.
+- [Sprint goal](01-concepts/#16-schedule-development-and-management)
+  - Short statement of what the sprint will achieve
+- [Velocity](01-concepts/#16-schedule-development-and-management)
+  - Story points a team completes per sprint, used to forecast
+- [Backlog prioritization](01-concepts/#16-schedule-development-and-management)
+  - Ordering backlog items by value, risk and dependency
+- [Critical path](01-concepts/#16-schedule-development-and-management)
+  - Longest sequence of dependent tasks. It sets the minimum project duration. Zero total float.
+- [Float / slack](01-concepts/#16-schedule-development-and-management)
+  - How long a task can slip without delaying the next task (free float) or the end date (total float)
+- [Crashing](01-concepts/#16-schedule-development-and-management)
+  - Add resources to critical path tasks to shorten the schedule (raises cost)
+- [Fast tracking](01-concepts/#16-schedule-development-and-management)
+  - Run tasks in parallel that were planned in sequence (raises risk)
+- [Resource loading](01-concepts/#16-schedule-development-and-management)
+  - Amount of a resource assigned over time. Overallocation means more than 100% capacity.
+- [Resource leveling](01-concepts/#16-schedule-development-and-management)
+  - Adjust the schedule to remove overallocation (may extend the finish date)
+- [Contingency reserve / buffer](01-concepts/#16-schedule-development-and-management)
+  - Time or money for *known* risks, owned by the PM
+- [Management reserve](01-concepts/#16-schedule-development-and-management)
+  - Money or time for *unknown-unknowns*, released by senior management
+- [Cadence](01-concepts/#16-schedule-development-and-management)
+  - Regular rhythm of delivery, such as two-week sprints or monthly releases
+- [Baseline](01-concepts/#16-schedule-development-and-management)
+  - Approved original plan used as a benchmark
+- [Revise baseline vs rebaseline](01-concepts/#16-schedule-development-and-management)
+  - Revising updates part of the plan for approved changes. Rebaselining resets the whole baseline after major change, which loses the original variance history.
 #### 1.7 Quality management vs performance management
-- Retrospective / lessons learned
-- Sprint review
-- Service-level agreement (SLA)
-- Key performance indicator (KPI)
-- Objectives and key results (OKRs)
-- Cost variance (CV)
-- Schedule variance (SV)
-- Audit
-- Inspection
-- Verification
-- Validation
-- Post-implementation support / warranty period
-- Unit
-- Integration
-- System
-- Smoke (build verification)
-- Regression
-- Performance
-- Stress
-- User acceptance (UAT)
+- [Retrospective / lessons learned](01-concepts/#17-quality-management-vs-performance-management)
+  - Team reflects on what went well and what to improve (end of sprint or phase)
+- [Sprint review](01-concepts/#17-quality-management-vs-performance-management)
+  - End-of-sprint demo to stakeholders to get feedback on the increment
+- [Service-level agreement (SLA)](01-concepts/#17-quality-management-vs-performance-management)
+  - Contract that sets measurable service levels (uptime, response time) and penalties
+- [Key performance indicator (KPI)](01-concepts/#17-quality-management-vs-performance-management)
+  - Measurable value showing progress toward an objective
+- [Objectives and key results (OKRs)](01-concepts/#17-quality-management-vs-performance-management)
+  - Goal-setting: an objective plus measurable key results
+- [Cost variance (CV)](01-concepts/#17-quality-management-vs-performance-management)
+  - Earned value minus actual cost. Negative = over budget.
+- [Schedule variance (SV)](01-concepts/#17-quality-management-vs-performance-management)
+  - Earned value minus planned value. Negative = behind schedule.
+- [Audit](01-concepts/#17-quality-management-vs-performance-management)
+  - Formal independent review of compliance with processes or standards
+- [Inspection](01-concepts/#17-quality-management-vs-performance-management)
+  - Examination of a product or work to see if it meets requirements
+- [Verification](01-concepts/#17-quality-management-vs-performance-management)
+  - "Did we build it *right*?" Checks against specifications, usually internal
+- [Validation](01-concepts/#17-quality-management-vs-performance-management)
+  - "Did we build the *right thing*?" Customer or user confirms it meets needs
+- [Post-implementation support / warranty period](01-concepts/#17-quality-management-vs-performance-management)
+  - Time after go-live in which defects are fixed at no extra charge
+- [Unit](01-concepts/#17-quality-management-vs-performance-management)
+  - Individual functions or components in isolation, usually automated
+- [Integration](01-concepts/#17-quality-management-vs-performance-management)
+  - Combined components work together
+- [System](01-concepts/#17-quality-management-vs-performance-management)
+  - Complete system against requirements
+- [Smoke (build verification)](01-concepts/#17-quality-management-vs-performance-management)
+  - Quick high-level check that a build is stable enough to test further
+- [Regression](01-concepts/#17-quality-management-vs-performance-management)
+  - Re-test after a change to confirm nothing else broke
+- [Performance](01-concepts/#17-quality-management-vs-performance-management)
+  - Speed, response time and throughput under expected load
+- [Stress](01-concepts/#17-quality-management-vs-performance-management)
+  - Push beyond normal limits to find the breaking point
+- [User acceptance (UAT)](01-concepts/#17-quality-management-vs-performance-management)
+  - Final test by real users or the customer to accept the product
 #### 1.8 Communication management
-- Synchronous
-- Asynchronous
-- Written vs verbal
-- Formal vs informal
-- Internal vs external
-- Communication platform / modality
-- Communication plan
+- [Synchronous](01-concepts/#18-communication-management)
+  - Real time, everyone present at once: phone call, video meeting, live chat
+- [Asynchronous](01-concepts/#18-communication-management)
+  - Not real time, read when convenient: email, recorded video, notifications, wiki
+- [Written vs verbal](01-concepts/#18-communication-management)
+  - Written gives a record and precision. Verbal is faster and conveys tone.
+- [Formal vs informal](01-concepts/#18-communication-management)
+  - Formal: status reports, contracts, official notices. Informal: hallway chat, instant messages.
+- [Internal vs external](01-concepts/#18-communication-management)
+  - Internal: team, sponsor. External: customers, vendors, regulators.
+- [Communication platform / modality](01-concepts/#18-communication-management)
+  - The channel chosen for the audience and message (email, chat, portal, conference)
+- [Communication plan](01-concepts/#18-communication-management)
+  - Who gets what information, when, how often, in what format, and from whom
 #### 1.9 Meeting management
-- Collaborative
-- Collaborative
-- Collaborative
-- Collaborative
-- Informative
-- Informative
-- Informative
-- Decisive
-- Decisive
-- Decisive
-- Agenda
-- Facilitator
-- Scribe
-- Attendees / target audience
-- Timeboxing
-- Action items
-- Meeting minutes
-- Follow-ups
+- [Collaborative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Workshop <br> **Purpose:** Hands-on session to build something together
+- [Collaborative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Focus group <br> **Purpose:** Gather opinions from a selected group of users
+- [Collaborative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Joint application development / review (JAD/JAR) <br> **Purpose:** Users and developers define or review requirements together
+- [Collaborative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Brainstorming <br> **Purpose:** Generate many ideas without judging them
+- [Informative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Demonstration / presentation <br> **Purpose:** Show or explain a product or topic
+- [Informative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Stand-up <br> **Purpose:** Short (about 15 minute) daily team sync: done, doing, blocked
+- [Informative](01-concepts/#19-meeting-management)
+  - **Meeting type:** Status <br> **Purpose:** Share progress, risks and issues
+- [Decisive](01-concepts/#19-meeting-management)
+  - **Meeting type:** Refinement <br> **Purpose:** Clarify and size backlog items
+- [Decisive](01-concepts/#19-meeting-management)
+  - **Meeting type:** Task setting <br> **Purpose:** Assign and agree on work
+- [Decisive](01-concepts/#19-meeting-management)
+  - **Meeting type:** Project steering committee <br> **Purpose:** Senior stakeholders decide direction, funding and escalations
+- [Agenda](01-concepts/#19-meeting-management)
+  - Topics, order and time, sent before the meeting
+- [Facilitator](01-concepts/#19-meeting-management)
+  - Runs the meeting, keeps it on track
+- [Scribe](01-concepts/#19-meeting-management)
+  - Records notes and decisions
+- [Attendees / target audience](01-concepts/#19-meeting-management)
+  - Only the people needed for the topic
+- [Timeboxing](01-concepts/#19-meeting-management)
+  - Fixed time limit per topic or meeting
+- [Action items](01-concepts/#19-meeting-management)
+  - Tasks from the meeting with an owner and due date
+- [Meeting minutes](01-concepts/#19-meeting-management)
+  - Record of attendance, decisions and action items
+- [Follow-ups](01-concepts/#19-meeting-management)
+  - Distribute minutes and track action items to closure
 #### 1.10 Team and resource management
-- Functional
-- Weak matrix
-- Balanced matrix
-- Strong matrix
-- Projectized
-- Human, physical, capital resources
-- Internal vs external
-- Shared vs dedicated
-- Gap analysis
-- Project manager (PM)
-- Program manager
-- Product manager
-- Product owner
-- Scrum master
-- Sponsor
-- Stakeholders
-- Senior management
-- Project management office (PMO)
-- Business analyst (BA)
-- Subject matter expert (SME)
-- Architect
-- Developers / engineers
-- Testers / QA specialists
-- End users
-- Core (operational) team
-- Extended (functional) team
+- [Functional](01-concepts/#110-team-and-resource-management)
+  - **Who the team reports to:** Functional (department) manager <br> **PM authority:** Little to none. PM is a coordinator.
+- [Weak matrix](01-concepts/#110-team-and-resource-management)
+  - **Who the team reports to:** Functional manager, with some project work <br> **PM authority:** Low
+- [Balanced matrix](01-concepts/#110-team-and-resource-management)
+  - **Who the team reports to:** Both functional and project manager <br> **PM authority:** Moderate
+- [Strong matrix](01-concepts/#110-team-and-resource-management)
+  - **Who the team reports to:** Mostly the project manager <br> **PM authority:** High
+- [Projectized](01-concepts/#110-team-and-resource-management)
+  - **Who the team reports to:** Project manager, fully dedicated <br> **PM authority:** Highest
+- [Human, physical, capital resources](01-concepts/#110-team-and-resource-management)
+  - People, equipment and facilities, money
+- [Internal vs external](01-concepts/#110-team-and-resource-management)
+  - Employees vs contractors and vendors
+- [Shared vs dedicated](01-concepts/#110-team-and-resource-management)
+  - Used by several projects vs assigned to one
+- [Gap analysis](01-concepts/#110-team-and-resource-management)
+  - Compare current state with needed state: feature/functionality, skills, utilization
+- [Project manager (PM)](01-concepts/#110-team-and-resource-management)
+  - Plans, executes and closes the project; manages scope, schedule, budget and team
+- [Program manager](01-concepts/#110-team-and-resource-management)
+  - Coordinates multiple related projects
+- [Product manager](01-concepts/#110-team-and-resource-management)
+  - Owns product strategy and life cycle, market and launch
+- [Product owner](01-concepts/#110-team-and-resource-management)
+  - Agile role that prioritizes the backlog and maximizes value
+- [Scrum master](01-concepts/#110-team-and-resource-management)
+  - Coaches the team on Scrum, removes impediments
+- [Sponsor](01-concepts/#110-team-and-resource-management)
+  - Provides funding and authority, champions the project
+- [Stakeholders](01-concepts/#110-team-and-resource-management)
+  - Anyone affected by or able to affect the project
+- [Senior management](01-concepts/#110-team-and-resource-management)
+  - Executive direction and support
+- [Project management office (PMO)](01-concepts/#110-team-and-resource-management)
+  - Standardizes methods and supports PMs across the organization
+- [Business analyst (BA)](01-concepts/#110-team-and-resource-management)
+  - Gathers and defines requirements
+- [Subject matter expert (SME)](01-concepts/#110-team-and-resource-management)
+  - Deep knowledge in one area
+- [Architect](01-concepts/#110-team-and-resource-management)
+  - Designs the technical structure
+- [Developers / engineers](01-concepts/#110-team-and-resource-management)
+  - Build the solution
+- [Testers / QA specialists](01-concepts/#110-team-and-resource-management)
+  - Verify quality, find defects
+- [End users](01-concepts/#110-team-and-resource-management)
+  - People who will use the product, key for feedback and adoption
+- [Core (operational) team](01-concepts/#110-team-and-resource-management)
+  - Work on the project day to day
+- [Extended (functional) team](01-concepts/#110-team-and-resource-management)
+  - Contribute part-time or on specific tasks
 #### 1.11 Procurement and vendor selection
-- Request for information (RFI)
-- Request for proposal (RFP)
-- Request for bid (RFB)
-- Request for quote (RFQ)
-- Fixed price
-- Time and material (T&M)
-- Cost plus
-- Unit price
-- Maintenance agreement
-- Master service agreement (MSA)
-- Purchase order (PO)
-- Terms of reference (TOR)
-- Statement of work (SOW)
-- Non-disclosure agreement (NDA)
+- [Request for information (RFI)](01-concepts/#111-procurement-and-vendor-selection)
+  - Learn what vendors offer. Early research, no commitment.
+- [Request for proposal (RFP)](01-concepts/#111-procurement-and-vendor-selection)
+  - Ask for a detailed solution and price when the approach is not fixed
+- [Request for bid (RFB)](01-concepts/#111-procurement-and-vendor-selection)
+  - Ask for a firm price for a clearly defined requirement
+- [Request for quote (RFQ)](01-concepts/#111-procurement-and-vendor-selection)
+  - Ask for a price on specific items or services
+- [Fixed price](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Set total price regardless of effort <br> **Who bears cost risk:** Seller
+- [Time and material (T&M)](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Pay hourly rate plus materials <br> **Who bears cost risk:** Buyer
+- [Cost plus](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Pay actual costs plus a fee or percentage <br> **Who bears cost risk:** Buyer
+- [Unit price](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Pay a set price per unit delivered <br> **Who bears cost risk:** Shared (depends on quantity)
+- [Maintenance agreement](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Ongoing support after delivery, may include warranty
+- [Master service agreement (MSA)](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Umbrella terms for many future work orders
+- [Purchase order (PO)](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Buyer's authorization to purchase
+- [Terms of reference (TOR)](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Defines purpose, scope and responsibilities of an engagement
+- [Statement of work (SOW)](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Detailed scope, deliverables, tasks, timeline and acceptance for the work
+- [Non-disclosure agreement (NDA)](01-concepts/#111-procurement-and-vendor-selection)
+  - **Definition:** Legal agreement to keep information confidential
 ## 2.0 Project Life Cycle Phases
 #### 2.1 Discovery / concept preparation artifacts
-- Business case
-- Business objective
-- Return on investment (ROI) analysis
-- Current state vs future state
-- Prequalified vendor
-- Predetermined client
-- Preexisting contracts
-- Capital expense (CapEx)
-- Operational expense (OpEx)
-- Feasibility study
-- Cost-benefit analysis
-- Payback period
+- [Business case](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Documents why the project should happen: problem or opportunity, options, costs, benefits, risks
+- [Business objective](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - The measurable business outcome the project supports
+- [Return on investment (ROI) analysis](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Compares expected benefit with cost
+- [Current state vs future state](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Today's process or system compared with the desired outcome. The gap is the work.
+- [Prequalified vendor](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Supplier already vetted, so selection is faster
+- [Predetermined client](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Customer already identified before the project starts (common in service contracts)
+- [Preexisting contracts](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Agreements already in place that shape scope: client SOW, client TOR
+- [Capital expense (CapEx)](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - One-time spend on assets that last (servers, licenses bought outright). Depreciated over time.
+- [Operational expense (OpEx)](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Ongoing day-to-day cost (subscriptions, support, cloud usage). Expensed when incurred.
+- [Feasibility study](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Checks if the project is technically, financially and operationally possible
+- [Cost-benefit analysis](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Compares total cost with total benefit. Benefit-cost ratio above 1 is favorable.
+- [Payback period](02-lifecycle/#21-discovery-concept-preparation-artifacts)
+  - Time to recover the initial investment
 #### 2.2 Initiation phase
-- Project charter
-- Project objectives
-- Success criteria
-- Preliminary scope statement
-- Stakeholder identification and assessment
-- Responsibility assignment matrix (RAM)
-- RACI
-- Communication channels
-- Records management plan
-- Access requirements
-- Review existing artifacts
-- Solution design
-- Kickoff meeting
+- [Project charter](02-lifecycle/#22-initiation-phase)
+  - Document that formally authorizes the project and the PM. Contains objectives, success criteria and a preliminary scope statement. Signed by the sponsor.
+- [Project objectives](02-lifecycle/#22-initiation-phase)
+  - What the project will achieve (SMART: specific, measurable, achievable, relevant, time-bound)
+- [Success criteria](02-lifecycle/#22-initiation-phase)
+  - Measurable conditions that show the project succeeded
+- [Preliminary scope statement](02-lifecycle/#22-initiation-phase)
+  - High-level description of what is in and out of scope
+- [Stakeholder identification and assessment](02-lifecycle/#22-initiation-phase)
+  - Find stakeholders, record them in the stakeholder register, and analyze influence and interest (power/interest grid)
+- [Responsibility assignment matrix (RAM)](02-lifecycle/#22-initiation-phase)
+  - Shows who does what on each deliverable
+- [RACI](02-lifecycle/#22-initiation-phase)
+  - Responsible (does the work), Accountable (one person, final sign-off), Consulted (two-way input), Informed (one-way updates)
+- [Communication channels](02-lifecycle/#22-initiation-phase)
+  - Agreed ways the team will communicate
+- [Records management plan](02-lifecycle/#22-initiation-phase)
+  - How data and documents are stored, retained, secured and disposed of
+- [Access requirements](02-lifecycle/#22-initiation-phase)
+  - Which people need which systems, folders and tools, on a need-to-know basis
+- [Review existing artifacts](02-lifecycle/#22-initiation-phase)
+  - Reuse prior documents, lessons learned and templates
+- [Solution design](02-lifecycle/#22-initiation-phase)
+  - High-level approach to meet the need
+- [Kickoff meeting](02-lifecycle/#22-initiation-phase)
+  - First meeting with team and stakeholders to align on goals, roles, scope and plan
 #### 2.3 Planning phase
-- Assess the resource pool
-- Assign project resources
-- Train project team members
-- Communication plan
-- Detailed scope statement
-- Work breakdown structure (WBS)
-- WBS dictionary
-- Backlog
-- Project schedule
-- Budget
-- Quality assurance (QA) plan
-- Initial risk assessment
-- Transition / release plan
-- Project management plan
-- Baselines
-- Milestones
-- Minimum viable product (MVP)
+- [Assess the resource pool](02-lifecycle/#23-planning-phase)
+  - Check who and what is available, plus a preliminary procurement needs assessment
+- [Assign project resources](02-lifecycle/#23-planning-phase)
+  - Match people and equipment to tasks
+- [Train project team members](02-lifecycle/#23-planning-phase)
+  - Fill skill gaps
+- [Communication plan](02-lifecycle/#23-planning-phase)
+  - Audience, content, method, frequency, owner. Includes meeting cadence.
+- [Detailed scope statement](02-lifecycle/#23-planning-phase)
+  - Deliverables, boundaries, assumptions, constraints, acceptance criteria
+- [Work breakdown structure (WBS)](02-lifecycle/#23-planning-phase)
+  - Hierarchical breakdown of all project work into deliverable-based work packages (the 100% rule: includes all work and only the work)
+- [WBS dictionary](02-lifecycle/#23-planning-phase)
+  - Describes each WBS element in detail
+- [Backlog](02-lifecycle/#23-planning-phase)
+  - Prioritized list of remaining work (Agile)
+- [Project schedule](02-lifecycle/#23-planning-phase)
+  - Sequenced tasks with durations, resources and dates. Establish cadences.
+- [Budget](02-lifecycle/#23-planning-phase)
+  - Cost estimates, aggregated into the cost baseline, with contingency reserve
+- [Quality assurance (QA) plan](02-lifecycle/#23-planning-phase)
+  - Standards, metrics and reviews that prevent defects
+- [Initial risk assessment](02-lifecycle/#23-planning-phase)
+  - Identify and analyze risks, build the risk register
+- [Transition / release plan](02-lifecycle/#23-planning-phase)
+  - Plans how the product moves to operations: operational training, go-live, operational handoff, and internal and external audiences
+- [Project management plan](02-lifecycle/#23-planning-phase)
+  - Master document that combines all subsidiary plans (scope, schedule, cost, quality, resource, communication, risk, procurement, stakeholder)
+- [Baselines](02-lifecycle/#23-planning-phase)
+  - Approved scope, schedule and cost baselines for measuring performance
+- [Milestones](02-lifecycle/#23-planning-phase)
+  - Key checkpoints
+- [Minimum viable product (MVP)](02-lifecycle/#23-planning-phase)
+  - Smallest version that delivers value and allows feedback
 #### 2.4 Execution phase
-- Execute tasks per the plan
-- Organizational change management (OCM)
-- Manage vendors
-- Project meetings and updates
-- Tracking and reporting
-- Update budget and timeline
-- Manage conflict
-- Phase gate review
-- Collaborate / problem solve
-- Compromise
-- Smoothing / accommodate
-- Forcing / direct
-- Avoiding / withdraw
+- [Execute tasks per the plan](02-lifecycle/#24-execution-phase)
+  - Produce deliverables as planned
+- [Organizational change management (OCM)](02-lifecycle/#24-execution-phase)
+  - Helps people adopt the change: impacts and responses, training, communication, documentation, new knowledge bases and processes, ensuring adoption and reinforcing it over time
+- [Manage vendors](02-lifecycle/#24-execution-phase)
+  - Enforce rules of engagement, monitor performance, approve deliverables
+- [Project meetings and updates](02-lifecycle/#24-execution-phase)
+  - Regular touch points
+- [Tracking and reporting](02-lifecycle/#24-execution-phase)
+  - Team touch points, risk reporting, external status reporting, overall progress reporting, gap analysis, ad hoc reporting
+- [Update budget and timeline](02-lifecycle/#24-execution-phase)
+  - Reflect actuals and approved changes
+- [Manage conflict](02-lifecycle/#24-execution-phase)
+  - Choose a resolution style (below)
+- [Phase gate review](02-lifecycle/#24-execution-phase)
+  - Checkpoint where stakeholders decide to proceed, change or stop
+- [Collaborate / problem solve](02-lifecycle/#24-execution-phase)
+  - **How it works:** Work together to find a solution that meets everyone's needs <br> **Outcome:** Win-win, best long term
+- [Compromise](02-lifecycle/#24-execution-phase)
+  - **How it works:** Each side gives something up <br> **Outcome:** Both partly satisfied (lose-lose)
+- [Smoothing / accommodate](02-lifecycle/#24-execution-phase)
+  - **How it works:** Emphasize agreement, downplay differences <br> **Outcome:** Short-term peace, problem remains
+- [Forcing / direct](02-lifecycle/#24-execution-phase)
+  - **How it works:** One side imposes a decision with authority <br> **Outcome:** Win-lose, damages relationships
+- [Avoiding / withdraw](02-lifecycle/#24-execution-phase)
+  - **How it works:** Ignore or postpone the conflict <br> **Outcome:** Problem remains, only good to cool down
 #### 2.5 Closing phase
-- Project evaluation
-- Validation of deliverables
-- Closing contracts
-- Removing access
-- Releasing resources
-- Project closure meeting
-- Closeout report
-- Collecting stakeholder feedback
-- Archiving documentation
-- Budget reconciliation
-- Rewards and celebration
-- Project sign-off
+- [Project evaluation](02-lifecycle/#25-closing-phase)
+  - Compare results with success criteria and the plan
+- [Validation of deliverables](02-lifecycle/#25-closing-phase)
+  - Customer formally accepts deliverables
+- [Closing contracts](02-lifecycle/#25-closing-phase)
+  - Complete and close vendor contracts, resolve claims, make final payment
+- [Removing access](02-lifecycle/#25-closing-phase)
+  - Disable accounts, badges and permissions for the team and vendors
+- [Releasing resources](02-lifecycle/#25-closing-phase)
+  - Return people, equipment and facilities
+- [Project closure meeting](02-lifecycle/#25-closing-phase)
+  - Final meeting to review outcome and next steps
+- [Closeout report](02-lifecycle/#25-closing-phase)
+  - Summary of performance, variances, deliverables and lessons
+- [Collecting stakeholder feedback](02-lifecycle/#25-closing-phase)
+  - Surveys or interviews on satisfaction
+- [Archiving documentation](02-lifecycle/#25-closing-phase)
+  - Store records per the records plan
+- [Budget reconciliation](02-lifecycle/#25-closing-phase)
+  - Compare final costs with budget and close accounts
+- [Rewards and celebration](02-lifecycle/#25-closing-phase)
+  - Recognize the team
+- [Project sign-off](02-lifecycle/#25-closing-phase)
+  - Sponsor or customer formally accepts closure
 ## 3.0 Tools and Documentation
 #### 3.1 Tools used throughout the project life cycle
-- Gantt chart
-- Milestone chart
-- Project network diagram
-- PERT chart
-- Budget burndown chart
-- Project organizational chart
-- Issue log
-- Defect log
-- Change log
-- Risk register
-- Risk report
-- Project dashboard
-- Project status report
-- Version control tools
-- Time-tracking tools
-- Task board
-- Requirements traceability matrix (RTM)
-- Stakeholder register
-- Lessons learned register
+- [Gantt chart](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - **What it shows:** Tasks as horizontal bars on a timeline, with durations, dependencies and progress <br> **Best used to:** Show and track the schedule
+- [Milestone chart](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - **What it shows:** Key events and dates, without task detail <br> **Best used to:** Brief executives
+- [Project network diagram](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - **What it shows:** Tasks as boxes joined by arrows showing dependencies <br> **Best used to:** Find the critical path
+- [PERT chart](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - **What it shows:** Network diagram with three-point duration estimates <br> **Best used to:** Estimate uncertain durations
+- [Budget burndown chart](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - **What it shows:** Budget remaining (or spent) over time <br> **Best used to:** Track spending against plan
+- [Project organizational chart](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - **What it shows:** Team structure and reporting lines <br> **Best used to:** Show who reports to whom
+- [Issue log](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Tracks current issues, owners, status and resolution
+- [Defect log](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Records defects found in testing: severity, steps to reproduce, status
+- [Change log](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Records all change requests and decisions
+- [Risk register](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Full catalog of risks with probability, impact, owner and response
+- [Risk report](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Summary of overall risk exposure and top risks for stakeholders
+- [Project dashboard](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Visual display of key metrics (KPIs) at a glance, often live
+- [Project status report](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Periodic update on progress, accomplishments, risks, issues and next steps
+- [Version control tools](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Track revisions of documents and code, support collaboration and rollback
+- [Time-tracking tools](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Record time spent per task for billing, utilization and estimates
+- [Task board](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Visual board (To do, In progress, Done), used in Agile and Kanban
+- [Requirements traceability matrix (RTM)](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Links each requirement to its source, design, test and deliverable, so nothing is missed
+- [Stakeholder register](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - List of stakeholders with interest, influence and engagement strategy
+- [Lessons learned register](03-tools/#31-tools-used-throughout-the-project-life-cycle)
+  - Captures what worked and what did not
 #### 3.2 Project management productivity tools
-- Communication tools
-- Collaboration tools
-- Meeting tools
-- Documentation and office tools
-- Project scheduling tools
-- Ticketing / case management
-- Accessible anywhere, easy collaboration
-- Vendor handles updates and backup
-- Subscription (OpEx)
-- Depends on internet and vendor security
+- [Communication tools](03-tools/#32-project-management-productivity-tools)
+  - Email (formal, asynchronous), messaging (SMS, chat for quick questions), telephone, face-to-face meetings, video, enterprise social media
+- [Collaboration tools](03-tools/#32-project-management-productivity-tools)
+  - Real-time multi-author editing, file sharing platforms, workflow and e-signature platforms, whiteboards, wiki knowledge bases
+- [Meeting tools](03-tools/#32-project-management-productivity-tools)
+  - Real-time surveys and polling, calendaring, print media, conferencing platforms
+- [Documentation and office tools](03-tools/#32-project-management-productivity-tools)
+  - Word processing, spreadsheets, presentations, charting and diagramming
+- [Project scheduling tools](03-tools/#32-project-management-productivity-tools)
+  - Cloud-based (browser access, vendor maintained, subscription) vs on-premises (local installation, you manage servers and updates, more control)
+- [Ticketing / case management](03-tools/#32-project-management-productivity-tools)
+  - Logs requests and incidents, assigns owners, tracks them to resolution, common in IT support
+- [Accessible anywhere, easy collaboration](03-tools/#32-project-management-productivity-tools)
+  - Data stays inside your network
+- [Vendor handles updates and backup](03-tools/#32-project-management-productivity-tools)
+  - You handle updates, backup and hardware
+- [Subscription (OpEx)](03-tools/#32-project-management-productivity-tools)
+  - License and hardware purchase (CapEx)
+- [Depends on internet and vendor security](03-tools/#32-project-management-productivity-tools)
+  - Better for strict security or offline needs
 #### 3.3 Quality and performance charts
-- Histogram
-- Pareto chart
-- Run chart
-- Scatter diagram
-- Fishbone / Ishikawa diagram
-- Control chart
-- Burnup chart
-- Burndown chart
-- Velocity chart
-- Decision tree
+- [Histogram](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Bar chart of how often values fall into ranges (distribution) <br> **Use to decide:** See the spread of data (for example defect counts)
+- [Pareto chart](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Bars sorted from largest to smallest with a cumulative line (80/20 rule) <br> **Use to decide:** Focus on the "vital few" causes
+- [Run chart](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Data points in time order <br> **Use to decide:** See trends, shifts and patterns over time
+- [Scatter diagram](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Two variables plotted as points <br> **Use to decide:** Test for correlation (positive, negative, none)
+- [Fishbone / Ishikawa diagram](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Cause-and-effect branches (people, process, equipment, materials, environment, methods) <br> **Use to decide:** Find root causes
+- [Control chart](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Data over time with mean and upper and lower control limits <br> **Use to decide:** Tell normal variation from special causes. Out of control if points go outside limits or show a run of 7 on one side.
+- [Burnup chart](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Work completed against total scope over time <br> **Use to decide:** Track progress and scope changes
+- [Burndown chart](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Work remaining over time <br> **Use to decide:** See if the sprint or release will finish on time
+- [Velocity chart](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Story points completed per sprint <br> **Use to decide:** Forecast capacity
+- [Decision tree](03-tools/#33-quality-and-performance-charts)
+  - **What it shows:** Branches of choices with probabilities and outcomes <br> **Use to decide:** Pick the option with best expected value
 ## 4.0 Basics of IT and Governance
 #### 4.1 Environmental, social and governance (ESG)
-- Environmental
-- Social
-- Governance
-- Company vision, mission and values
-- Brand value
+- [Environmental](04-it-governance/#41-environmental-social-and-governance-esg)
+  - Impact on the local and global environment: energy use, e-waste, carbon footprint, sustainable sourcing
+- [Social](04-it-governance/#41-environmental-social-and-governance-esg)
+  - Impact on people and communities: working conditions, diversity, accessibility, local effects
+- [Governance](04-it-governance/#41-environmental-social-and-governance-esg)
+  - Following applicable regulations and standards, ethics, transparency, oversight
+- [Company vision, mission and values](04-it-governance/#41-environmental-social-and-governance-esg)
+  - Project work should align with them
+- [Brand value](04-it-governance/#41-environmental-social-and-governance-esg)
+  - Poor ESG behavior can damage reputation and brand
 #### 4.2 Information security concepts
-- Physical security
-- Operational security
-- Digital security
-- Data security
-- Corporate IT security policies
+- [Physical security](04-it-governance/#42-information-security-concepts)
+  - Facility access (badges, locks, visitor logs), mobile device considerations (loss, theft, encryption), removable media (USB drives can leak or spread malware)
+- [Operational security](04-it-governance/#42-information-security-concepts)
+  - Background screening, security clearance requirements
+- [Digital security](04-it-governance/#42-information-security-concepts)
+  - Resource access and permissions (least privilege), remote access restrictions (VPN), multifactor authentication (MFA: something you know, have, or are)
+- [Data security](04-it-governance/#42-information-security-concepts)
+  - Data classification by sensitivity (public, internal, confidential, restricted), intellectual property, trade secrets, national security information, access on a need-to-know basis
+- [Corporate IT security policies](04-it-governance/#42-information-security-concepts)
+  - Acceptable use, password rules, branding restrictions on what may be shared publicly
 #### 4.3 Compliance and privacy
-- Data confidentiality
-- Personally identifiable information (PII)
-- Personal health information (PHI)
-- Legal and regulatory impacts
-- Country, state and province privacy rules
-- Industry or organization compliance
+- [Data confidentiality](04-it-governance/#43-compliance-and-privacy)
+  - Protecting sensitive data from unauthorized disclosure
+- [Personally identifiable information (PII)](04-it-governance/#43-compliance-and-privacy)
+  - Data that identifies a person: name, address, SSN, email, IP address
+- [Personal health information (PHI)](04-it-governance/#43-compliance-and-privacy)
+  - Health data linked to a person. Protected in the US by HIPAA.
+- [Legal and regulatory impacts](04-it-governance/#43-compliance-and-privacy)
+  - Laws that affect how the project handles data and operates
+- [Country, state and province privacy rules](04-it-governance/#43-compliance-and-privacy)
+  - Examples: GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada). Rules depend on where the data subject lives, not just where the company sits.
+- [Industry or organization compliance](04-it-governance/#43-compliance-and-privacy)
+  - Examples: HIPAA (health), PCI DSS (payment cards), SOX (financial reporting), FERPA (education records)
 #### 4.4 Basic IT concepts
-- Infrastructure
-- Multitiered architecture
-- Data warehouse
-- Platform as a service (PaaS)
-- Infrastructure as a service (IaaS)
-- Software as a service (SaaS)
-- Anything as a service (XaaS)
-- Enterprise resource planning (ERP)
-- Customer relationship management (CRM)
-- Database
-- Electronic document and record management system (EDRMS)
-- Content management system (CMS)
-- Financial systems
+- [Infrastructure](04-it-governance/#44-basic-it-concepts)
+  - Computing services, networking and connectivity, storage, and supporting documentation
+- [Multitiered architecture](04-it-governance/#44-basic-it-concepts)
+  - Presentation tier (user interface), application tier (business logic), data tier (database)
+- [Data warehouse](04-it-governance/#44-basic-it-concepts)
+  - Central store of integrated historical data for reporting and analysis
+- [Platform as a service (PaaS)](04-it-governance/#44-basic-it-concepts)
+  - Provider supplies platform and runtime. You deploy apps.
+- [Infrastructure as a service (IaaS)](04-it-governance/#44-basic-it-concepts)
+  - Provider supplies virtual servers, storage and networking. You manage OS and apps.
+- [Software as a service (SaaS)](04-it-governance/#44-basic-it-concepts)
+  - Provider supplies finished software over the internet, usually by subscription
+- [Anything as a service (XaaS)](04-it-governance/#44-basic-it-concepts)
+  - Any capability delivered as a service (security, analytics, desktops)
+- [Enterprise resource planning (ERP)](04-it-governance/#44-basic-it-concepts)
+  - Integrated suite for core business processes (finance, HR, supply chain)
+- [Customer relationship management (CRM)](04-it-governance/#44-basic-it-concepts)
+  - Manages customer data, sales and service interactions
+- [Database](04-it-governance/#44-basic-it-concepts)
+  - Organized storage of structured data
+- [Electronic document and record management system (EDRMS)](04-it-governance/#44-basic-it-concepts)
+  - Stores, controls and retains documents and records
+- [Content management system (CMS)](04-it-governance/#44-basic-it-concepts)
+  - Creates and manages web or digital content
+- [Financial systems](04-it-governance/#44-basic-it-concepts)
+  - Accounting, billing, payroll and budgeting software
 #### 4.5 Operational change control during an IT project
-- IT infrastructure change control
-- Software change control
-- Cloud vs on-premises change control
-- CI/CD
-- Production vs beta / staging
-- Tiered environments
+- [IT infrastructure change control](04-it-governance/#45-operational-change-control-during-an-it-project)
+  - Schedule downtime or maintenance windows, send customer notifications, prepare a rollback plan, run validation checks after the change
+- [Software change control](04-it-governance/#45-operational-change-control-during-an-it-project)
+  - Define requirements, assess risk, test (automated and manual), obtain approval, notify customers, release
+- [Cloud vs on-premises change control](04-it-governance/#45-operational-change-control-during-an-it-project)
+  - Cloud: provider controls some changes, so follow provider notice and shared-responsibility terms. On-premises: you control the whole stack and the change window.
+- [CI/CD](04-it-governance/#45-operational-change-control-during-an-it-project)
+  - Continuous integration merges and tests code often. Continuous delivery keeps code always releasable. Continuous deployment releases automatically to production.
+- [Production vs beta / staging](04-it-governance/#45-operational-change-control-during-an-it-project)
+  - Staging or beta mirrors production so changes can be tested safely before release. Production is the live environment.
+- [Tiered environments](04-it-governance/#45-operational-change-control-during-an-it-project)
+  - Development, test, staging/beta and production, with promotion between them after approval
 ## Gaps filled from the All-in-One Exam Guide
 #### How CompTIA words things (traps)
-- Phases
-- Waterfall
-- Agile / adaptive
-- Projects vs operations
+- [Phases](05-gaps/#how-comptia-words-things-traps)
+  - **It means:** The five PMI process groups: initiating, planning, executing, monitoring and controlling, closing <br> **Why it matters:** Questions ask "which phase" for things like stakeholder identification (initiation) or EVM (monitoring and controlling)
+- [Waterfall](05-gaps/#how-comptia-words-things-traps)
+  - **It means:** Predictive, plan-driven <br> **Why it matters:** Treat the two words as the same thing
+- [Agile / adaptive](05-gaps/#how-comptia-words-things-traps)
+  - **It means:** Iterative, change-welcoming <br> **Why it matters:** Adaptive projects do *not* use a scope statement, WBS, network diagram or formal change control. They use a product backlog, product roadmap and reprioritization instead.
+- [Projects vs operations](05-gaps/#how-comptia-words-things-traps)
+  - **It means:** Temporary and unique vs ongoing and repetitive <br> **Why it matters:** Expect at least one question that asks you to tell them apart
 #### Activities by phase (know what happens where)
-- Initiating
-- Planning
-- Executing
-- Monitoring and controlling
-- Closing
+- [Initiating](05-gaps/#activities-by-phase-know-what-happens-where)
+  - Create the charter, identify stakeholders
+- [Planning](05-gaps/#activities-by-phase-know-what-happens-where)
+  - Project management plan, scope statement, WBS, activity list and sequence, estimates, schedule, budget, quality plan, resource plan, communications plan, risk plan and register, procurement plan, stakeholder engagement plan
+- [Executing](05-gaps/#activities-by-phase-know-what-happens-where)
+  - Direct the work, manage quality, acquire and develop the team, manage communications, implement risk responses, conduct procurements, manage stakeholder engagement
+- [Monitoring and controlling](05-gaps/#activities-by-phase-know-what-happens-where)
+  - Integrated change control, validate scope, control scope/schedule/cost, quality control, EVM, monitor risks, administer procurements
+- [Closing](05-gaps/#activities-by-phase-know-what-happens-where)
+  - Close the project or phase, formal acceptance, close contracts, release resources, archive, lessons learned
 #### Estimating
-- Rough order of magnitude (ROM)
-- Budget estimate
-- Definitive estimate
+- [Rough order of magnitude (ROM)](05-gaps/#estimating)
+  - **When:** Initiating, top-down <br> **Accuracy:** Least accurate (about −25% to +75%)
+- [Budget estimate](05-gaps/#estimating)
+  - **When:** Early planning, scope approved, top-down <br> **Accuracy:** Moderate (about −10% to +25%)
+- [Definitive estimate](05-gaps/#estimating)
+  - **When:** Late planning, built from the WBS, bottom-up <br> **Accuracy:** Most accurate (about −5% to +10%), slowest to create
 #### Cost types
-- Direct
-- Indirect
-- Fixed
-- Variable
-- Cost of conformance
-- Cost of nonconformance
+- [Direct](05-gaps/#cost-types)
+  - **Definition:** Charged only to this project <br> **Example:** Team travel, equipment leased for this project
+- [Indirect](05-gaps/#cost-types)
+  - **Definition:** Cost of doing business, shared <br> **Example:** Rent, utilities, phone
+- [Fixed](05-gaps/#cost-types)
+  - **Definition:** Constant regardless of usage <br> **Example:** Monthly equipment rental
+- [Variable](05-gaps/#cost-types)
+  - **Definition:** Changes with quantity <br> **Example:** Catering per attendee, licenses per user
+- [Cost of conformance](05-gaps/#cost-types)
+  - **Definition:** Money spent to get quality right: training, testing, standards <br> **Example:** Prevention and appraisal
+- [Cost of nonconformance](05-gaps/#cost-types)
+  - **Definition:** Cost of failure: rework, downtime, lost sales, waste <br> **Example:** Internal and external failure
 #### Quality: assurance vs control
 #### People and power
-- Formal / legitimate / positional
-- Reward
-- Coercive / penalty
-- Expert
-- Referent
-- Maslow's hierarchy
-- Herzberg
-- McGregor X and Y
-- Ouchi Theory Z
-- McClelland
-- Vroom expectancy
+- [Formal / legitimate / positional](05-gaps/#people-and-power)
+  - Assigned by senior management (the charter)
+- [Reward](05-gaps/#people-and-power)
+  - Ability to give bonuses, recognition, good assignments
+- [Coercive / penalty](05-gaps/#people-and-power)
+  - Ability to discipline. Team works out of fear.
+- [Expert](05-gaps/#people-and-power)
+  - The PM's own knowledge of the subject
+- [Referent](05-gaps/#people-and-power)
+  - Team likes the PM, or the PM references someone powerful ("the CEO wants this")
+- [Maslow's hierarchy](05-gaps/#people-and-power)
+  - Physiological, safety, social, esteem, self-actualization, in that order
+- [Herzberg](05-gaps/#people-and-power)
+  - Hygiene factors (pay, safety, job security) only prevent dissatisfaction. Motivators (recognition, responsibility, growth) drive performance.
+- [McGregor X and Y](05-gaps/#people-and-power)
+  - Theory X: people are lazy and need micromanagement. Theory Y: people are self-motivated.
+- [Ouchi Theory Z](05-gaps/#people-and-power)
+  - Participative management, commitment and long-term opportunity motivate
+- [McClelland](05-gaps/#people-and-power)
+  - Needs for achievement, affiliation and power, shaped by experience
+- [Vroom expectancy](05-gaps/#people-and-power)
+  - People work in proportion to the reward they expect
 #### Scope, requirements and selection
 #### Schedule and risk extras
 #### Change and release extras
@@ -416,5 +757,13 @@ markmap:
 </script>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18"></script>
+<script>
+  // A term links to its section on the site. Inside the embedded view that
+  // link must replace the whole page, not just the frame.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[href]");
+    if (a && window.top !== window) { e.preventDefault(); window.top.location = a.href; }
+  });
+</script>
 </body>
 </html>
