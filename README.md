@@ -35,7 +35,7 @@ generated from them, so edit a page and re-run the scripts:
 ```sh
 python3 scripts/build_mindmap.py
 python3 scripts/build_anki.py
-pip install -r requirements-docs.txt && mkdocs serve   # preview at http://127.0.0.1:8000
+pip install -r requirements.txt && mkdocs serve   # preview at http://127.0.0.1:8000
 ```
 
 The site builds on every push and pull request and deploys from `main`
