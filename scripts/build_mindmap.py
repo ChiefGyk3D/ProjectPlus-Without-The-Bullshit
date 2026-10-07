@@ -46,11 +46,17 @@ page = f"""<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Project+ mind map</title>
 <style>
-  html, body {{ margin: 0; height: 100%; background: #fff; }}
-  @media (prefers-color-scheme: dark) {{ html, body {{ background: #1e1e2e; }} svg {{ color: #ddd; }} }}
-  .markmap {{ width: 100%; height: 100%; }}
-  .markmap > svg {{ width: 100%; height: 100%; }}
-  #hint {{ position: fixed; top: 8px; left: 12px; font: 13px system-ui, sans-serif; color: #888; }}
+  /* Forced light scheme: markmap draws its labels in the page's text colour,
+     and the OS dark theme otherwise leaves near-black text on a dark page. */
+  :root {{ color-scheme: light only; }}
+  html, body {{ margin: 0; height: 100%; background: #ffffff; color: #111111; }}
+  .markmap {{ width: 100%; height: 100%; color: #111111; --markmap-text-color: #111111;
+             --markmap-highlight-bg: #fff3b0; font: 15px/1.3 system-ui, sans-serif; }}
+  .markmap > svg {{ width: 100%; height: 100%; background: #ffffff; }}
+  .markmap-foreign {{ color: #111111 !important; }}
+  .markmap-link {{ stroke-width: 2.5px; }}
+  #hint {{ position: fixed; top: 8px; left: 12px; font: 13px system-ui, sans-serif; color: #555;
+          background: rgba(255,255,255,.9); padding: 4px 8px; border-radius: 4px; }}
 </style>
 </head>
 <body>
@@ -62,6 +68,8 @@ markmap:
   colorFreezeLevel: 2
   initialExpandLevel: 2
   maxWidth: 320
+  spacingVertical: 8
+  paddingX: 12
 ---
 {outline}</script>
 </div>
