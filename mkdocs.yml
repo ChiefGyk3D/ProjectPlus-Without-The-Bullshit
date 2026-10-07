@@ -1,0 +1,54 @@
+site_name: Project+ Without The Bullshit
+site_description: CompTIA Project+ PK0-005 study guide for people who already run projects and just need the cert.
+site_url: https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/
+repo_url: https://github.com/ChiefGyk3D/ProjectPlus-Without-The-Bullshit
+repo_name: ChiefGyk3D/ProjectPlus-Without-The-Bullshit
+edit_uri: edit/main/docs/
+copyright: MIT licensed. Not affiliated with CompTIA.
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+
+nav:
+  - Start here: index.md
+  - "1.0 Project Management Concepts": 01-concepts.md
+  - "2.0 Project Life Cycle Phases": 02-lifecycle.md
+  - "3.0 Tools and Documentation": 03-tools.md
+  - "4.0 IT and Governance": 04-it-governance.md
+  - Gaps from the book: 05-gaps.md
+  - Cheat sheet: 06-cheatsheet.md
+  - Mind map: mindmap.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.superfences
+
+plugins:
+  - search

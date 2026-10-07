@@ -1,0 +1,404 @@
+Front,Back,Tags
+Start and finish,"Defined beginning and end, with dates and deliverables — Migrate email to the cloud by 30 June",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Unique,"Each project differs in objectives, constraints and requirements — A one-off ERP rollout for a single client",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Reason / purpose,Exists to meet a business need or goal — Reduce help-desk calls by 20%,ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Part of a program,"A program groups related projects managed together for combined benefit — Data center move: network, servers and apps projects",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Part of a portfolio,"A portfolio is all programs and projects an organization funds, aligned to strategy — Everything IT is funding this year",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Waterfall,"Linear and sequential. Each phase finishes before the next starts. Changes late in the project are costly. — Requirements, design, implementation, testing, deployment, maintenance. Predictive. Heavy documentation.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Agile,"Iterative and incremental delivery of working product, with customer feedback every cycle. — Sprint/iteration, backlog, self-organizing team, adaptive planning, continuous improvement, deliver value early.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Scrum,"Agile framework using time-boxed sprints (commonly 2 to 4 weeks, never longer than 1 month in the Scrum Guide). — Roles: Product Owner (maximizes value, owns product backlog), Scrum Master (facilitator, removes impediments), Development Team (builds the increment). Events: sprint planning, daily scrum/stand-up, sprint review, sprint retrospective. Artifacts: product backlog, sprint backlog, increment.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Kanban,"Visual pull system. Cards move across columns on a board. — Visualize work, limit work in progress (WIP), manage flow, cycle time, throughput, continuous delivery with no fixed iterations.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Extreme Programming (XP),"Agile engineering practices for high-quality code. — Pair programming (driver and observer), test-driven development (TDD), continuous integration, simple design, refactoring, small releases, collective code ownership, on-site customer.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Scaled Agile Framework (SAFe),"Applies Agile and Lean at enterprise scale. — Agile Release Train (ART, 50 to 125 people), Program Increment (PI, about 8 to 12 weeks), Lean Portfolio Management, Portfolio Kanban.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+DevOps,"Joins development and operations to shorten delivery with automation and shared ownership. — Continuous integration (CI), continuous delivery/deployment (CD), infrastructure as code (IaC), monitoring and feedback, breaking down silos.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+DevSecOps,"DevOps with security built into every stage. — Shift left (test security early), security as code, automated security testing, threat modeling, continuous monitoring.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+PRINCE2 (PRojects IN Controlled Environments),"Process-based, stage-by-stage method with strong governance. — 7 principles (continued business justification, learn from experience, defined roles, manage by stages, manage by exception, focus on products, tailor to suit). 7 themes (business case, organization, quality, plans, risk, change, progress). 7 processes (starting up, initiating, directing, controlling a stage, managing product delivery, managing stage boundaries, closing). Project Board, product-based planning.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+Software Development Life Cycle (SDLC),"The phases software goes through, regardless of method. — Planning, analysis, design, implementation/coding, testing, deployment, maintenance and support.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks
+"Tolerance for change (requirements, budget, schedule)",High. Requirements change between sprints. — Low. Changes are costly and may restart earlier phases.,ProjectPlus::1_2_Agile_vs_Waterfall
+Approach,"Adaptive, iterative — Predictive, sequential",ProjectPlus::1_2_Agile_vs_Waterfall
+Best when,Requirements are unclear or evolving — Requirements are stable and well understood,ProjectPlus::1_2_Agile_vs_Waterfall
+Culture,"Collaborative, transparent, empowered teams — Hierarchical, clear role boundaries",ProjectPlus::1_2_Agile_vs_Waterfall
+Industry fit,"Software, product development, fast-moving markets — Construction, aerospace, defense, heavily regulated work",ProjectPlus::1_2_Agile_vs_Waterfall
+Product ownership,Dedicated Product Owner prioritizes the backlog — Sponsor and stakeholders define scope up front,ProjectPlus::1_2_Agile_vs_Waterfall
+Roles,"Cross-functional, self-organizing (Scrum Master, Product Owner, Developers) — Specialized, separate teams (design, dev, test) with a PM directing",ProjectPlus::1_2_Agile_vs_Waterfall
+Team size,"Small (often 5 to 9) — Often larger, specialists per phase",ProjectPlus::1_2_Agile_vs_Waterfall
+Resource commitment,"Ongoing, near full-time during sprints — Heavy at the phase where the skill is needed",ProjectPlus::1_2_Agile_vs_Waterfall
+Communication,"Frequent and informal: daily stand-up, planning, review, retrospective — Formal documentation and milestone meetings",ProjectPlus::1_2_Agile_vs_Waterfall
+Delivery,Working increments every sprint — One main delivery at the end,ProjectPlus::1_2_Agile_vs_Waterfall
+Budget and schedule,"Time and cost fixed, scope flexible — Scope fixed, time and cost estimated",ProjectPlus::1_2_Agile_vs_Waterfall
+Change request,"Formal proposal to alter scope, schedule, budget or deliverables",ProjectPlus::1_3_Change_control_process
+Change control log,"Register of all CRs with requester, date, status and decision",ProjectPlus::1_3_Change_control_process
+Change control board (CCB),Group with authority to approve or reject significant changes,ProjectPlus::1_3_Change_control_process
+Impact assessment,Analysis of what a change affects across the project constraints,ProjectPlus::1_3_Change_control_process
+Product change vs project change,"Product change alters what is delivered (a feature). Project change alters how it is delivered (schedule, budget, resources, plan).",ProjectPlus::1_3_Change_control_process
+Scope creep,Uncontrolled growth in scope with no change control and no matching time or budget,ProjectPlus::1_3_Change_control_process
+Gold plating,Adding extras the customer did not ask for,ProjectPlus::1_3_Change_control_process
+Baseline,"Approved version of scope, schedule or cost used as the comparison point",ProjectPlus::1_3_Change_control_process
+Known risk,"Identified and analyzed, so it can be planned for",ProjectPlus::1_4_Risk_management
+Unknown risk,"Not yet identified. Covered by management reserve, not by a specific plan.",ProjectPlus::1_4_Risk_management
+Risk register,"Central log of risks: description, probability, impact, owner, response, status",ProjectPlus::1_4_Risk_management
+Risk owner,Person accountable for monitoring a risk and carrying out its response,ProjectPlus::1_4_Risk_management
+Risk trigger,Warning sign that a risk is about to occur,ProjectPlus::1_4_Risk_management
+Contingency plan,Planned response that runs *if* the risk occurs,ProjectPlus::1_4_Risk_management
+Fallback plan,Backup used if the first response does not work,ProjectPlus::1_4_Risk_management
+Residual risk,Risk left after a response,ProjectPlus::1_4_Risk_management
+Secondary risk,New risk created by the response itself,ProjectPlus::1_4_Risk_management
+Risk appetite / tolerance,How much risk the organization accepts,ProjectPlus::1_4_Risk_management
+Accept,"Acknowledge and monitor, maybe set aside reserve — Take the benefit if it comes, no effort to chase it",ProjectPlus::1_4_Risk_management
+Avoid,Change the plan to remove the threat,ProjectPlus::1_4_Risk_management
+Mitigate,Reduce probability or impact,ProjectPlus::1_4_Risk_management
+Transfer,"Shift the impact to a third party (insurance, outsourcing, warranty)",ProjectPlus::1_4_Risk_management
+Enhance,Raise probability or impact of the opportunity,ProjectPlus::1_4_Risk_management
+Exploit,Make sure the opportunity definitely happens,ProjectPlus::1_4_Risk_management
+Share,Partner with another party who can capture it better,ProjectPlus::1_4_Risk_management
+Issue log,"Tracker of issues: description, status, priority, owner, due date, resolution",ProjectPlus::1_5_Issue_management
+Escalation path,The defined chain of people to contact when the team cannot resolve an issue,ProjectPlus::1_5_Issue_management
+Ownership,Each issue is assigned to a named person who is accountable,ProjectPlus::1_5_Issue_management
+Root cause analysis (RCA),"Finding the underlying reason, not the symptom (5 Whys, fishbone diagram)",ProjectPlus::1_5_Issue_management
+Work-around,Temporary fix that keeps work moving but does not remove the cause,ProjectPlus::1_5_Issue_management
+Contingency plan,Predefined response executed when a known risk becomes an issue,ProjectPlus::1_5_Issue_management
+Resolution plan,"Steps, owner and date to fix the issue",ProjectPlus::1_5_Issue_management
+Hard logic / mandatory,Physically or contractually required order — Build the server before installing software on it,ProjectPlus::1_6_Schedule_development_and_management
+Soft logic / discretionary,Preferred order by best practice — Do UI design before database tuning,ProjectPlus::1_6_Schedule_development_and_management
+External,Depends on something outside the project — Vendor delivers hardware,ProjectPlus::1_6_Schedule_development_and_management
+Internal,Depends on another project task or team — Testing waits for development,ProjectPlus::1_6_Schedule_development_and_management
+Finish-to-start (FS),B cannot start until A finishes — Most common,ProjectPlus::1_6_Schedule_development_and_management
+Start-to-start (SS),B cannot start until A starts — Parallel work,ProjectPlus::1_6_Schedule_development_and_management
+Finish-to-finish (FF),B cannot finish until A finishes — Documentation ends with the build,ProjectPlus::1_6_Schedule_development_and_management
+Start-to-finish (SF),B cannot finish until A starts — Rare (shift handover),ProjectPlus::1_6_Schedule_development_and_management
+Milestone,Zero-duration marker of an important event or deliverable,ProjectPlus::1_6_Schedule_development_and_management
+Estimating techniques,"Analogous (from similar past projects), parametric (unit rate, such as hours per line of code), bottom-up (sum of work packages), three-point, expert judgment",ProjectPlus::1_6_Schedule_development_and_management
+Three-point / PERT estimate,"Weighted average of optimistic (O), most likely (M) and pessimistic (P)",ProjectPlus::1_6_Schedule_development_and_management
+Story points,"Relative size estimate for agile work (Fibonacci scale, planning poker)",ProjectPlus::1_6_Schedule_development_and_management
+Epic > story > task,Epic is a large body of work. A story is a user-facing slice. A task is a unit of work to finish a story.,ProjectPlus::1_6_Schedule_development_and_management
+Sprint goal,Short statement of what the sprint will achieve,ProjectPlus::1_6_Schedule_development_and_management
+Velocity,"Story points a team completes per sprint, used to forecast",ProjectPlus::1_6_Schedule_development_and_management
+Backlog prioritization,"Ordering backlog items by value, risk and dependency",ProjectPlus::1_6_Schedule_development_and_management
+Critical path,Longest sequence of dependent tasks. It sets the minimum project duration. Zero total float.,ProjectPlus::1_6_Schedule_development_and_management
+Float / slack,How long a task can slip without delaying the next task (free float) or the end date (total float),ProjectPlus::1_6_Schedule_development_and_management
+Crashing,Add resources to critical path tasks to shorten the schedule (raises cost),ProjectPlus::1_6_Schedule_development_and_management
+Fast tracking,Run tasks in parallel that were planned in sequence (raises risk),ProjectPlus::1_6_Schedule_development_and_management
+Resource loading,Amount of a resource assigned over time. Overallocation means more than 100% capacity.,ProjectPlus::1_6_Schedule_development_and_management
+Resource leveling,Adjust the schedule to remove overallocation (may extend the finish date),ProjectPlus::1_6_Schedule_development_and_management
+Contingency reserve / buffer,"Time or money for *known* risks, owned by the PM",ProjectPlus::1_6_Schedule_development_and_management
+Management reserve,"Money or time for *unknown-unknowns*, released by senior management",ProjectPlus::1_6_Schedule_development_and_management
+Cadence,"Regular rhythm of delivery, such as two-week sprints or monthly releases",ProjectPlus::1_6_Schedule_development_and_management
+Baseline,Approved original plan used as a benchmark,ProjectPlus::1_6_Schedule_development_and_management
+Revise baseline vs rebaseline,"Revising updates part of the plan for approved changes. Rebaselining resets the whole baseline after major change, which loses the original variance history.",ProjectPlus::1_6_Schedule_development_and_management
+Retrospective / lessons learned,Team reflects on what went well and what to improve (end of sprint or phase),ProjectPlus::1_7_Quality_management_vs_performance_management
+Sprint review,End-of-sprint demo to stakeholders to get feedback on the increment,ProjectPlus::1_7_Quality_management_vs_performance_management
+Service-level agreement (SLA),"Contract that sets measurable service levels (uptime, response time) and penalties",ProjectPlus::1_7_Quality_management_vs_performance_management
+Key performance indicator (KPI),Measurable value showing progress toward an objective,ProjectPlus::1_7_Quality_management_vs_performance_management
+Objectives and key results (OKRs),Goal-setting: an objective plus measurable key results,ProjectPlus::1_7_Quality_management_vs_performance_management
+Cost variance (CV),Earned value minus actual cost. Negative = over budget.,ProjectPlus::1_7_Quality_management_vs_performance_management
+Schedule variance (SV),Earned value minus planned value. Negative = behind schedule.,ProjectPlus::1_7_Quality_management_vs_performance_management
+Audit,Formal independent review of compliance with processes or standards,ProjectPlus::1_7_Quality_management_vs_performance_management
+Inspection,Examination of a product or work to see if it meets requirements,ProjectPlus::1_7_Quality_management_vs_performance_management
+Verification,"""Did we build it *right*?"" Checks against specifications, usually internal",ProjectPlus::1_7_Quality_management_vs_performance_management
+Validation,"""Did we build the *right thing*?"" Customer or user confirms it meets needs",ProjectPlus::1_7_Quality_management_vs_performance_management
+Post-implementation support / warranty period,Time after go-live in which defects are fixed at no extra charge,ProjectPlus::1_7_Quality_management_vs_performance_management
+Unit,"Individual functions or components in isolation, usually automated",ProjectPlus::1_7_Quality_management_vs_performance_management
+Integration,Combined components work together,ProjectPlus::1_7_Quality_management_vs_performance_management
+System,Complete system against requirements,ProjectPlus::1_7_Quality_management_vs_performance_management
+Smoke (build verification),Quick high-level check that a build is stable enough to test further,ProjectPlus::1_7_Quality_management_vs_performance_management
+Regression,Re-test after a change to confirm nothing else broke,ProjectPlus::1_7_Quality_management_vs_performance_management
+Performance,"Speed, response time and throughput under expected load",ProjectPlus::1_7_Quality_management_vs_performance_management
+Stress,Push beyond normal limits to find the breaking point,ProjectPlus::1_7_Quality_management_vs_performance_management
+User acceptance (UAT),Final test by real users or the customer to accept the product,ProjectPlus::1_7_Quality_management_vs_performance_management
+Synchronous,"Real time, everyone present at once: phone call, video meeting, live chat",ProjectPlus::1_8_Communication_management
+Asynchronous,"Not real time, read when convenient: email, recorded video, notifications, wiki",ProjectPlus::1_8_Communication_management
+Written vs verbal,Written gives a record and precision. Verbal is faster and conveys tone.,ProjectPlus::1_8_Communication_management
+Formal vs informal,"Formal: status reports, contracts, official notices. Informal: hallway chat, instant messages.",ProjectPlus::1_8_Communication_management
+Internal vs external,"Internal: team, sponsor. External: customers, vendors, regulators.",ProjectPlus::1_8_Communication_management
+Communication platform / modality,"The channel chosen for the audience and message (email, chat, portal, conference)",ProjectPlus::1_8_Communication_management
+Communication plan,"Who gets what information, when, how often, in what format, and from whom",ProjectPlus::1_8_Communication_management
+Collaborative,Workshop — Hands-on session to build something together,ProjectPlus::1_9_Meeting_management
+Collaborative,Focus group — Gather opinions from a selected group of users,ProjectPlus::1_9_Meeting_management
+Collaborative,Joint application development / review (JAD/JAR) — Users and developers define or review requirements together,ProjectPlus::1_9_Meeting_management
+Collaborative,Brainstorming — Generate many ideas without judging them,ProjectPlus::1_9_Meeting_management
+Informative,Demonstration / presentation — Show or explain a product or topic,ProjectPlus::1_9_Meeting_management
+Informative,"Stand-up — Short (about 15 minute) daily team sync: done, doing, blocked",ProjectPlus::1_9_Meeting_management
+Informative,"Status — Share progress, risks and issues",ProjectPlus::1_9_Meeting_management
+Decisive,Refinement — Clarify and size backlog items,ProjectPlus::1_9_Meeting_management
+Decisive,Task setting — Assign and agree on work,ProjectPlus::1_9_Meeting_management
+Decisive,"Project steering committee — Senior stakeholders decide direction, funding and escalations",ProjectPlus::1_9_Meeting_management
+Agenda,"Topics, order and time, sent before the meeting",ProjectPlus::1_9_Meeting_management
+Facilitator,"Runs the meeting, keeps it on track",ProjectPlus::1_9_Meeting_management
+Scribe,Records notes and decisions,ProjectPlus::1_9_Meeting_management
+Attendees / target audience,Only the people needed for the topic,ProjectPlus::1_9_Meeting_management
+Timeboxing,Fixed time limit per topic or meeting,ProjectPlus::1_9_Meeting_management
+Action items,Tasks from the meeting with an owner and due date,ProjectPlus::1_9_Meeting_management
+Meeting minutes,"Record of attendance, decisions and action items",ProjectPlus::1_9_Meeting_management
+Follow-ups,Distribute minutes and track action items to closure,ProjectPlus::1_9_Meeting_management
+Functional,Functional (department) manager — Little to none. PM is a coordinator.,ProjectPlus::1_10_Team_and_resource_management
+Weak matrix,"Functional manager, with some project work — Low",ProjectPlus::1_10_Team_and_resource_management
+Balanced matrix,Both functional and project manager — Moderate,ProjectPlus::1_10_Team_and_resource_management
+Strong matrix,Mostly the project manager — High,ProjectPlus::1_10_Team_and_resource_management
+Projectized,"Project manager, fully dedicated — Highest",ProjectPlus::1_10_Team_and_resource_management
+"Human, physical, capital resources","People, equipment and facilities, money",ProjectPlus::1_10_Team_and_resource_management
+Internal vs external,Employees vs contractors and vendors,ProjectPlus::1_10_Team_and_resource_management
+Shared vs dedicated,Used by several projects vs assigned to one,ProjectPlus::1_10_Team_and_resource_management
+Gap analysis,"Compare current state with needed state: feature/functionality, skills, utilization",ProjectPlus::1_10_Team_and_resource_management
+Project manager (PM),"Plans, executes and closes the project; manages scope, schedule, budget and team",ProjectPlus::1_10_Team_and_resource_management
+Program manager,Coordinates multiple related projects,ProjectPlus::1_10_Team_and_resource_management
+Product manager,"Owns product strategy and life cycle, market and launch",ProjectPlus::1_10_Team_and_resource_management
+Product owner,Agile role that prioritizes the backlog and maximizes value,ProjectPlus::1_10_Team_and_resource_management
+Scrum master,"Coaches the team on Scrum, removes impediments",ProjectPlus::1_10_Team_and_resource_management
+Sponsor,"Provides funding and authority, champions the project",ProjectPlus::1_10_Team_and_resource_management
+Stakeholders,Anyone affected by or able to affect the project,ProjectPlus::1_10_Team_and_resource_management
+Senior management,Executive direction and support,ProjectPlus::1_10_Team_and_resource_management
+Project management office (PMO),Standardizes methods and supports PMs across the organization,ProjectPlus::1_10_Team_and_resource_management
+Business analyst (BA),Gathers and defines requirements,ProjectPlus::1_10_Team_and_resource_management
+Subject matter expert (SME),Deep knowledge in one area,ProjectPlus::1_10_Team_and_resource_management
+Architect,Designs the technical structure,ProjectPlus::1_10_Team_and_resource_management
+Developers / engineers,Build the solution,ProjectPlus::1_10_Team_and_resource_management
+Testers / QA specialists,"Verify quality, find defects",ProjectPlus::1_10_Team_and_resource_management
+End users,"People who will use the product, key for feedback and adoption",ProjectPlus::1_10_Team_and_resource_management
+Core (operational) team,Work on the project day to day,ProjectPlus::1_10_Team_and_resource_management
+Extended (functional) team,Contribute part-time or on specific tasks,ProjectPlus::1_10_Team_and_resource_management
+Request for information (RFI),"Learn what vendors offer. Early research, no commitment.",ProjectPlus::1_11_Procurement_and_vendor_selection
+Request for proposal (RFP),Ask for a detailed solution and price when the approach is not fixed,ProjectPlus::1_11_Procurement_and_vendor_selection
+Request for bid (RFB),Ask for a firm price for a clearly defined requirement,ProjectPlus::1_11_Procurement_and_vendor_selection
+Request for quote (RFQ),Ask for a price on specific items or services,ProjectPlus::1_11_Procurement_and_vendor_selection
+Fixed price,Set total price regardless of effort — Seller,ProjectPlus::1_11_Procurement_and_vendor_selection
+Time and material (T&M),Pay hourly rate plus materials — Buyer,ProjectPlus::1_11_Procurement_and_vendor_selection
+Cost plus,Pay actual costs plus a fee or percentage — Buyer,ProjectPlus::1_11_Procurement_and_vendor_selection
+Unit price,Pay a set price per unit delivered — Shared (depends on quantity),ProjectPlus::1_11_Procurement_and_vendor_selection
+Maintenance agreement,"Ongoing support after delivery, may include warranty",ProjectPlus::1_11_Procurement_and_vendor_selection
+Master service agreement (MSA),Umbrella terms for many future work orders,ProjectPlus::1_11_Procurement_and_vendor_selection
+Purchase order (PO),Buyer's authorization to purchase,ProjectPlus::1_11_Procurement_and_vendor_selection
+Terms of reference (TOR),"Defines purpose, scope and responsibilities of an engagement",ProjectPlus::1_11_Procurement_and_vendor_selection
+Statement of work (SOW),"Detailed scope, deliverables, tasks, timeline and acceptance for the work",ProjectPlus::1_11_Procurement_and_vendor_selection
+Non-disclosure agreement (NDA),Legal agreement to keep information confidential,ProjectPlus::1_11_Procurement_and_vendor_selection
+Business case,"Documents why the project should happen: problem or opportunity, options, costs, benefits, risks",ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Business objective,The measurable business outcome the project supports,ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Return on investment (ROI) analysis,Compares expected benefit with cost,ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Current state vs future state,Today's process or system compared with the desired outcome. The gap is the work.,ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Prequalified vendor,"Supplier already vetted, so selection is faster",ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Predetermined client,Customer already identified before the project starts (common in service contracts),ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Preexisting contracts,"Agreements already in place that shape scope: client SOW, client TOR",ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Capital expense (CapEx),"One-time spend on assets that last (servers, licenses bought outright). Depreciated over time.",ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Operational expense (OpEx),"Ongoing day-to-day cost (subscriptions, support, cloud usage). Expensed when incurred.",ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Feasibility study,"Checks if the project is technically, financially and operationally possible",ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Cost-benefit analysis,Compares total cost with total benefit. Benefit-cost ratio above 1 is favorable.,ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Payback period,Time to recover the initial investment,ProjectPlus::2_1_Discovery_concept_preparation_artifacts
+Project charter,"Document that formally authorizes the project and the PM. Contains objectives, success criteria and a preliminary scope statement. Signed by the sponsor.",ProjectPlus::2_2_Initiation_phase
+Project objectives,"What the project will achieve (SMART: specific, measurable, achievable, relevant, time-bound)",ProjectPlus::2_2_Initiation_phase
+Success criteria,Measurable conditions that show the project succeeded,ProjectPlus::2_2_Initiation_phase
+Preliminary scope statement,High-level description of what is in and out of scope,ProjectPlus::2_2_Initiation_phase
+Stakeholder identification and assessment,"Find stakeholders, record them in the stakeholder register, and analyze influence and interest (power/interest grid)",ProjectPlus::2_2_Initiation_phase
+Responsibility assignment matrix (RAM),Shows who does what on each deliverable,ProjectPlus::2_2_Initiation_phase
+RACI,"Responsible (does the work), Accountable (one person, final sign-off), Consulted (two-way input), Informed (one-way updates)",ProjectPlus::2_2_Initiation_phase
+Communication channels,Agreed ways the team will communicate,ProjectPlus::2_2_Initiation_phase
+Records management plan,"How data and documents are stored, retained, secured and disposed of",ProjectPlus::2_2_Initiation_phase
+Access requirements,"Which people need which systems, folders and tools, on a need-to-know basis",ProjectPlus::2_2_Initiation_phase
+Review existing artifacts,"Reuse prior documents, lessons learned and templates",ProjectPlus::2_2_Initiation_phase
+Solution design,High-level approach to meet the need,ProjectPlus::2_2_Initiation_phase
+Kickoff meeting,"First meeting with team and stakeholders to align on goals, roles, scope and plan",ProjectPlus::2_2_Initiation_phase
+Assess the resource pool,"Check who and what is available, plus a preliminary procurement needs assessment",ProjectPlus::2_3_Planning_phase
+Assign project resources,Match people and equipment to tasks,ProjectPlus::2_3_Planning_phase
+Train project team members,Fill skill gaps,ProjectPlus::2_3_Planning_phase
+Communication plan,"Audience, content, method, frequency, owner. Includes meeting cadence.",ProjectPlus::2_3_Planning_phase
+Detailed scope statement,"Deliverables, boundaries, assumptions, constraints, acceptance criteria",ProjectPlus::2_3_Planning_phase
+Work breakdown structure (WBS),Hierarchical breakdown of all project work into deliverable-based work packages (the 100% rule: includes all work and only the work),ProjectPlus::2_3_Planning_phase
+WBS dictionary,Describes each WBS element in detail,ProjectPlus::2_3_Planning_phase
+Backlog,Prioritized list of remaining work (Agile),ProjectPlus::2_3_Planning_phase
+Project schedule,"Sequenced tasks with durations, resources and dates. Establish cadences.",ProjectPlus::2_3_Planning_phase
+Budget,"Cost estimates, aggregated into the cost baseline, with contingency reserve",ProjectPlus::2_3_Planning_phase
+Quality assurance (QA) plan,"Standards, metrics and reviews that prevent defects",ProjectPlus::2_3_Planning_phase
+Initial risk assessment,"Identify and analyze risks, build the risk register",ProjectPlus::2_3_Planning_phase
+Transition / release plan,"Plans how the product moves to operations: operational training, go-live, operational handoff, and internal and external audiences",ProjectPlus::2_3_Planning_phase
+Project management plan,"Master document that combines all subsidiary plans (scope, schedule, cost, quality, resource, communication, risk, procurement, stakeholder)",ProjectPlus::2_3_Planning_phase
+Baselines,"Approved scope, schedule and cost baselines for measuring performance",ProjectPlus::2_3_Planning_phase
+Milestones,Key checkpoints,ProjectPlus::2_3_Planning_phase
+Minimum viable product (MVP),Smallest version that delivers value and allows feedback,ProjectPlus::2_3_Planning_phase
+Execute tasks per the plan,Produce deliverables as planned,ProjectPlus::2_4_Execution_phase
+Organizational change management (OCM),"Helps people adopt the change: impacts and responses, training, communication, documentation, new knowledge bases and processes, ensuring adoption and reinforcing it over time",ProjectPlus::2_4_Execution_phase
+Manage vendors,"Enforce rules of engagement, monitor performance, approve deliverables",ProjectPlus::2_4_Execution_phase
+Project meetings and updates,Regular touch points,ProjectPlus::2_4_Execution_phase
+Tracking and reporting,"Team touch points, risk reporting, external status reporting, overall progress reporting, gap analysis, ad hoc reporting",ProjectPlus::2_4_Execution_phase
+Update budget and timeline,Reflect actuals and approved changes,ProjectPlus::2_4_Execution_phase
+Manage conflict,Choose a resolution style (below),ProjectPlus::2_4_Execution_phase
+Phase gate review,"Checkpoint where stakeholders decide to proceed, change or stop",ProjectPlus::2_4_Execution_phase
+Collaborate / problem solve,"Work together to find a solution that meets everyone's needs — Win-win, best long term",ProjectPlus::2_4_Execution_phase
+Compromise,Each side gives something up — Both partly satisfied (lose-lose),ProjectPlus::2_4_Execution_phase
+Smoothing / accommodate,"Emphasize agreement, downplay differences — Short-term peace, problem remains",ProjectPlus::2_4_Execution_phase
+Forcing / direct,"One side imposes a decision with authority — Win-lose, damages relationships",ProjectPlus::2_4_Execution_phase
+Avoiding / withdraw,"Ignore or postpone the conflict — Problem remains, only good to cool down",ProjectPlus::2_4_Execution_phase
+Project evaluation,Compare results with success criteria and the plan,ProjectPlus::2_5_Closing_phase
+Validation of deliverables,Customer formally accepts deliverables,ProjectPlus::2_5_Closing_phase
+Closing contracts,"Complete and close vendor contracts, resolve claims, make final payment",ProjectPlus::2_5_Closing_phase
+Removing access,"Disable accounts, badges and permissions for the team and vendors",ProjectPlus::2_5_Closing_phase
+Releasing resources,"Return people, equipment and facilities",ProjectPlus::2_5_Closing_phase
+Project closure meeting,Final meeting to review outcome and next steps,ProjectPlus::2_5_Closing_phase
+Closeout report,"Summary of performance, variances, deliverables and lessons",ProjectPlus::2_5_Closing_phase
+Collecting stakeholder feedback,Surveys or interviews on satisfaction,ProjectPlus::2_5_Closing_phase
+Archiving documentation,Store records per the records plan,ProjectPlus::2_5_Closing_phase
+Budget reconciliation,Compare final costs with budget and close accounts,ProjectPlus::2_5_Closing_phase
+Rewards and celebration,Recognize the team,ProjectPlus::2_5_Closing_phase
+Project sign-off,Sponsor or customer formally accepts closure,ProjectPlus::2_5_Closing_phase
+Gantt chart,"Tasks as horizontal bars on a timeline, with durations, dependencies and progress — Show and track the schedule",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Milestone chart,"Key events and dates, without task detail — Brief executives",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Project network diagram,Tasks as boxes joined by arrows showing dependencies — Find the critical path,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+PERT chart,Network diagram with three-point duration estimates — Estimate uncertain durations,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Budget burndown chart,Budget remaining (or spent) over time — Track spending against plan,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Project organizational chart,Team structure and reporting lines — Show who reports to whom,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Issue log,"Tracks current issues, owners, status and resolution",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Defect log,"Records defects found in testing: severity, steps to reproduce, status",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Change log,Records all change requests and decisions,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Risk register,"Full catalog of risks with probability, impact, owner and response",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Risk report,Summary of overall risk exposure and top risks for stakeholders,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Project dashboard,"Visual display of key metrics (KPIs) at a glance, often live",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Project status report,"Periodic update on progress, accomplishments, risks, issues and next steps",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Version control tools,"Track revisions of documents and code, support collaboration and rollback",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Time-tracking tools,"Record time spent per task for billing, utilization and estimates",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Task board,"Visual board (To do, In progress, Done), used in Agile and Kanban",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Requirements traceability matrix (RTM),"Links each requirement to its source, design, test and deliverable, so nothing is missed",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Stakeholder register,"List of stakeholders with interest, influence and engagement strategy",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Lessons learned register,Captures what worked and what did not,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle
+Communication tools,"Email (formal, asynchronous), messaging (SMS, chat for quick questions), telephone, face-to-face meetings, video, enterprise social media",ProjectPlus::3_2_Project_management_productivity_tools
+Collaboration tools,"Real-time multi-author editing, file sharing platforms, workflow and e-signature platforms, whiteboards, wiki knowledge bases",ProjectPlus::3_2_Project_management_productivity_tools
+Meeting tools,"Real-time surveys and polling, calendaring, print media, conferencing platforms",ProjectPlus::3_2_Project_management_productivity_tools
+Documentation and office tools,"Word processing, spreadsheets, presentations, charting and diagramming",ProjectPlus::3_2_Project_management_productivity_tools
+Project scheduling tools,"Cloud-based (browser access, vendor maintained, subscription) vs on-premises (local installation, you manage servers and updates, more control)",ProjectPlus::3_2_Project_management_productivity_tools
+Ticketing / case management,"Logs requests and incidents, assigns owners, tracks them to resolution, common in IT support",ProjectPlus::3_2_Project_management_productivity_tools
+"Accessible anywhere, easy collaboration",Data stays inside your network,ProjectPlus::3_2_Project_management_productivity_tools
+Vendor handles updates and backup,"You handle updates, backup and hardware",ProjectPlus::3_2_Project_management_productivity_tools
+Subscription (OpEx),License and hardware purchase (CapEx),ProjectPlus::3_2_Project_management_productivity_tools
+Depends on internet and vendor security,Better for strict security or offline needs,ProjectPlus::3_2_Project_management_productivity_tools
+Histogram,Bar chart of how often values fall into ranges (distribution) — See the spread of data (for example defect counts),ProjectPlus::3_3_Quality_and_performance_charts
+Pareto chart,"Bars sorted from largest to smallest with a cumulative line (80/20 rule) — Focus on the ""vital few"" causes",ProjectPlus::3_3_Quality_and_performance_charts
+Run chart,"Data points in time order — See trends, shifts and patterns over time",ProjectPlus::3_3_Quality_and_performance_charts
+Scatter diagram,"Two variables plotted as points — Test for correlation (positive, negative, none)",ProjectPlus::3_3_Quality_and_performance_charts
+Fishbone / Ishikawa diagram,"Cause-and-effect branches (people, process, equipment, materials, environment, methods) — Find root causes",ProjectPlus::3_3_Quality_and_performance_charts
+Control chart,Data over time with mean and upper and lower control limits — Tell normal variation from special causes. Out of control if points go outside limits or show a run of 7 on one side.,ProjectPlus::3_3_Quality_and_performance_charts
+Burnup chart,Work completed against total scope over time — Track progress and scope changes,ProjectPlus::3_3_Quality_and_performance_charts
+Burndown chart,Work remaining over time — See if the sprint or release will finish on time,ProjectPlus::3_3_Quality_and_performance_charts
+Velocity chart,Story points completed per sprint — Forecast capacity,ProjectPlus::3_3_Quality_and_performance_charts
+Decision tree,Branches of choices with probabilities and outcomes — Pick the option with best expected value,ProjectPlus::3_3_Quality_and_performance_charts
+Environmental,"Impact on the local and global environment: energy use, e-waste, carbon footprint, sustainable sourcing",ProjectPlus::4_1_Environmental_social_and_governance_ESG
+Social,"Impact on people and communities: working conditions, diversity, accessibility, local effects",ProjectPlus::4_1_Environmental_social_and_governance_ESG
+Governance,"Following applicable regulations and standards, ethics, transparency, oversight",ProjectPlus::4_1_Environmental_social_and_governance_ESG
+"Company vision, mission and values",Project work should align with them,ProjectPlus::4_1_Environmental_social_and_governance_ESG
+Brand value,Poor ESG behavior can damage reputation and brand,ProjectPlus::4_1_Environmental_social_and_governance_ESG
+Physical security,"Facility access (badges, locks, visitor logs), mobile device considerations (loss, theft, encryption), removable media (USB drives can leak or spread malware)",ProjectPlus::4_2_Information_security_concepts
+Operational security,"Background screening, security clearance requirements",ProjectPlus::4_2_Information_security_concepts
+Digital security,"Resource access and permissions (least privilege), remote access restrictions (VPN), multifactor authentication (MFA: something you know, have, or are)",ProjectPlus::4_2_Information_security_concepts
+Data security,"Data classification by sensitivity (public, internal, confidential, restricted), intellectual property, trade secrets, national security information, access on a need-to-know basis",ProjectPlus::4_2_Information_security_concepts
+Corporate IT security policies,"Acceptable use, password rules, branding restrictions on what may be shared publicly",ProjectPlus::4_2_Information_security_concepts
+Data confidentiality,Protecting sensitive data from unauthorized disclosure,ProjectPlus::4_3_Compliance_and_privacy
+Personally identifiable information (PII),"Data that identifies a person: name, address, SSN, email, IP address",ProjectPlus::4_3_Compliance_and_privacy
+Personal health information (PHI),Health data linked to a person. Protected in the US by HIPAA.,ProjectPlus::4_3_Compliance_and_privacy
+Legal and regulatory impacts,Laws that affect how the project handles data and operates,ProjectPlus::4_3_Compliance_and_privacy
+"Country, state and province privacy rules","Examples: GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada). Rules depend on where the data subject lives, not just where the company sits.",ProjectPlus::4_3_Compliance_and_privacy
+Industry or organization compliance,"Examples: HIPAA (health), PCI DSS (payment cards), SOX (financial reporting), FERPA (education records)",ProjectPlus::4_3_Compliance_and_privacy
+Infrastructure,"Computing services, networking and connectivity, storage, and supporting documentation",ProjectPlus::4_4_Basic_IT_concepts
+Multitiered architecture,"Presentation tier (user interface), application tier (business logic), data tier (database)",ProjectPlus::4_4_Basic_IT_concepts
+Data warehouse,Central store of integrated historical data for reporting and analysis,ProjectPlus::4_4_Basic_IT_concepts
+Platform as a service (PaaS),Provider supplies platform and runtime. You deploy apps.,ProjectPlus::4_4_Basic_IT_concepts
+Infrastructure as a service (IaaS),"Provider supplies virtual servers, storage and networking. You manage OS and apps.",ProjectPlus::4_4_Basic_IT_concepts
+Software as a service (SaaS),"Provider supplies finished software over the internet, usually by subscription",ProjectPlus::4_4_Basic_IT_concepts
+Anything as a service (XaaS),"Any capability delivered as a service (security, analytics, desktops)",ProjectPlus::4_4_Basic_IT_concepts
+Enterprise resource planning (ERP),"Integrated suite for core business processes (finance, HR, supply chain)",ProjectPlus::4_4_Basic_IT_concepts
+Customer relationship management (CRM),"Manages customer data, sales and service interactions",ProjectPlus::4_4_Basic_IT_concepts
+Database,Organized storage of structured data,ProjectPlus::4_4_Basic_IT_concepts
+Electronic document and record management system (EDRMS),"Stores, controls and retains documents and records",ProjectPlus::4_4_Basic_IT_concepts
+Content management system (CMS),Creates and manages web or digital content,ProjectPlus::4_4_Basic_IT_concepts
+Financial systems,"Accounting, billing, payroll and budgeting software",ProjectPlus::4_4_Basic_IT_concepts
+IT infrastructure change control,"Schedule downtime or maintenance windows, send customer notifications, prepare a rollback plan, run validation checks after the change",ProjectPlus::4_5_Operational_change_control_during_an_IT_project
+Software change control,"Define requirements, assess risk, test (automated and manual), obtain approval, notify customers, release",ProjectPlus::4_5_Operational_change_control_during_an_IT_project
+Cloud vs on-premises change control,"Cloud: provider controls some changes, so follow provider notice and shared-responsibility terms. On-premises: you control the whole stack and the change window.",ProjectPlus::4_5_Operational_change_control_during_an_IT_project
+CI/CD,Continuous integration merges and tests code often. Continuous delivery keeps code always releasable. Continuous deployment releases automatically to production.,ProjectPlus::4_5_Operational_change_control_during_an_IT_project
+Production vs beta / staging,Staging or beta mirrors production so changes can be tested safely before release. Production is the live environment.,ProjectPlus::4_5_Operational_change_control_during_an_IT_project
+Tiered environments,"Development, test, staging/beta and production, with promotion between them after approval",ProjectPlus::4_5_Operational_change_control_during_an_IT_project
+Phases,"The five PMI process groups: initiating, planning, executing, monitoring and controlling, closing — Questions ask ""which phase"" for things like stakeholder identification (initiation) or EVM (monitoring and controlling)",ProjectPlus::How_CompTIA_words_things_traps
+Waterfall,"Predictive, plan-driven — Treat the two words as the same thing",ProjectPlus::How_CompTIA_words_things_traps
+Agile / adaptive,"Iterative, change-welcoming — Adaptive projects do *not* use a scope statement, WBS, network diagram or formal change control. They use a product backlog, product roadmap and reprioritization instead.",ProjectPlus::How_CompTIA_words_things_traps
+Projects vs operations,Temporary and unique vs ongoing and repetitive — Expect at least one question that asks you to tell them apart,ProjectPlus::How_CompTIA_words_things_traps
+Initiating,"Create the charter, identify stakeholders",ProjectPlus::Activities_by_phase_know_what_happens_where
+Planning,"Project management plan, scope statement, WBS, activity list and sequence, estimates, schedule, budget, quality plan, resource plan, communications plan, risk plan and register, procurement plan, stakeholder engagement plan",ProjectPlus::Activities_by_phase_know_what_happens_where
+Executing,"Direct the work, manage quality, acquire and develop the team, manage communications, implement risk responses, conduct procurements, manage stakeholder engagement",ProjectPlus::Activities_by_phase_know_what_happens_where
+Monitoring and controlling,"Integrated change control, validate scope, control scope/schedule/cost, quality control, EVM, monitor risks, administer procurements",ProjectPlus::Activities_by_phase_know_what_happens_where
+Closing,"Close the project or phase, formal acceptance, close contracts, release resources, archive, lessons learned",ProjectPlus::Activities_by_phase_know_what_happens_where
+Rough order of magnitude (ROM),"Initiating, top-down — Least accurate (about −25% to +75%)",ProjectPlus::Estimating
+Budget estimate,"Early planning, scope approved, top-down — Moderate (about −10% to +25%)",ProjectPlus::Estimating
+Definitive estimate,"Late planning, built from the WBS, bottom-up — Most accurate (about −5% to +10%), slowest to create",ProjectPlus::Estimating
+Direct,"Charged only to this project — Team travel, equipment leased for this project",ProjectPlus::Cost_types
+Indirect,"Cost of doing business, shared — Rent, utilities, phone",ProjectPlus::Cost_types
+Fixed,Constant regardless of usage — Monthly equipment rental,ProjectPlus::Cost_types
+Variable,"Changes with quantity — Catering per attendee, licenses per user",ProjectPlus::Cost_types
+Cost of conformance,"Money spent to get quality right: training, testing, standards — Prevention and appraisal",ProjectPlus::Cost_types
+Cost of nonconformance,"Cost of failure: rework, downtime, lost sales, waste — Internal and external failure",ProjectPlus::Cost_types
+Formal / legitimate / positional,Assigned by senior management (the charter),ProjectPlus::People_and_power
+Reward,"Ability to give bonuses, recognition, good assignments",ProjectPlus::People_and_power
+Coercive / penalty,Ability to discipline. Team works out of fear.,ProjectPlus::People_and_power
+Expert,The PM's own knowledge of the subject,ProjectPlus::People_and_power
+Referent,"Team likes the PM, or the PM references someone powerful (""the CEO wants this"")",ProjectPlus::People_and_power
+Maslow's hierarchy,"Physiological, safety, social, esteem, self-actualization, in that order",ProjectPlus::People_and_power
+Herzberg,"Hygiene factors (pay, safety, job security) only prevent dissatisfaction. Motivators (recognition, responsibility, growth) drive performance.",ProjectPlus::People_and_power
+McGregor X and Y,Theory X: people are lazy and need micromanagement. Theory Y: people are self-motivated.,ProjectPlus::People_and_power
+Ouchi Theory Z,"Participative management, commitment and long-term opportunity motivate",ProjectPlus::People_and_power
+McClelland,"Needs for achievement, affiliation and power, shaped by experience",ProjectPlus::People_and_power
+Vroom expectancy,People work in proportion to the reward they expect,ProjectPlus::People_and_power
+PV (planned value),Budgeted cost of work scheduled,ProjectPlus::Formulas
+EV (earned value),Budgeted cost of work actually completed,ProjectPlus::Formulas
+AC (actual cost),Real money spent,ProjectPlus::Formulas
+BAC,Budget at completion (total budget),ProjectPlus::Formulas
+EAC,Estimate at completion (forecast total cost),ProjectPlus::Formulas
+ETC,Estimate to complete (remaining cost),ProjectPlus::Formulas
+ART,Agile Release Train,ProjectPlus::Acronyms
+BA,Business analyst,ProjectPlus::Acronyms
+CCB,Change control board,ProjectPlus::Acronyms
+CI/CD,Continuous integration / continuous delivery or deployment,ProjectPlus::Acronyms
+CMS,Content management system,ProjectPlus::Acronyms
+CPI / SPI,Cost / schedule performance index,ProjectPlus::Acronyms
+CRM,Customer relationship management,ProjectPlus::Acronyms
+EDRMS,Electronic document and record management system,ProjectPlus::Acronyms
+ERP,Enterprise resource planning,ProjectPlus::Acronyms
+ESG,"Environmental, social and governance",ProjectPlus::Acronyms
+IaaS / PaaS / SaaS / XaaS,Infrastructure / platform / software / anything as a service,ProjectPlus::Acronyms
+IaC,Infrastructure as code,ProjectPlus::Acronyms
+JAD / JAR,Joint application development / review,ProjectPlus::Acronyms
+KPI,Key performance indicator,ProjectPlus::Acronyms
+MFA,Multifactor authentication,ProjectPlus::Acronyms
+MSA,Master service agreement,ProjectPlus::Acronyms
+MVP,Minimum viable product,ProjectPlus::Acronyms
+NDA,Non-disclosure agreement,ProjectPlus::Acronyms
+OCM,Organizational change management,ProjectPlus::Acronyms
+OKR,Objectives and key results,ProjectPlus::Acronyms
+PERT,Program evaluation review technique,ProjectPlus::Acronyms
+PHI / PII,Personal health information / personally identifiable information,ProjectPlus::Acronyms
+PMO,Project management office,ProjectPlus::Acronyms
+PO,Purchase order,ProjectPlus::Acronyms
+PRINCE2,PRojects IN Controlled Environments,ProjectPlus::Acronyms
+QA,Quality assurance,ProjectPlus::Acronyms
+RACI,"Responsible, accountable, consulted, informed",ProjectPlus::Acronyms
+RAM,Responsibility assignment matrix,ProjectPlus::Acronyms
+RCA,Root cause analysis,ProjectPlus::Acronyms
+RFB / RFI / RFP / RFQ,Request for bid / information / proposal / quote,ProjectPlus::Acronyms
+ROI,Return on investment,ProjectPlus::Acronyms
+RTM,Requirements traceability matrix,ProjectPlus::Acronyms
+SAFe,Scaled Agile Framework,ProjectPlus::Acronyms
+SDLC,Software development life cycle,ProjectPlus::Acronyms
+SLA,Service-level agreement,ProjectPlus::Acronyms
+SME,Subject matter expert,ProjectPlus::Acronyms
+SOW,Statement of work,ProjectPlus::Acronyms
+T&M,Time and material,ProjectPlus::Acronyms
+TDD,Test-driven development,ProjectPlus::Acronyms
+TOR,Terms of reference,ProjectPlus::Acronyms
+UAT,User acceptance testing,ProjectPlus::Acronyms
+WBS,Work breakdown structure,ProjectPlus::Acronyms
+WIP,Work in progress,ProjectPlus::Acronyms
+XP,Extreme Programming,ProjectPlus::Acronyms
+Risk vs issue,Risk might happen. Issue is happening now.,ProjectPlus::Easily_confused_pairs
+Contingency vs management reserve,Known risks vs unknown-unknowns,ProjectPlus::Easily_confused_pairs
+Crashing vs fast tracking,Add resources (cost) vs overlap tasks (risk),ProjectPlus::Easily_confused_pairs
+Verification vs validation,Built it right vs built the right thing,ProjectPlus::Easily_confused_pairs
+Program vs portfolio,Related projects vs all work aligned to strategy,ProjectPlus::Easily_confused_pairs
+Product owner vs product manager,Agile backlog owner vs strategic product lead,ProjectPlus::Easily_confused_pairs
+RFI vs RFP vs RFQ,Learn vs detailed proposal vs price only,ProjectPlus::Easily_confused_pairs
+Fixed price vs T&M,Seller bears cost risk vs buyer bears cost risk,ProjectPlus::Easily_confused_pairs
+Burnup vs burndown,Work done with scope line vs work remaining,ProjectPlus::Easily_confused_pairs
+Gantt vs network diagram,Schedule bars vs dependency logic,ProjectPlus::Easily_confused_pairs
+CapEx vs OpEx,One-time asset vs ongoing running cost,ProjectPlus::Easily_confused_pairs
+Revise baseline vs rebaseline,Update for approved change vs full reset,ProjectPlus::Easily_confused_pairs

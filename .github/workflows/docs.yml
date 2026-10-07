@@ -1,0 +1,27 @@
+# Builds the MkDocs site on every push and pull request; deploys to GitHub
+# Pages from main. Uses the shared workflow from git-your-ship-together.
+#
+# One-time setting: Settings -> Pages -> Build and deployment -> Source:
+# "GitHub Actions". Until then the deploy job fails with a message saying so.
+
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    uses: ChiefGyk3D/git-your-ship-together/.github/workflows/docs-pages.yml@d8a03811b786c10fb3396c7e00bcdc94c4f40e1d # main
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    with:
+      install-command: pip install -r requirements-docs.txt
+      build-command: python3 scripts/build_mindmap.py && mkdocs build --strict
