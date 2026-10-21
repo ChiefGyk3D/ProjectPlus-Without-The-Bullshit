@@ -9,6 +9,7 @@ only.
   1.1 .. 4.5               one page per exam objective, split from the domain pages
   Gaps-from-the-book       docs/05-gaps.md
   Cheat-sheet              docs/06-cheatsheet.md
+  Practice-questions       docs/07-practice.md
   Mind-map, Flashcards     where the generated study aids live
   _Sidebar, _Footer        navigation and the "edit docs/, not the wiki" notice
 
@@ -29,6 +30,7 @@ DOCS = ROOT / "docs"
 DOMAIN_FILES = ["01-concepts.md", "02-lifecycle.md", "03-tools.md", "04-it-governance.md"]
 GAPS_PAGE = "Gaps-from-the-book"
 CHEAT_PAGE = "Cheat-sheet"
+PRACTICE_PAGE = "Practice-questions"
 MINDMAP_PAGE = "Mind-map"
 ANKI_PAGE = "Flashcards"
 BUILD_PAGE = "How-this-is-built"
@@ -49,6 +51,11 @@ def page_name(heading: str) -> str:
     """Wiki file name for a heading: words joined by hyphens, punctuation dropped."""
     words = re.sub(r"[^\w.\s-]", "", heading).split()
     return "-".join(words)
+
+
+def anchor_slug(heading: str) -> str:
+    """The anchor MkDocs' toc extension gives a heading."""
+    return re.sub(r"\s+", "-", re.sub(r"[^\w\s-]", "", heading).strip().lower())
 
 
 def clean(cell: str) -> str:
@@ -119,15 +126,20 @@ def convert_admonitions(text: str) -> str:
     return "\n".join(out)
 
 
-def rewrite_links(text: str, pages: dict[str, str]) -> str:
-    """Point relative links at wiki pages; drop attr_list suffixes."""
+def rewrite_links(text: str, pages: dict[str, str], anchors: dict[tuple[str, str], str] | None = None) -> str:
+    """Point relative links at wiki pages; drop attr_list suffixes.
+
+    A link into a domain page with an objective's anchor goes to that
+    objective's own page."""
     text = re.sub(r"\)\{[^}]*\}", ")", text)
 
     def fix(m: re.Match) -> str:
         label, target = m.group(1), m.group(2)
         if re.match(r"[a-z]+://|#|mailto:", target):
             return m.group(0)
-        base = target.split("#")[0]
+        base, _, anchor = target.partition("#")
+        if anchors and (base, anchor) in anchors:
+            return f"[{label}]({anchors[(base, anchor)]})"
         if base in pages:
             return f"[{label}]({pages[base]})"
         if base == "mindmap-full.html":
@@ -150,10 +162,24 @@ def main() -> None:
         "05-gaps.md": GAPS_PAGE,
         "06-cheatsheet.md": CHEAT_PAGE,
         "mindmap.md": MINDMAP_PAGE,
+        "07-practice.md": PRACTICE_PAGE,
         "index.md": "Home",
     }
     for f, (title, _, _, _) in zip(DOMAIN_FILES, domains):
         pages[f] = page_name(title)
+
+    anchors: dict[tuple[str, str], str] = {}  # (docs file, heading anchor) -> objective page
+    for f, (_, _, _, objectives) in zip(DOMAIN_FILES, domains):
+        for heading, _ in objectives:
+            anchors[(f, anchor_slug(heading))] = page_name(heading)
+
+    # Objectives must run N.1, N.2, ... within their domain, or a page went missing.
+    for f, (title, _, _, objectives) in zip(DOMAIN_FILES, domains):
+        domain = title.split(".")[0]
+        got = [h.split()[0] for h, _ in objectives]
+        want = [f"{domain}.{n}" for n in range(1, len(objectives) + 1)]
+        if got != want:
+            sys.exit(f"{f}: objectives {got} should be {want}")
 
     out: dict[str, str] = {}
     toc: list[tuple[str, str, str, int]] = []  # domain page, objective page, objective heading, rows
@@ -169,15 +195,19 @@ def main() -> None:
             toc.append((dpage, opage, heading, rows))
             sidebar.append(f"  - [{heading}]({opage})")
             listing.append(f"- [{heading}]({opage})")
-            body = rewrite_links(convert_admonitions(body), pages)
+            body = rewrite_links(convert_admonitions(body), pages, anchors)
             out[opage] = f"# {heading}\n\nPart of [{title} ({weight})]({dpage}).\n\n{body}\n"
         intro = rewrite_links(convert_admonitions(intro), pages)
         out[dpage] = f"# {title} ({weight})\n\n{intro}\n\n## Objectives\n\n" + "\n".join(listing) + "\n"
 
-    for src, page, heading in (("05-gaps.md", GAPS_PAGE, "Gaps from the book"), ("06-cheatsheet.md", CHEAT_PAGE, "Cheat sheet")):
+    for src, page, heading in (
+        ("05-gaps.md", GAPS_PAGE, "Gaps from the book"),
+        ("06-cheatsheet.md", CHEAT_PAGE, "Cheat sheet"),
+        ("07-practice.md", PRACTICE_PAGE, "Practice questions"),
+    ):
         body = (DOCS / src).read_text().split("\n", 1)[1].strip()
-        out[page] = f"# {heading}\n\n{rewrite_links(convert_admonitions(body), pages)}\n"
-    sidebar += ["", "**Cram**", f"- [{CHEAT_PAGE.replace('-', ' ')}]({CHEAT_PAGE})", f"- [Gaps from the book]({GAPS_PAGE})"]
+        out[page] = f"# {heading}\n\n{rewrite_links(convert_admonitions(body), pages, anchors)}\n"
+    sidebar += ["", "**Cram**", f"- [{CHEAT_PAGE.replace('-', ' ')}]({CHEAT_PAGE})", f"- [Gaps from the book]({GAPS_PAGE})", f"- [Practice questions]({PRACTICE_PAGE})"]
 
     mindmap_rows = sum(r for *_, r in toc)
     out[MINDMAP_PAGE] = (
@@ -190,8 +220,9 @@ def main() -> None:
         "# Flashcards\n\n"
         f"[`anki/projectplus.csv`]({REPO}/blob/main/anki/projectplus.csv) has one card for every table row in the guide, "
         "tagged with the objective it came from.\n\n"
-        "Import it in Anki with **File → Import**, field separator **comma**, **Allow HTML off**, "
-        "first row is the header, tags in the third field.\n\n"
+        "Import it in Anki 2.1.54 or later with **File → Import**. The file carries its own settings (comma separated, plain text, "
+        "tags in the third column), so the dialog needs nothing else. Each card has a stable ID, so importing a newer version "
+        "updates the cards you already have instead of adding duplicates.\n\n"
         "The file is generated by `scripts/build_anki.py`. Edit the pages, not the CSV.\n"
     )
     out[BUILD_PAGE] = (
@@ -213,7 +244,7 @@ def main() -> None:
     # Home: the exam at a glance, built from the index page, plus every objective.
     index = (DOCS / "index.md").read_text().split("\n", 1)[1].strip()
     index = index.split("\n\n", 1)[1]  # the tagline is repeated on Home already
-    index = re.sub(r"^- \*\*(Read|See it whole|Memorize|Print|Cram):\*\*.*\n?", "", index, flags=re.MULTILINE).strip()
+    index = re.sub(r"^- \*\*(Read|See it whole|Memorize|Test yourself|Print|Cram):\*\*.*\n?", "", index, flags=re.MULTILINE).strip()
     index = rewrite_links(convert_admonitions(index), pages)
     table = ["| Objective | Domain | Terms |", "| --- | --- | ---: |"]
     for dpage, opage, heading, rows in toc:
@@ -227,6 +258,7 @@ def main() -> None:
         f"| See the whole exam on one screen | [Mind map]({MINDMAP_PAGE}) |\n"
         f"| Drill terms with spaced repetition | [Flashcards]({ANKI_PAGE}) |\n"
         f"| Print it | [PDF]({SITE}/ProjectPlus-PK0-005.pdf), the whole guide on US Letter |\n"
+        f"| Test yourself | [Practice questions]({PRACTICE_PAGE}), forty scenarios with an answer key |\n"
         f"| Cram the night before | [Cheat sheet]({CHEAT_PAGE}) and [Gaps from the book]({GAPS_PAGE}) |\n\n"
         f"{index}\n\n"
         "## Every objective\n\n" + "\n".join(table) + "\n"

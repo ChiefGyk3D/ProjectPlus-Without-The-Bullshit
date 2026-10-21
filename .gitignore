@@ -5,3 +5,4 @@ __pycache__/
 *.epub
 *.pdf
 wiki-out/
+.venv/

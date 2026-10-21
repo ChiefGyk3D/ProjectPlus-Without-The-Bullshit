@@ -56,7 +56,7 @@ The largest domain. It covers how projects are run (methodologies), controlled (
 | Budget and schedule | Time and cost fixed, scope flexible | Scope fixed, time and cost estimated |
 
 !!! tip "Exam tip"
-    a hybrid approach mixes both (for example, Waterfall for hardware procurement and Agile for software). Pick it when the scenario has a regulated or fixed-date portion plus a changing portion.
+    A hybrid approach mixes both (for example, Waterfall for hardware procurement and Agile for software). Pick it when the scenario has a regulated or fixed-date portion plus a changing portion.
 
 
 ### 1.3 Change control process
@@ -126,7 +126,7 @@ A **risk** is an uncertain event that, if it happens, affects an objective. It h
 | Share | n/a | Partner with another party who can capture it better |
 
 !!! note "Memory aid"
-    negative = *A*ccept, *A*void, *M*itigate, *T*ransfer. Positive = *A*ccept, *E*nhance, *E*xploit, *S*hare.
+    Negative = *A*ccept, *A*void, *M*itigate, *T*ransfer. Positive = *A*ccept, *E*nhance, *E*xploit, *S*hare.
 
 
 **Risk analysis**
@@ -389,4 +389,4 @@ For example, 10 people = 45 channels. Adding people increases complexity fast.
 | Non-disclosure agreement (NDA) | Legal agreement to keep information confidential | n/a |
 
 !!! tip "Exam tip"
-    unclear scope favors T&M or cost plus. Clear scope favors fixed price. An MSA is signed once, then SOWs and POs cover each piece of work.
+    Unclear scope favors T&M or cost plus. Clear scope favors fixed price. An MSA is signed once, then SOWs and POs cover each piece of work.

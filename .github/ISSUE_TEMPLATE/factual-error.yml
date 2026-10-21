@@ -1,0 +1,24 @@
+name: Factual error in the guide
+description: Something in the study material is wrong, out of date or unclear.
+labels: [content]
+body:
+  - type: input
+    id: section
+    attributes:
+      label: Section
+      description: The objective or page, for example "1.6 Schedule development" or "Gaps from the book".
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What the guide says
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What is right, and where you checked it
+      description: A link to CompTIA's exam objectives or exam page, or the book and page. Please do not paste book text or real exam questions.
+    validations:
+      required: true

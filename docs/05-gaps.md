@@ -11,7 +11,7 @@ These are things the book flags as exam-critical that the objective list alone d
 | Agile / adaptive | Iterative, change-welcoming | Adaptive projects do *not* use a scope statement, WBS, network diagram or formal change control. They use a product backlog, product roadmap and reprioritization instead. |
 | Projects vs operations | Temporary and unique vs ongoing and repetitive | Expect at least one question that asks you to tell them apart |
 
-**Question tactics the book stresses:** read for "except" and "not"; when two answers look right, the scenario contains a clue (phase, methodology, who is asking) that picks one; answer every question (blank = wrong); first instinct is usually right; about 72 of 90 correct passes.
+**Question tactics the book stresses:** read for "except" and "not"; when two answers look right, the scenario contains a clue (phase, methodology, who is asking) that picks one; answer every question (blank = wrong); first instinct is usually right; the book estimates about 72 of 90 correct to pass, but CompTIA publishes no raw-score conversion for the 710 scale, so treat that as a rough target.
 
 ### Activities by phase (know what happens where)
 

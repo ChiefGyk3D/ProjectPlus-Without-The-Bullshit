@@ -1,0 +1,12 @@
+Third-party code the mind map runs, copied here so the page works offline and
+loads nothing from a third party. Update by hand, then re-run
+scripts/build_mindmap.py and check the page in a browser.
+
+d3            7.9.0    ISC   https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js
+markmap-lib   0.18.12  MIT   https://cdn.jsdelivr.net/npm/markmap-lib@0.18.12/dist/browser/index.iife.min.js
+markmap-view  0.18.12  MIT   https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js
+
+sha256
+f2094bbf6141b359722c4fe454eb6c4b0f0e42cc10cc7af921fc158fceb86539  d3.min.js
+07c2dd97a98ea6e78075968a41a63eae236d64be150451249c3f95cdbed643f5  markmap-lib.min.js
+861eb6d20af18aaa300878d46d695722a73625c58b40f49236af027f18b74e07  markmap-view.js

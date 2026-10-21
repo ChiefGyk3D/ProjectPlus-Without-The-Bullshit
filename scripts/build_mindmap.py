@@ -4,14 +4,16 @@ Reads docs/01-*.md through docs/05-*.md and writes:
   docs/mindmap-full.html  a standalone markmap page (domain > objective > term)
   docs/mindmap.md         the site page that embeds it
 
-Run from the repository root. No dependencies beyond the standard library;
-markmap itself loads from jsDelivr when the page is viewed.
+Run from the repository root. No dependencies beyond the standard library. The
+page runs d3 and markmap from docs/assets/vendor/ (see VENDOR.txt there), so it
+loads nothing from a third party and works offline.
 """
+import hashlib
+import json
 import re
 from pathlib import Path
 
 DOCS = Path(__file__).resolve().parent.parent / "docs"
-MARKMAP_VERSION = "0.18"
 
 def slug(heading: str) -> str:
     """The anchor mkdocs' toc extension gives a heading."""
@@ -25,6 +27,18 @@ def clean(cell: str) -> str:
     return cell.replace("\\", "").strip()
 
 
+def check_vendor() -> None:
+    """The vendored libraries must match the checksums recorded in VENDOR.txt."""
+    vendor = DOCS / "assets" / "vendor"
+    listed = re.findall(r"^([0-9a-f]{64})  (\S+)$", (vendor / "VENDOR.txt").read_text(), re.MULTILINE)
+    if not listed:
+        raise SystemExit("assets/vendor/VENDOR.txt lists no checksums")
+    for digest, name in listed:
+        if hashlib.sha256((vendor / name).read_bytes()).hexdigest() != digest:
+            raise SystemExit(f"assets/vendor/{name} does not match VENDOR.txt; update both together")
+
+
+check_vendor()
 lines = ["# CompTIA Project+ PK0-005"]
 terms = 0
 for page in sorted(DOCS.glob("0[1-5]-*.md")):
@@ -65,6 +79,7 @@ for page in sorted(DOCS.glob("0[1-5]-*.md")):
 
 outline = "\n".join(lines) + "\n"
 assert "</script" not in outline.lower()
+outline_json = json.dumps(outline)
 
 page = f"""<!doctype html>
 <html lang="en">
@@ -88,19 +103,22 @@ page = f"""<!doctype html>
 </head>
 <body>
 <div id="hint">Click a circle to expand or collapse. Click a term to open its definition; click the term text to jump to its section. Scroll to zoom, drag to pan.</div>
-<div class="markmap">
-<script type="text/template">
----
-markmap:
-  colorFreezeLevel: 2
-  initialExpandLevel: 2
-  maxWidth: 360
-  spacingVertical: 8
-  paddingX: 12
----
-{outline}</script>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@{MARKMAP_VERSION}"></script>
+<div class="markmap"><svg id="mm"></svg></div>
+<script src="assets/vendor/d3.min.js"></script>
+<script src="assets/vendor/markmap-lib.min.js"></script>
+<script src="assets/vendor/markmap-view.js"></script>
+<script>
+  const outline = {outline_json};
+  const {{ Transformer, Markmap, deriveOptions }} = window.markmap;
+  const {{ root }} = new Transformer().transform(outline);
+  Markmap.create("#mm", deriveOptions({{
+    colorFreezeLevel: 2,
+    initialExpandLevel: 2,
+    maxWidth: 360,
+    spacingVertical: 8,
+    paddingX: 12,
+  }}), root);
+</script>
 <script>
   // A term links to its section on the site. Inside the embedded view that
   // link must replace the whole page, not just the frame.
