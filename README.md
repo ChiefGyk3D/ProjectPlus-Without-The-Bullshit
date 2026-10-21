@@ -12,6 +12,7 @@ nothing else.
 | See the whole exam on one screen | [mind map](https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/mindmap-full.html) |
 | Drill terms with spaced repetition | [`anki/projectplus.csv`](anki/projectplus.csv), import into Anki (File → Import, comma separated, tags in field 3) |
 | Browse by objective | the [wiki](https://github.com/ChiefGyk3D/ProjectPlus-Without-The-Bullshit/wiki), one page per exam objective |
+| Print it | the [PDF](https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/ProjectPlus-PK0-005.pdf), the whole guide on US Letter, rebuilt on every push to `main` |
 | Cram the night before | [cheat sheet](docs/06-cheatsheet.md) and [gaps from the book](docs/05-gaps.md) |
 
 ## Layout
@@ -27,7 +28,7 @@ docs/
   06-cheatsheet.md      formulas, acronyms, easily confused pairs
   mindmap.md            embeds mindmap-full.html (generated)
 anki/projectplus.csv    flashcards (generated)
-scripts/                build_mindmap.py, build_anki.py, gen_wiki.py
+scripts/                build_mindmap.py, build_anki.py, gen_wiki.py, build_pdf.py
 ```
 
 The domain pages are the source. The mind map, the flashcards and the wiki are
@@ -49,6 +50,7 @@ pinned to a release SHA and bumped by Dependabot:
 | --- | --- | --- |
 | `ci.yml` | `python-ci.yml` | `ruff` on the scripts, regenerates the mind map and flashcards and fails if they were stale, `mkdocs build --strict`. `ci / CI green` is the branch-protection gate. |
 | `docs.yml` | `docs-pages.yml` | Builds the site on every push and PR, deploys to GitHub Pages from `main` |
+| `docs.yml` (PDF) | same | `scripts/build_pdf.py` renders the pages to `ProjectPlus-PK0-005.pdf` (WeasyPrint) and ships it beside the site |
 | `wiki.yml` | `wiki-publish.yml` | Runs `gen_wiki.py` and replaces every page of the GitHub wiki from `main`. The wiki is a mirror: edit `docs/`, never the wiki. |
 | `security.yml` | `security.yml` | CodeQL (python, actions), gitleaks, pip-audit, dependency review, Scorecard |
 | `dependabot-auto-merge.yml` | `dependabot-auto-merge.yml` | Merges Dependabot bumps up to minor once CI is green |

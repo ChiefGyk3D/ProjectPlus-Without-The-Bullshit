@@ -5,6 +5,7 @@ A CompTIA Project+ PK0-005 study guide for people who already know how to run pr
 - **Read:** the four domains in the sidebar, in order.
 - **See it whole:** the [mind map](mindmap.md) puts the entire exam on one screen.
 - **Memorize:** import [`anki/projectplus.csv`](https://github.com/ChiefGyk3D/ProjectPlus-Without-The-Bullshit/blob/main/anki/projectplus.csv) into Anki.
+- **Print:** the [whole guide as a PDF](https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/ProjectPlus-PK0-005.pdf), US Letter, built from these pages.
 - **Cram:** the [cheat sheet](06-cheatsheet.md) and the [gaps](05-gaps.md) the night before.
 
 
