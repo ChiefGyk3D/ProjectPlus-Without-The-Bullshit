@@ -34,7 +34,7 @@
 | --- | --- |
 | Data confidentiality | Protecting sensitive data from unauthorized disclosure |
 | Personally identifiable information (PII) | Data that identifies a person: name, address, SSN, email, IP address |
-| Personal health information (PHI) | Health data linked to a person. Protected in the US by HIPAA. |
+| Personal (protected) health information (PHI) | Health data linked to a person. Protected in the US by HIPAA. |
 | Legal and regulatory impacts | Laws that affect how the project handles data and operates |
 | Country, state and province privacy rules | Examples: GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada). Rules depend on where the data subject lives, not just where the company sits. |
 | Industry or organization compliance | Examples: HIPAA (health), PCI DSS (payment cards), SOX (financial reporting), FERPA (education records) |

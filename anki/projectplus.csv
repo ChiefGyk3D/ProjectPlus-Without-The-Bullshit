@@ -73,7 +73,7 @@ Risk register (1.4),"Central log of risks: description, probability, impact, own
 Risk owner,Person accountable for monitoring a risk and carrying out its response,ProjectPlus::1_4_Risk_management,417d21340f6b
 Risk trigger,Warning sign that a risk is about to occur,ProjectPlus::1_4_Risk_management,309a5aae5003
 Contingency plan (1.4),Planned response that runs *if* the risk occurs,ProjectPlus::1_4_Risk_management,2b8ef9d55e37
-Fallback plan,Backup used if the first response does not work,ProjectPlus::1_4_Risk_management,6e555c0dd61a
+Fallback plan,Backup used if the first response (the contingency plan) does not work. In change control the same word means a rollback plan: see the gaps,ProjectPlus::1_4_Risk_management,6e555c0dd61a
 Residual risk,Risk left after a response,ProjectPlus::1_4_Risk_management,4f8d9ed18d82
 Secondary risk,New risk created by the response itself,ProjectPlus::1_4_Risk_management,05ae40f53628
 Risk appetite / tolerance,How much risk the organization accepts,ProjectPlus::1_4_Risk_management,bcac4a8143ff
@@ -110,7 +110,7 @@ Start-to-finish (SF),"Rule: B cannot finish until A starts
 Frequency: Rare (shift handover)",ProjectPlus::1_6_Schedule_development_and_management,878d9023fab4
 Milestone,Zero-duration marker of an important event or deliverable,ProjectPlus::1_6_Schedule_development_and_management,79c14be01a86
 Estimating techniques,"Analogous (from similar past projects), parametric (unit rate, such as hours per line of code), bottom-up (sum of work packages), three-point, expert judgment",ProjectPlus::1_6_Schedule_development_and_management,db6f97dea2f5
-Three-point / PERT estimate,"Weighted average of optimistic (O), most likely (M) and pessimistic (P)",ProjectPlus::1_6_Schedule_development_and_management,b7c19a3cd539
+Three-point / PERT estimate,"Weighted average of optimistic (O), most likely (M) and pessimistic (P). A plain triangular average is (O + M + P) / 3. Use PERT unless the question says ""simple average"".",ProjectPlus::1_6_Schedule_development_and_management,b7c19a3cd539
 Story points,"Relative size estimate for agile work (Fibonacci scale, planning poker)",ProjectPlus::1_6_Schedule_development_and_management,5251375b751f
 Epic > story > task,Epic is a large body of work. A story is a user-facing slice. A task is a unit of work to finish a story.,ProjectPlus::1_6_Schedule_development_and_management,d1066acd8eb8
 Sprint goal,Short statement of what the sprint will achieve,ProjectPlus::1_6_Schedule_development_and_management,61b7ccb59ed2
@@ -307,7 +307,7 @@ Project organizational chart,"What it shows: Team structure and reporting lines
 Best used to: Show who reports to whom",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,fefdb43640f0
 Issue log (3.1),"Tracks current issues, owners, status and resolution",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,14b359841f48
 Defect log,"Records defects found in testing: severity, steps to reproduce, status",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,76e0979f30d9
-Change log,Records all change requests and decisions,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,b7b2f93c98af
+Change log (change control log),Records all change requests and decisions,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,be9a29d860b1
 Risk register (3.1),"Full catalog of risks with probability, impact, owner and response",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,08b45632c5a1
 Risk report,Summary of overall risk exposure and top risks for stakeholders,ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,30380b0b383d
 Project dashboard,"Visual display of key metrics (KPIs) at a glance, often live",ProjectPlus::3_1_Tools_used_throughout_the_project_life_cycle,26e348d9524a
@@ -360,7 +360,7 @@ Data security,"Data classification by sensitivity (public, internal, confidentia
 Corporate IT security policies,"Acceptable use, password rules, branding restrictions on what may be shared publicly",ProjectPlus::4_2_Information_security_concepts,80aa1671caac
 Data confidentiality,Protecting sensitive data from unauthorized disclosure,ProjectPlus::4_3_Compliance_and_privacy,896c16fbbb8e
 Personally identifiable information (PII),"Data that identifies a person: name, address, SSN, email, IP address",ProjectPlus::4_3_Compliance_and_privacy,05e857c9a1c1
-Personal health information (PHI),Health data linked to a person. Protected in the US by HIPAA.,ProjectPlus::4_3_Compliance_and_privacy,86ae01c5f56e
+Personal (protected) health information (PHI),Health data linked to a person. Protected in the US by HIPAA.,ProjectPlus::4_3_Compliance_and_privacy,66f745a5cf35
 Legal and regulatory impacts,Laws that affect how the project handles data and operates,ProjectPlus::4_3_Compliance_and_privacy,8bbc2fbfeba7
 "Country, state and province privacy rules","Examples: GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada). Rules depend on where the data subject lives, not just where the company sits.",ProjectPlus::4_3_Compliance_and_privacy,44117887f732
 Industry or organization compliance,"Examples: HIPAA (health), PCI DSS (payment cards), SOX (financial reporting), FERPA (education records)",ProjectPlus::4_3_Compliance_and_privacy,a7ed3613eca2
@@ -383,7 +383,7 @@ Cloud vs on-premises change control,"Cloud: provider controls some changes, so f
 CI/CD (4.5),Continuous integration merges and tests code often. Continuous delivery keeps code always releasable. Continuous deployment releases automatically to production.,ProjectPlus::4_5_Operational_change_control_during_an_IT_project,212257360ebb
 Production vs beta / staging,Staging or beta mirrors production so changes can be tested safely before release. Production is the live environment.,ProjectPlus::4_5_Operational_change_control_during_an_IT_project,2f02be217e88
 Tiered environments,"Development, test, staging/beta and production, with promotion between them after approval",ProjectPlus::4_5_Operational_change_control_during_an_IT_project,2dc13d514c09
-Phases,"It means: The five PMI process groups: initiating, planning, executing, monitoring and controlling, closing
+Phases,"It means: The five PMI process groups: initiating, planning, executing, monitoring and controlling, closing. The objectives themselves list discovery as the first phase and treat monitoring and controlling as running alongside, so if a question asks which phase an activity belongs to, use the phase list in objective 2.0
 Why it matters: Questions ask ""which phase"" for things like stakeholder identification (initiation) or EVM (monitoring and controlling)",ProjectPlus::How_CompTIA_words_things_traps,a6908debb5f7
 Waterfall (gaps),"It means: Predictive, plan-driven
 Why it matters: Treat the two words as the same thing",ProjectPlus::How_CompTIA_words_things_traps,66b8c7e49eed
@@ -451,8 +451,8 @@ MVP,Minimum viable product,ProjectPlus::Acronyms,3cb97ddac7a6
 NDA,Non-disclosure agreement,ProjectPlus::Acronyms,8ffdf3380295
 OCM,Organizational change management,ProjectPlus::Acronyms,150ca076593e
 OKR,Objectives and key results,ProjectPlus::Acronyms,ef2910e2ec63
-PERT,Program evaluation review technique,ProjectPlus::Acronyms,8a1d639d1fcc
-PHI / PII,Personal health information / personally identifiable information,ProjectPlus::Acronyms,ef7d14306665
+PERT,Program evaluation and review technique,ProjectPlus::Acronyms,8a1d639d1fcc
+PHI / PII,Personal (protected) health information / personally identifiable information,ProjectPlus::Acronyms,ef7d14306665
 PMO,Project management office,ProjectPlus::Acronyms,2e086e4bda7c
 PO,Purchase order,ProjectPlus::Acronyms,976bc68876a1
 PRINCE2,PRojects IN Controlled Environments,ProjectPlus::Acronyms,3a18e1589a9e

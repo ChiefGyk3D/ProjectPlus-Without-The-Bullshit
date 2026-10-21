@@ -19,7 +19,7 @@
 | --- | --- |
 | Issue log | Tracks current issues, owners, status and resolution |
 | Defect log | Records defects found in testing: severity, steps to reproduce, status |
-| Change log | Records all change requests and decisions |
+| Change log (change control log) | Records all change requests and decisions |
 | Risk register | Full catalog of risks with probability, impact, owner and response |
 | Risk report | Summary of overall risk exposure and top risks for stakeholders |
 | Project dashboard | Visual display of key metrics (KPIs) at a glance, often live |

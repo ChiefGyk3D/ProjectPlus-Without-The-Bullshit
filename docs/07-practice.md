@@ -6,14 +6,14 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 
 ### 1.0 Project Management Concepts
 
-**1.** A project is halfway through execution and the scope baseline has been approved. A stakeholder stops the PM in the hallway and asks for "one small addition" that the team could finish in a day. What should the PM do?
+**1.** A predictive (waterfall) project is halfway through execution and the scope baseline has been approved. A stakeholder stops the PM in the hallway and asks for "one small addition" that the team could finish in a day. What should the PM do?
 
 - A. Ask the stakeholder to submit a change request so its impact can be assessed
-- B. Add it, because it is small and keeps the stakeholder happy
-- C. Refuse, because the baseline cannot change once approved
-- D. Add it and absorb the time into the contingency reserve
+- B. Add it now, because it is small and keeps the stakeholder happy
+- C. Refuse it outright, because an approved baseline can never be changed
+- D. Add it and absorb the time into the contingency reserve for risks
 
-**2.** A change request has been received and entered in the change control log. What is the next step?
+**2.** A change request has been received and entered in the change control log. Following the standard sequence, what is the next step?
 
 - A. Implement the change
 - B. Conduct a preliminary review
@@ -34,7 +34,7 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 - C. Accept
 - D. Transfer
 
-**5.** A project earns a bonus if it finishes early. The sponsor assigns the strongest engineers to the critical tasks to make sure that happens. Which response to a positive risk is this?
+**5.** A project earns a bonus if it finishes early. The sponsor reassigns the strongest engineers to the critical tasks and removes every other duty from them, so that the early finish is certain. Which response to a positive risk is this?
 
 - A. Enhance
 - B. Exploit
@@ -88,8 +88,8 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 
 - A. Fixed price
 - B. Time and material
-- C. Non-disclosure agreement
-- D. Purchase order for a single item
+- C. Maintenance agreement
+- D. Master service agreement
 
 **13.** Requirements are expected to change often. The team is small and cross-functional, and the customer wants to review working software every few weeks. Which approach fits best?
 
@@ -132,7 +132,7 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 
 - A. Nothing, because shared accountability is normal
 - B. The deliverable should have no **A**, because **R** covers it
-- C. One of the two should be marked **C**, because an accountable person never does the work
+- C. The extra **A** should become an **I**, so that nobody blocks the sign-off
 - D. There must be exactly one person accountable per deliverable
 
 **19.** Which of these is created in the planning phase and not in initiation?
@@ -267,9 +267,9 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 
 **37.** The team will process names and email addresses of residents of the EU. The team and the company are based in the United States. What must the PM do?
 
-- A. Nothing, because the team is not in the EU
-- B. Remove all personal data from the project
-- C. Apply only US state privacy law
+- A. Do nothing extra, because the team and the company are not in the EU
+- B. Remove all personal data from the project before the work begins
+- C. Apply only US state privacy law, because the company is based in the US
 - D. Account for EU privacy rules, because they follow where the data subjects live
 
 **38.** The project is closing. What should happen to the team's and vendors' accounts and access?

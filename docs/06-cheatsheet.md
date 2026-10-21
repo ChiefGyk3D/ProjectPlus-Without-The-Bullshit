@@ -12,6 +12,8 @@ CPI = EV / AC       SPI = EV / PV
 EAC = BAC / CPI       ETC = EAC − AC       VAC = BAC − EAC
 ```
 
+EAC = BAC / CPI is the form to use unless the question says the variance so far is a one-off. If it is, EAC = AC + (BAC − EV).
+
 | Earned value term | Meaning |
 | --- | --- |
 | PV (planned value) | Budgeted cost of work scheduled |
@@ -47,8 +49,8 @@ Read the result: variance above 0 or index above 1 is *good*. Below 0 or below 1
 | NDA | Non-disclosure agreement |
 | OCM | Organizational change management |
 | OKR | Objectives and key results |
-| PERT | Program evaluation review technique |
-| PHI / PII | Personal health information / personally identifiable information |
+| PERT | Program evaluation and review technique |
+| PHI / PII | Personal (protected) health information / personally identifiable information |
 | PMO | Project management office |
 | PO | Purchase order |
 | PRINCE2 | PRojects IN Controlled Environments |
