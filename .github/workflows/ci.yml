@@ -38,6 +38,7 @@ jobs:
         python3 scripts/build_anki.py
         git diff --exit-code -- docs/mindmap-full.html docs/mindmap.md anki/projectplus.csv
         python3 scripts/gen_wiki.py --out "$(mktemp -d)"
+        python3 scripts/build_pdf.py --out "$(mktemp -d)/guide.pdf"
         mkdocs build --strict
       lint-command: ruff check scripts
       docker-build: false

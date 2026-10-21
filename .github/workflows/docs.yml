@@ -1,5 +1,6 @@
 # Builds the MkDocs site on every push and pull request; deploys to GitHub
-# Pages from main. Uses the shared workflow from git-your-ship-together.
+# Pages from main, with the printable PDF beside it. Uses the shared workflow
+# from git-your-ship-together.
 #
 # One-time setting: Settings -> Pages -> Build and deployment -> Source:
 # "GitHub Actions". Until then the deploy job fails with a message saying so.
@@ -24,4 +25,7 @@ jobs:
       id-token: write
     with:
       install-command: pip install -r requirements.txt
-      build-command: python3 scripts/build_mindmap.py && mkdocs build --strict
+      build-command: |
+        python3 scripts/build_mindmap.py
+        mkdocs build --strict
+        python3 scripts/build_pdf.py --out site/ProjectPlus-PK0-005.pdf --commit "$GITHUB_SHA"

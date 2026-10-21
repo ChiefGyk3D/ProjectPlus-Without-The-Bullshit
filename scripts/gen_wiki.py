@@ -201,6 +201,7 @@ def main() -> None:
         f"| [Site]({SITE}/) | `mkdocs build --strict` |\n"
         "| Mind map | `scripts/build_mindmap.py` |\n"
         "| Flashcards | `scripts/build_anki.py` |\n"
+        f"| [PDF]({SITE}/ProjectPlus-PK0-005.pdf) | `scripts/build_pdf.py` (WeasyPrint), deployed with the site |\n"
         "| This wiki | `scripts/gen_wiki.py`, published by `.github/workflows/wiki.yml` |\n\n"
         "**Do not edit the wiki.** Every publish replaces every page. Edit `docs/`, open a pull request, and the wiki follows when it merges to `main`.\n\n"
         "CI regenerates the mind map and the flashcards and fails if they are stale, and fails if the wiki generator finds a link it cannot resolve. "
@@ -212,7 +213,7 @@ def main() -> None:
     # Home: the exam at a glance, built from the index page, plus every objective.
     index = (DOCS / "index.md").read_text().split("\n", 1)[1].strip()
     index = index.split("\n\n", 1)[1]  # the tagline is repeated on Home already
-    index = re.sub(r"^- \*\*(Read|See it whole|Memorize|Cram):\*\*.*\n?", "", index, flags=re.MULTILINE).strip()
+    index = re.sub(r"^- \*\*(Read|See it whole|Memorize|Print|Cram):\*\*.*\n?", "", index, flags=re.MULTILINE).strip()
     index = rewrite_links(convert_admonitions(index), pages)
     table = ["| Objective | Domain | Terms |", "| --- | --- | ---: |"]
     for dpage, opage, heading, rows in toc:
@@ -225,6 +226,7 @@ def main() -> None:
         "| Want to | Go to |\n| --- | --- |\n"
         f"| See the whole exam on one screen | [Mind map]({MINDMAP_PAGE}) |\n"
         f"| Drill terms with spaced repetition | [Flashcards]({ANKI_PAGE}) |\n"
+        f"| Print it | [PDF]({SITE}/ProjectPlus-PK0-005.pdf), the whole guide on US Letter |\n"
         f"| Cram the night before | [Cheat sheet]({CHEAT_PAGE}) and [Gaps from the book]({GAPS_PAGE}) |\n\n"
         f"{index}\n\n"
         "## Every objective\n\n" + "\n".join(table) + "\n"
