@@ -12,9 +12,12 @@ import re
 import sys
 from html import escape
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 import markdown
+from markdown.extensions.toc import slugify
 from weasyprint import CSS, HTML
+from weasyprint.urls import FatalURLFetchingError, URLFetcher
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -42,6 +45,7 @@ pre { padding: 4pt 6pt; break-inside: avoid; }
 .admonition p, .admonition ul { margin: 2pt 0; }
 a { color: inherit; text-decoration: none; }
 .cover { margin-top: 2.2in; font-size: 28pt; border: 0; text-align: center; }
+.cover-page { break-after: page; }
 .sub { text-align: center; font-size: 12pt; }
 .small { text-align: center; font-size: 8.5pt; color: #555; margin-top: 2in; }
 .contents ul { list-style: none; padding-left: 0; }
@@ -49,6 +53,19 @@ a { color: inherit; text-decoration: none; }
 .contents li.ch { margin-top: 8pt; font-weight: bold; }
 .contents a::after { content: leader('.') target-counter(attr(href), page); }
 """
+
+
+class LocalOnly(URLFetcher):
+    """Fetch only data: URLs and files under docs/. A page that asks for anything
+    else (an image on the network, a file:// path elsewhere) fails the build,
+    because the PDF is published and the build runs with the runner's files."""
+
+    def fetch(self, url, headers=None):
+        if not url.startswith("data:"):
+            parsed = urlparse(url)
+            if parsed.scheme != "file" or not Path(unquote(parsed.path)).resolve().is_relative_to(DOCS.resolve()):
+                raise FatalURLFetchingError(f"the PDF build may not fetch {url}")
+        return super().fetch(url, headers)
 
 
 def main() -> None:
@@ -73,8 +90,15 @@ def main() -> None:
             text = "# Start here\n" + text
         # Links between pages become in-document anchors; the mind map stays on the site.
         text = re.sub(r"\]\(mindmap\.md\)", f"]({site_url}/mindmap-full.html)", text)
-        text = re.sub(r"\]\((\d\d-[\w-]+\.md|index\.md)(#[\w-]*)?\)", lambda m: f"](#{ids[m.group(1)]})", text)
-        html = markdown.markdown(text, extensions=["tables", "admonition", "attr_list", "fenced_code", "sane_lists"])
+        text = re.sub(r"\]\((\d\d-[\w-]+\.md|index\.md)(?:#([\w-]*))?\)", lambda m: f"](#{ids[m.group(1)]}{'-' + m.group(2) if m.group(2) else ''})", text)
+        if p == "index.md":  # the bullets point at the sidebar and the site; print has neither
+            text = re.sub(r"^- \*\*(Read|See it whole|Memorize|Test yourself|Print|Cram):\*\*.*\n?", "", text, flags=re.MULTILINE)
+        prefix = ids[p]
+        html = markdown.markdown(
+            text,
+            extensions=["tables", "admonition", "attr_list", "fenced_code", "sane_lists", "toc"],
+            extension_configs={"toc": {"slugify": lambda value, sep, prefix=prefix: f"{prefix}-{slugify(value, sep)}"}},
+        )
         sections.append(f'<section id="{ids[p]}">{html}</section>')
         toc.append((ids[p], re.sub(r"\s*\(\d+%\)", "", title)))
 
@@ -82,15 +106,18 @@ def main() -> None:
     contents = '<div class="contents"><h1>Contents</h1><ul>' + "".join(items) + "</ul></div>"
     stamp = args.commit[:7] if args.commit != "unknown" else ""
     cover = (
-        '<h1 class="cover">Project+ Without The Bullshit</h1>'
+        '<div class="cover-page"><h1 class="cover">Project+ Without The Bullshit</h1>'
         '<p class="sub">CompTIA Project+ PK0-005 study guide</p>'
-        f'<p class="small">Print edition{" · " + stamp if stamp else ""}<br>Latest version: {escape(site_url)}/<br>'
-        "Not affiliated with CompTIA. MIT licensed.</p>"
+        f'<p class="small">Print edition{" · " + escape(stamp) if stamp else ""}<br>Latest version: {escape(site_url)}/<br>'
+        "Not affiliated with CompTIA. MIT licensed.</p></div>"
     )
     doc = f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Project+ Without The Bullshit</title></head><body>{cover}{contents}{"".join(sections)}</body></html>'
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    HTML(string=doc, base_url=str(DOCS)).write_pdf(args.out, stylesheets=[CSS(string=STYLE)])
+    fetcher = LocalOnly()
+    HTML(string=doc, base_url=str(DOCS), url_fetcher=fetcher).write_pdf(
+        args.out, stylesheets=[CSS(string=STYLE, url_fetcher=fetcher)]
+    )
     print(f"pdf: {args.out} ({args.out.stat().st_size // 1024} KiB)")
 
 

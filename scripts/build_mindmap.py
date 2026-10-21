@@ -24,7 +24,9 @@ def slug(heading: str) -> str:
 def clean(cell: str) -> str:
     cell = re.sub(r"\*\*|`", "", cell)
     cell = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", cell)
-    return cell.replace("\\", "").strip()
+    cell = cell.replace("\\", "").strip()
+    # markmap renders node text as HTML; a cell is text, never markup.
+    return cell.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def check_vendor() -> None:
@@ -78,7 +80,8 @@ for page in sorted(DOCS.glob("0[1-5]-*.md")):
                 terms += 1
 
 outline = "\n".join(lines) + "\n"
-assert "</script" not in outline.lower()
+if "</script" in outline.lower() or "<!--" in outline:
+    raise SystemExit("the outline contains markup that would end the embedding script early")
 outline_json = json.dumps(outline)
 
 page = f"""<!doctype html>

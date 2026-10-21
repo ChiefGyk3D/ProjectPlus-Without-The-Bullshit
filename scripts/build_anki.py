@@ -10,8 +10,10 @@ that still appears in two places gets its objective appended, so no two cards
 look the same. Tables with three or more columns label each back line with its
 column header.
 
-Each card carries a stable ID, so importing a newer file updates the cards you
-already have instead of adding duplicates. The file starts with Anki header
+Each card carries an ID built from its page, objective number and term, so
+importing a newer file updates the cards you already have instead of adding
+duplicates. (A file imported before the IDs existed has none, so delete that
+deck first.) The file starts with Anki header
 lines (Anki 2.1.54 or later), so the import dialog needs no settings: File ->
 Import, pick the file, Import.
 """
@@ -90,7 +92,7 @@ for header, rows, section, page in tables:
             label = rest_hdr[j] if j < len(rest_hdr) and len(rest) > 1 else ""
             parts.append(f"{label}: {c}" if label else c)
         if parts:
-            cards.append([front, "\n".join(parts), section, page])
+            cards.append([front, "\n".join(parts), section, page, front])
 
 seen: dict[str, int] = {}
 for c in cards:
@@ -101,9 +103,13 @@ for c in cards:
 
 rows_out = []
 guids = set()
-for front, back, section, _ in cards:
+for front, back, section, page, term in cards:
     tag = "ProjectPlus::" + re.sub(r"[^A-Za-z0-9]+", "_", section).strip("_")
-    guid = hashlib.sha1(f"{tag}|{front}".encode()).hexdigest()[:12]
+    if front.startswith("#"):
+        raise SystemExit(f"a card front may not start with '#' (Anki reads it as a comment): {front!r}")
+    # The ID follows the page, the objective number and the bare term, so it survives a
+    # reworded heading or a "(1.4)" suffix appearing on a term that later turns up twice.
+    guid = hashlib.sha1(f"{page}|{label_for(section, page)}|{term}".encode()).hexdigest()[:12]
     if guid in guids:
         raise SystemExit(f"duplicate card: {front!r} under {section!r}")
     guids.add(guid)
@@ -112,5 +118,5 @@ for front, back, section, _ in cards:
 OUT.parent.mkdir(exist_ok=True)
 with OUT.open("w", newline="") as f:
     f.write(HEADER)
-    csv.writer(f).writerows(rows_out)
+    csv.writer(f, lineterminator="\n").writerows(rows_out)
 print(f"anki: {len(rows_out)} cards -> {OUT.relative_to(ROOT)}")

@@ -29,3 +29,4 @@ jobs:
         python3 scripts/build_mindmap.py
         mkdocs build --strict
         python3 scripts/build_pdf.py --out site/ProjectPlus-PK0-005.pdf --commit "$GITHUB_SHA"
+      egress-policy: block   # pip and the build need only the default allow-list; the PDF build fetches nothing
