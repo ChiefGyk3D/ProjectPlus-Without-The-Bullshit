@@ -56,7 +56,7 @@ The largest domain. It covers how projects are run (methodologies), controlled (
 | Budget and schedule | Time and cost fixed, scope flexible | Scope fixed, time and cost estimated |
 
 !!! tip "Exam tip"
-    a hybrid approach mixes both (for example, Waterfall for hardware procurement and Agile for software). Pick it when the scenario has a regulated or fixed-date portion plus a changing portion.
+    A hybrid approach mixes both (for example, Waterfall for hardware procurement and Agile for software). Pick it when the scenario has a regulated or fixed-date portion plus a changing portion.
 
 
 ### 1.3 Change control process
@@ -108,7 +108,7 @@ A **risk** is an uncertain event that, if it happens, affects an objective. It h
 | Risk owner | Person accountable for monitoring a risk and carrying out its response |
 | Risk trigger | Warning sign that a risk is about to occur |
 | Contingency plan | Planned response that runs *if* the risk occurs |
-| Fallback plan | Backup used if the first response does not work |
+| Fallback plan | Backup used if the first response (the contingency plan) does not work. In change control the same word means a rollback plan: see the [gaps](05-gaps.md) |
 | Residual risk | Risk left after a response |
 | Secondary risk | New risk created by the response itself |
 | Risk appetite / tolerance | How much risk the organization accepts |
@@ -126,7 +126,7 @@ A **risk** is an uncertain event that, if it happens, affects an objective. It h
 | Share | n/a | Partner with another party who can capture it better |
 
 !!! note "Memory aid"
-    negative = *A*ccept, *A*void, *M*itigate, *T*ransfer. Positive = *A*ccept, *E*nhance, *E*xploit, *S*hare.
+    Negative = *A*ccept, *A*void, *M*itigate, *T*ransfer. Positive = *A*ccept, *E*nhance, *E*xploit, *S*hare.
 
 
 **Risk analysis**
@@ -195,7 +195,7 @@ The task that must come first is the **predecessor**. The task that follows is t
 | --- | --- |
 | Milestone | Zero-duration marker of an important event or deliverable |
 | Estimating techniques | Analogous (from similar past projects), parametric (unit rate, such as hours per line of code), bottom-up (sum of work packages), three-point, expert judgment |
-| Three-point / PERT estimate | Weighted average of optimistic (O), most likely (M) and pessimistic (P) |
+| Three-point / PERT estimate | Weighted average of optimistic (O), most likely (M) and pessimistic (P). A plain triangular average is (O + M + P) / 3. Use PERT unless the question says "simple average". |
 | Story points | Relative size estimate for agile work (Fibonacci scale, planning poker) |
 | Epic > story > task | Epic is a large body of work. A story is a user-facing slice. A task is a unit of work to finish a story. |
 | Sprint goal | Short statement of what the sprint will achieve |
@@ -389,4 +389,4 @@ For example, 10 people = 45 channels. Adding people increases complexity fast.
 | Non-disclosure agreement (NDA) | Legal agreement to keep information confidential | n/a |
 
 !!! tip "Exam tip"
-    unclear scope favors T&M or cost plus. Clear scope favors fixed price. An MSA is signed once, then SOWs and POs cover each piece of work.
+    Unclear scope favors T&M or cost plus. Clear scope favors fixed price. An MSA is signed once, then SOWs and POs cover each piece of work.

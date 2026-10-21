@@ -2,8 +2,9 @@
 # ChiefGyk3D/git-your-ship-together; this file says only what is specific to
 # this repository: a docs site with two generator scripts and no package.
 #
-# The "test" is that the generated files are current and the site builds
-# strictly: edit a page without re-running the scripts and the gate goes red.
+# The "test" is that the generated files are current, the wiki generator can
+# resolve every link and the site builds strictly: edit a page without
+# re-running the scripts and the gate goes red.
 # `ci / CI green` is the check to require in branch protection.
 name: CI
 
@@ -36,6 +37,8 @@ jobs:
         python3 scripts/build_mindmap.py
         python3 scripts/build_anki.py
         git diff --exit-code -- docs/mindmap-full.html docs/mindmap.md anki/projectplus.csv
+        python3 scripts/gen_wiki.py --out "$(mktemp -d)"
+        python3 scripts/build_pdf.py --out "$(mktemp -d)/guide.pdf"
         mkdocs build --strict
       lint-command: ruff check scripts
       docker-build: false

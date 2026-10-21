@@ -10,7 +10,10 @@ nothing else.
 | --- | --- |
 | Read the guide with a sidebar and search | the site above, or [`docs/`](docs/) on GitHub |
 | See the whole exam on one screen | [mind map](https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/mindmap-full.html) |
-| Drill terms with spaced repetition | [`anki/projectplus.csv`](anki/projectplus.csv), import into Anki (File → Import, comma separated, tags in field 3) |
+| Drill terms with spaced repetition | [`anki/projectplus.csv`](anki/projectplus.csv), import into Anki 2.1.54 or later with File → Import; the file carries its own settings, and importing a newer version updates your cards instead of duplicating them |
+| Browse by objective | the [wiki](https://github.com/ChiefGyk3D/ProjectPlus-Without-The-Bullshit/wiki), one page per exam objective |
+| Print it | the [PDF](https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/ProjectPlus-PK0-005.pdf), the whole guide on US Letter, rebuilt on every push to `main` |
+| Test yourself | [practice questions](docs/07-practice.md), forty scenarios with an answer key |
 | Cram the night before | [cheat sheet](docs/06-cheatsheet.md) and [gaps from the book](docs/05-gaps.md) |
 
 ## Layout
@@ -24,17 +27,19 @@ docs/
   04-it-governance.md   4.0 Basics of IT and Governance (18%)
   05-gaps.md            what the objectives don't say but the exam asks
   06-cheatsheet.md      formulas, acronyms, easily confused pairs
+  07-practice.md        forty scenario questions with an answer key
   mindmap.md            embeds mindmap-full.html (generated)
 anki/projectplus.csv    flashcards (generated)
-scripts/                build_mindmap.py, build_anki.py
+scripts/                build_mindmap.py, build_anki.py, gen_wiki.py, build_pdf.py
 ```
 
-The domain pages are the source. The mind map and the flashcards are
+The domain pages are the source. The mind map, the flashcards and the wiki are
 generated from them, so edit a page and re-run the scripts:
 
 ```sh
 python3 scripts/build_mindmap.py
 python3 scripts/build_anki.py
+python3 scripts/gen_wiki.py --out wiki-out   # the wiki pages, for a look; CI publishes them
 pip install -r requirements.txt && mkdocs serve   # preview at http://127.0.0.1:8000
 ```
 
@@ -47,6 +52,8 @@ pinned to a release SHA and bumped by Dependabot:
 | --- | --- | --- |
 | `ci.yml` | `python-ci.yml` | `ruff` on the scripts, regenerates the mind map and flashcards and fails if they were stale, `mkdocs build --strict`. `ci / CI green` is the branch-protection gate. |
 | `docs.yml` | `docs-pages.yml` | Builds the site on every push and PR, deploys to GitHub Pages from `main` |
+| `docs.yml` (PDF) | same | `scripts/build_pdf.py` renders the pages to `ProjectPlus-PK0-005.pdf` (WeasyPrint) and ships it beside the site |
+| `wiki.yml` | `wiki-publish.yml` | Runs `gen_wiki.py` and replaces every page of the GitHub wiki from `main`. The wiki is a mirror: edit `docs/`, never the wiki. |
 | `security.yml` | `security.yml` | CodeQL (python, actions), gitleaks, pip-audit, dependency review, Scorecard |
 | `dependabot-auto-merge.yml` | `dependabot-auto-merge.yml` | Merges Dependabot bumps up to minor once CI is green |
 

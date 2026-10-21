@@ -25,7 +25,7 @@
 **Confidentiality, integrity, availability (CIA triad):** keep data private, accurate and accessible. **Least privilege:** give only the access needed for the role.
 
 !!! tip "Exam tip"
-    at project close, remove access promptly. At project start, define access requirements and classify data first.
+    At project close, remove access promptly. At project start, define access requirements and classify data first.
 
 
 ### 4.3 Compliance and privacy
@@ -34,13 +34,13 @@
 | --- | --- |
 | Data confidentiality | Protecting sensitive data from unauthorized disclosure |
 | Personally identifiable information (PII) | Data that identifies a person: name, address, SSN, email, IP address |
-| Personal health information (PHI) | Health data linked to a person. Protected in the US by HIPAA. |
+| Personal (protected) health information (PHI) | Health data linked to a person. Protected in the US by HIPAA. |
 | Legal and regulatory impacts | Laws that affect how the project handles data and operates |
 | Country, state and province privacy rules | Examples: GDPR (EU), CCPA/CPRA (California), PIPEDA (Canada). Rules depend on where the data subject lives, not just where the company sits. |
 | Industry or organization compliance | Examples: HIPAA (health), PCI DSS (payment cards), SOX (financial reporting), FERPA (education records) |
 
 !!! tip "Exam tip"
-    if a project handles data from a region with strict rules (for example EU residents), the PM must account for those rules even if the team is elsewhere.
+    If a project handles data from a region with strict rules (for example EU residents), the PM must account for those rules even if the team is elsewhere.
 
 
 ### 4.4 Basic IT concepts
@@ -61,7 +61,7 @@
 | Content management system (CMS) | Creates and manages web or digital content |
 | Financial systems | Accounting, billing, payroll and budgeting software |
 
-**Cloud responsibility:** the user controls the most in IaaS, less in PaaS, and least in SaaS. Remember it as *I* = infrastructure only is given to you, *P* = platform given, *S* = software given.
+**Cloud responsibility:** the user controls the most in IaaS, less in PaaS, and least in SaaS. The more the provider supplies, the less you manage: with IaaS you manage the OS and apps, with PaaS only your apps and data, with SaaS only your data and users.
 
 ### 4.5 Operational change control during an IT project
 
@@ -77,4 +77,4 @@
 **Rollback plan:** documented steps to return to the last known good state if the change fails. **Maintenance window:** agreed time when planned downtime has least impact.
 
 !!! tip "Exam tip"
-    never deploy untested changes to production. A change goes through test or staging, gets approval, runs in a maintenance window with a rollback plan, then is validated.
+    Never deploy untested changes to production. A change goes through test or staging, gets approval, runs in a maintenance window with a rollback plan, then is validated.

@@ -26,7 +26,7 @@ ROI = Net Benefit / Cost × 100%
 ```
 
 !!! tip "Exam tip"
-    moving from on-premises hardware (CapEx) to cloud subscriptions shifts spend to OpEx.
+    Moving from on-premises hardware (CapEx) to cloud subscriptions shifts spend to OpEx.
 
 
 ### 2.2 Initiation phase
@@ -80,7 +80,7 @@ Goal: define how the work will be done and set the baselines.
 | Minimum viable product (MVP) | Smallest version that delivers value and allows feedback |
 
 !!! tip "Exam tip"
-    the WBS divides *deliverables*, not activities. The project management plan is approved by the sponsor and becomes the benchmark for change control.
+    The WBS divides *deliverables*, not activities. The project management plan is approved by the sponsor and becomes the benchmark for change control.
 
 
 ### 2.4 Execution phase
@@ -107,7 +107,7 @@ Goal: do the work in the plan, manage people and vendors, and report progress.
 | Avoiding / withdraw | Ignore or postpone the conflict | Problem remains, only good to cool down |
 
 !!! tip "Exam tip"
-    collaboration is usually the best answer unless the scenario describes an emergency (forcing) or a minor issue with emotions running high (avoiding or smoothing).
+    Collaboration is usually the best answer unless the scenario describes an emergency (forcing) or a minor issue with emotions running high (avoiding or smoothing).
 
 
 ### 2.5 Closing phase
@@ -130,4 +130,4 @@ Goal: formally finish the work and capture what was learned.
 | Project sign-off | Sponsor or customer formally accepts closure |
 
 !!! tip "Exam tip"
-    the order that usually matters: validate deliverables, close contracts, remove access and release resources, then hold the closure meeting, archive records and obtain sign-off.
+    The order that usually matters: validate deliverables, close contracts, remove access and release resources, then hold the closure meeting, archive records and obtain sign-off.

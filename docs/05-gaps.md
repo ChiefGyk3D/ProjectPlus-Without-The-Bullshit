@@ -6,12 +6,12 @@ These are things the book flags as exam-critical that the objective list alone d
 
 | CompTIA says | It means | Why it matters |
 | --- | --- | --- |
-| Phases | The five PMI process groups: initiating, planning, executing, monitoring and controlling, closing | Questions ask "which phase" for things like stakeholder identification (initiation) or EVM (monitoring and controlling) |
+| Phases | The five PMI process groups: initiating, planning, executing, monitoring and controlling, closing. The objectives themselves list discovery as the first phase and treat monitoring and controlling as running alongside, so if a question asks which phase an activity belongs to, use the phase list in objective 2.0 | Questions ask "which phase" for things like stakeholder identification (initiation) or EVM (monitoring and controlling) |
 | Waterfall | Predictive, plan-driven | Treat the two words as the same thing |
 | Agile / adaptive | Iterative, change-welcoming | Adaptive projects do *not* use a scope statement, WBS, network diagram or formal change control. They use a product backlog, product roadmap and reprioritization instead. |
 | Projects vs operations | Temporary and unique vs ongoing and repetitive | Expect at least one question that asks you to tell them apart |
 
-**Question tactics the book stresses:** read for "except" and "not"; when two answers look right, the scenario contains a clue (phase, methodology, who is asking) that picks one; answer every question (blank = wrong); first instinct is usually right; about 72 of 90 correct passes.
+**Question tactics the book stresses:** read for "except" and "not"; when two answers look right, the scenario contains a clue (phase, methodology, who is asking) that picks one; answer every question (blank = wrong); first instinct is usually right; the book estimates about 72 of 90 correct to pass, but CompTIA publishes no raw-score conversion for the 710 scale, so treat that as a rough target.
 
 ### Activities by phase (know what happens where)
 
@@ -101,7 +101,7 @@ Other team terms: **virtual / non-collocated teams** (remote, need extra communi
 ### Change and release extras
 
 - **Integrated change control:** examining how a change affects *every* part of the project (scope, time, cost, quality, risk, resources).
-- **Regression plan** = **fallback plan** = **rollback plan**: steps to return to the last known good state. Staging is where you prove the change before production.
+- In change control, **regression plan** = **fallback plan** = **rollback plan** (in risk management a fallback plan is the backup for a failed contingency plan; use the context): steps to return to the last known good state. Staging is where you prove the change before production.
 - Adaptive projects welcome change and reprioritize the backlog instead of running a change control process.
 - Never bring management a problem without a proposed solution.
 
