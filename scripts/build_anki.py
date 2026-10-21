@@ -109,7 +109,7 @@ for front, back, section, page, term in cards:
         raise SystemExit(f"a card front may not start with '#' (Anki reads it as a comment): {front!r}")
     # The ID follows the page, the objective number and the bare term, so it survives a
     # reworded heading or a "(1.4)" suffix appearing on a term that later turns up twice.
-    guid = hashlib.sha1(f"{page}|{label_for(section, page)}|{term}".encode()).hexdigest()[:12]
+    guid = hashlib.sha256(f"{page}|{label_for(section, page)}|{term}".encode()).hexdigest()[:12]
     if guid in guids:
         raise SystemExit(f"duplicate card: {front!r} under {section!r}")
     guids.add(guid)
