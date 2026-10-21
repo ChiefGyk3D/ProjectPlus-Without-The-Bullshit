@@ -1,6 +1,6 @@
 """Build a printable PDF of the whole guide from the docs.
 
-Concatenates docs/index.md and the six pages (not the mind map, which needs a
+Concatenates docs/index.md and the seven pages (not the mind map, which needs a
 browser) into one US Letter document with a contents page, running headers,
 page numbers and table rows that do not split across pages, then renders it
 with WeasyPrint. The site build publishes the result next to the site.
@@ -18,7 +18,7 @@ from weasyprint import CSS, HTML
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
-PAGES = ["index.md", "01-concepts.md", "02-lifecycle.md", "03-tools.md", "04-it-governance.md", "05-gaps.md", "06-cheatsheet.md"]
+PAGES = ["index.md", "01-concepts.md", "02-lifecycle.md", "03-tools.md", "04-it-governance.md", "05-gaps.md", "06-cheatsheet.md", "07-practice.md"]
 
 STYLE = """
 @page { size: Letter; margin: 0.7in 0.6in 0.75in;

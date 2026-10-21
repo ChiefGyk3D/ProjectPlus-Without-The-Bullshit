@@ -3,8 +3,10 @@
 This repository is a study guide: Markdown pages, two generator scripts and
 a static site build. There is nothing here that handles credentials or user
 data. The things that could still go wrong are supply chain (a pinned action
-or a pip dependency) and the site's one runtime dependency, the markmap
-library the mind map loads from jsDelivr.
+or a pip dependency) and the three JavaScript libraries the mind map runs
+(d3 and markmap). Those are copied into `docs/assets/vendor/` with their
+versions and checksums in `VENDOR.txt`, and the build fails if a file no
+longer matches, so the published pages load nothing from a third party.
 
 ## Reporting a Vulnerability
 

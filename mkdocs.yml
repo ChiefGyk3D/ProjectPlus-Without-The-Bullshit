@@ -38,6 +38,7 @@ nav:
   - "4.0 IT and Governance": 04-it-governance.md
   - Gaps from the book: 05-gaps.md
   - Cheat sheet: 06-cheatsheet.md
+  - Practice questions: 07-practice.md
   - Mind map: mindmap.md
 
 markdown_extensions:
