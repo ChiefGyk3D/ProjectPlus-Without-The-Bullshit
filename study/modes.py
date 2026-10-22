@@ -236,7 +236,7 @@ def cards(cfg, index, source, chapter, topic, limit, seed, out_path: Path, out=p
         for card in rows:
             tag = f"ProjectPlusStudy::{card['source']}::" + re.sub(
                 r"[^A-Za-z0-9]+", "_", card["chapter"]).strip("_")
-            guid = hashlib.sha1(("study|" + card["front"]).encode()).hexdigest()[:10]
+            guid = hashlib.sha256(("study|" + card["front"]).encode()).hexdigest()[:10]
             w.writerow([card["front"], f"{card['back']}\n\n[{card['ref']}]", tag, guid])
     out(f"wrote {len(rows)} cards to {out_path}")
     return len(rows)
