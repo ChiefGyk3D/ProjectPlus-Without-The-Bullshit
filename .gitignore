@@ -6,3 +6,5 @@ __pycache__/
 *.pdf
 wiki-out/
 .venv/
+study/data/
+study/.env.local

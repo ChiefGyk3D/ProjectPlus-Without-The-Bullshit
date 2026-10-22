@@ -34,12 +34,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
       test-command: |
+        python3 -m unittest discover -s study/tests -t .
         python3 scripts/build_mindmap.py
         python3 scripts/build_anki.py
         git diff --exit-code -- docs/mindmap-full.html docs/mindmap.md anki/projectplus.csv
         python3 scripts/gen_wiki.py --out "$(mktemp -d)"
         python3 scripts/build_pdf.py --out "$(mktemp -d)/guide.pdf"
         mkdocs build --strict
-      lint-command: ruff check scripts
+      lint-command: ruff check scripts study
       docker-build: false
       egress-policy: block
