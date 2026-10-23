@@ -51,6 +51,31 @@ python3 -m study stats
 chapter number (or `intro`, `glossary`, `appb`) and, for the guide, the page
 prefix such as `03`.
 
+## Web page
+
+```sh
+STUDY_ENV_FILE=~/.config/projectplus-study/env python3 -m study web   # http://127.0.0.1:8765/
+```
+
+One page, five tabs, localhost only (`--port` changes the port):
+
+- **Ask:** a cited answer with the chapter and page of each source.
+- **Drill:** one question at a time with instant feedback. *Fixed* questions are the
+  book's own chapter-review questions (180, with the book's answer keys) and the
+  guide's practice file, parsed in code, so they are instant. *Generated* questions are
+  new ones written from a random passage; the next one is prepared while you answer
+  the current one. Order can be random, not seen yet, or the ones you missed.
+- **Practice test:** pick a size, a chapter and an optional timer. Answers are held
+  until you finish, then you get a score, a per-chapter breakdown and a review.
+- **Flashcards:** pick a chapter and a size, download the Anki CSV.
+- **Progress:** accuracy by chapter from `quiz-log.jsonl`, and a one-click drill of the
+  questions you missed last time.
+
+The server binds to 127.0.0.1, rejects other Host and Origin headers, accepts only
+JSON POSTs, and sends a strict Content-Security-Policy. An answer key is not sent to
+the page until you have answered. The book's questions come from your own epub and
+are never written into the repo.
+
 ## What is checked in code
 
 - **Ask:** the model may only cite the passages it was given; citation

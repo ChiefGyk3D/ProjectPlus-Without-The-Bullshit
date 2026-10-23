@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project+ study</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header>
+  <h1>Project+ study</h1>
+  <nav id="tabs" role="tablist">
+    <button role="tab" data-tab="ask" aria-selected="true">Ask</button>
+    <button role="tab" data-tab="drill" aria-selected="false">Drill</button>
+    <button role="tab" data-tab="test" aria-selected="false">Practice test</button>
+    <button role="tab" data-tab="cards" aria-selected="false">Flashcards</button>
+    <button role="tab" data-tab="progress" aria-selected="false">Progress</button>
+  </nav>
+</header>
+<main>
+  <section id="ask" class="panel">
+    <form id="ask-form" class="row">
+      <input id="ask-q" type="text" maxlength="1000" placeholder="Ask about the material" autocomplete="off" required>
+      <select id="ask-source" aria-label="Source"></select>
+      <select id="ask-chapter" aria-label="Chapter"></select>
+      <button type="submit">Ask</button>
+    </form>
+    <div id="ask-out" aria-live="polite"></div>
+  </section>
+
+  <section id="drill" class="panel" hidden>
+    <form id="drill-form" class="row">
+      <label>Questions
+        <select id="drill-kind">
+          <option value="bank">Fixed (book review + guide)</option>
+          <option value="gen">Generated (new, from the book)</option>
+        </select>
+      </label>
+      <label>From <select id="drill-source"></select></label>
+      <label>Chapter <select id="drill-chapter"></select></label>
+      <label>Order
+        <select id="drill-mode">
+          <option value="random">Random</option>
+          <option value="unseen">Not seen yet</option>
+          <option value="weak">Missed last time</option>
+        </select>
+      </label>
+      <label id="drill-topic-label" hidden>Topic <input id="drill-topic" type="text" maxlength="200" placeholder="optional"></label>
+      <button type="submit">Start</button>
+    </form>
+    <div id="drill-out" aria-live="polite"></div>
+  </section>
+
+  <section id="test" class="panel" hidden>
+    <form id="test-form" class="row">
+      <label>Questions <input id="test-n" type="number" min="1" max="90" value="20"></label>
+      <label>Minutes <input id="test-min" type="number" min="0" max="120" value="0" title="0 means untimed"></label>
+      <label>From <select id="test-source"></select></label>
+      <label>Chapter <select id="test-chapter"></select></label>
+      <button type="submit">Start test</button>
+    </form>
+    <p class="muted">Answers are not shown until you finish. The real exam is 90 questions in 90 minutes.</p>
+    <div id="test-out" aria-live="polite"></div>
+  </section>
+
+  <section id="cards" class="panel" hidden>
+    <form id="cards-form" class="row">
+      <label>From <select id="cards-source"></select></label>
+      <label>Chapter <select id="cards-chapter"></select></label>
+      <label>Passages <input id="cards-limit" type="number" min="1" max="60" value="10"></label>
+      <button type="submit">Make cards</button>
+    </form>
+    <p class="muted">Each passage becomes one to three cards, which takes a few seconds per passage. The file imports into Anki.</p>
+    <div id="cards-out" aria-live="polite"></div>
+  </section>
+
+  <section id="progress" class="panel" hidden>
+    <div id="progress-out"></div>
+  </section>
+</main>
+<footer id="foot"></footer>
+<script src="/app.js"></script>
+</body>
+</html>
