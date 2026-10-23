@@ -4,6 +4,7 @@ No model is involved, so these are instant and the answer keys are the sources' 
 An item is {id, source, chapter, n, question, choices, answer (list of indexes),
 explanation, ref}. Anything that does not parse cleanly is dropped, never guessed.
 """
+import json
 import re
 from pathlib import Path
 
@@ -128,4 +129,24 @@ def guide_items(path: Path) -> list[dict]:
             "answer": sorted(set(picks)), "explanation": re.sub(r"\s*See \[[^\]]*\]\([^)]*\)\.?$", "", why),
             "ref": f"guide 07-practice.md, question {n}" + (f" ({domain})" if domain else ""),
         })
+    return items
+
+
+GENERATED = "generated-bank.jsonl"
+
+
+def generated_items(path: Path) -> list[dict]:
+    """Items written by `study build-bank`, in the same shape as the fixed banks."""
+    if not path.is_file():
+        return []
+    items = []
+    for line in path.read_text().splitlines():
+        try:
+            row = json.loads(line)
+            ok = (isinstance(row["answer"], list) and row["choices"] and row["question"]
+                  and all(0 <= i < len(row["choices"]) for i in row["answer"]))
+        except (json.JSONDecodeError, KeyError, TypeError):
+            continue
+        if ok:
+            items.append(row | {"set": "generated"})
     return items

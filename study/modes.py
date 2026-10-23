@@ -242,3 +242,55 @@ def cards(cfg, index, source, chapter, topic, limit, seed, out_path: Path, out=p
             w.writerow([card["front"], f"{card['back']}\n\n[{card['ref']}]", tag, guid])
     out(f"wrote {len(rows)} cards to {out_path}")
     return len(rows)
+
+
+def build_bank(cfg, index, n, source, chapter, out_path: Path, out=print):
+    """Append up to n verified questions to out_path, spread evenly over the chapters.
+
+    Resumable: a passage that already has a question is skipped, and so is a question
+    whose text matches one already written.
+    """
+    have, seen_chunks, seen_q = 0, set(), set()
+    if out_path.is_file():
+        for line in out_path.read_text().splitlines():
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            have += 1
+            seen_chunks.add(row.get("chunk"))
+            seen_q.add(grounding.norm(row.get("question", "")))
+    by_chapter: dict[str, list] = {}
+    for c in pick(cfg, index, n, source, chapter, None):
+        if c["id"] not in seen_chunks:
+            by_chapter.setdefault(c["chapter"], []).append(c)
+    rng = random.Random()
+    for pool in by_chapter.values():
+        rng.shuffle(pool)
+    order = []  # one passage from each chapter in turn, so no chapter dominates
+    while any(by_chapter.values()):
+        for pool in by_chapter.values():
+            if pool:
+                order.append(pool.pop())
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    made = tried = 0
+    with out_path.open("a") as fh:
+        for chunk in order:
+            if made >= n:
+                break
+            tried += 1
+            try:
+                item = make_question(cfg, chunk, rng=rng)
+            except llm.OllamaError as e:
+                out(f"model server error, stopping: {e}")
+                break
+            if item is None or grounding.norm(item["question"]) in seen_q:
+                continue
+            seen_q.add(grounding.norm(item["question"]))
+            row = item | {"id": f"gen-{chunk['id']}", "answer": [item["answer"]]}
+            fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+            fh.flush()
+            made += 1
+            out(f"  {made}/{n} (passages tried {tried}) ch {chunk['chapter']}: {chunk['ref'][:60]}")
+    out(f"wrote {made} new questions; the file now holds {have + made}: {out_path}")
+    return made

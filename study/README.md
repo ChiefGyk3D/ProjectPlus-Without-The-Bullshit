@@ -44,12 +44,23 @@ python3 -m study ask --source guide --chapter 03 "RACI vs RASCI"
 python3 -m study quiz -n 5 --chapter 3          # interactive
 python3 -m study quiz --topic "risk response" --print   # show answers
 python3 -m study cards --chapter 3 --limit 20   # Anki CSV in the data dir
+python3 -m study build-bank -n 300 --source book   # more fixed questions, see below
 python3 -m study stats
 ```
 
 `--source book|guide|both` picks the material. `--chapter` is the book
 chapter number (or `intro`, `glossary`, `appb`) and, for the guide, the page
 prefix such as `03`.
+
+## More questions
+
+`build-bank` writes verified questions to `generated-bank.jsonl` in the data
+directory (never the repository), spread evenly across the chapters. It uses the
+same checks as live quizzes: four distinct choices, evidence quoted from the
+passage, and an independent solver call that must agree with the key. It is
+resumable (a passage is used once, a repeated question is skipped), so run it as
+often as you like. About 5 seconds per question. The web page loads the file, so
+those questions are instant and count toward Progress like the rest.
 
 ## Web page
 
@@ -61,8 +72,8 @@ One page, five tabs, localhost only (`--port` changes the port):
 
 - **Ask:** a cited answer with the chapter and page of each source.
 - **Drill:** one question at a time with instant feedback. *Fixed* questions are the
-  book's own chapter-review questions (180, with the book's answer keys) and the
-  guide's practice file, parsed in code, so they are instant. *Generated* questions are
+  book's own chapter-review questions (180, with the book's answer keys), the
+  guide's practice file and anything `build-bank` wrote, so they are instant. *Generated* questions are
   new ones written from a random passage; the next one is prepared while you answer
   the current one. Order can be random, not seen yet, or the ones you missed.
 - **Practice test:** pick a size, a chapter and an optional timer. Answers are held

@@ -79,6 +79,52 @@ class Banks(unittest.TestCase):
         self.assertEqual(bank.guide_items(Path("/nonexistent/x.md")), [])
 
 
+def make_item(chunk, question):
+    return {"question": question, "choices": ["a", "b", "c", "d"], "answer": 1, "evidence": "quote",
+            "explanation": "why", "ref": chunk["ref"], "chunk": chunk["id"], "source": "book",
+            "chapter": chunk["chapter"]}
+
+
+class BuildBank(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.path = Path(self.tmp.name) / "generated-bank.jsonl"
+        self.index = SimpleNamespace(chunks=[
+            {"id": f"book-{i}", "source": "book", "chapter": str(1 + i % 2), "heading": "H",
+             "text": "x" * 500, "ref": f"Ch {1 + i % 2}, p. {i}"} for i in range(6)])
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def build(self, n, maker):
+        with mock.patch.object(modes, "make_question", side_effect=maker):
+            return modes.build_bank(None, self.index, n, "book", None, self.path, out=lambda *_: None)
+
+    def test_it_writes_verified_items_spread_over_chapters_and_resumes(self):
+        made = self.build(4, lambda cfg, chunk, rng=None: make_item(chunk, f"Q about {chunk['id']}?"))
+        self.assertEqual(made, 4)
+        rows = [json.loads(x) for x in self.path.read_text().splitlines()]
+        self.assertEqual({r["chapter"] for r in rows}, {"1", "2"})
+        self.assertEqual(len({r["chunk"] for r in rows}), 4)
+        self.assertEqual(self.build(10, lambda cfg, chunk, rng=None: make_item(chunk, f"New {chunk['id']}?")), 2)
+        self.assertEqual(len(self.path.read_text().splitlines()), 6)  # only the 2 unused passages
+
+    def test_failures_and_repeated_questions_are_skipped(self):
+        calls = iter([None, "Same question?", "Same question?"])
+
+        def maker(cfg, chunk, rng=None):
+            q = next(calls, None)
+            return make_item(chunk, q) if q else None
+        self.assertEqual(self.build(5, maker), 1)
+
+    def test_the_web_bank_loads_them_and_ignores_bad_rows(self):
+        good = make_item(self.index.chunks[0], "Q?") | {"id": "gen-book-0", "answer": [1]}
+        self.path.write_text(json.dumps(good) + "\nnot json\n" + json.dumps(good | {"answer": [9]}) + "\n")
+        items = bank.generated_items(self.path)
+        self.assertEqual([i["id"] for i in items], ["gen-book-0"])
+        self.assertEqual(items[0]["set"], "generated")
+
+
 class Server(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
