@@ -1,8 +1,8 @@
-"""python3 -m study {index,ask,quiz,cards,stats,web}"""
+"""python3 -m study {index,ask,quiz,build-bank,cards,stats,web}"""
 import argparse
 import sys
 
-from . import config, llm, modes
+from . import bank, config, llm, modes
 from . import index as idx
 
 
@@ -39,6 +39,9 @@ def main(argv=None) -> int:
     q.add_argument("--print", dest="show", action="store_true",
                    help="print questions with answers instead of asking you")
     common(q)
+    b = sub.add_parser("build-bank", help="generate verified questions into the fixed bank")
+    b.add_argument("-n", type=int, default=100, help="how many new questions to add")
+    common(b)
     c = sub.add_parser("cards", help="write an Anki CSV of flashcards")
     c.add_argument("--topic")
     c.add_argument("--limit", type=int, help="max passages to turn into cards")
@@ -76,6 +79,9 @@ def main(argv=None) -> int:
         elif args.cmd == "quiz":
             modes.quiz(cfg, index, args.n, source, args.chapter, args.topic,
                        not args.show and sys.stdin.isatty(), args.seed, cfg.data_dir)
+        elif args.cmd == "build-bank":
+            modes.build_bank(cfg, index, args.n, source, args.chapter,
+                             cfg.data_dir / bank.GENERATED)
         elif args.cmd == "cards":
             label = args.topic or args.chapter or "all"
             safe = "".join(ch if ch.isalnum() else "_" for ch in str(label))

@@ -95,6 +95,7 @@ class App:
         self.log_path = cfg.data_dir / "quiz-log.jsonl"
         items = bank.book_items(index.chunks) if "book" in index.meta else []
         items += bank.guide_items(guide_file or cfg.guide_dir / "07-practice.md")
+        items += bank.generated_items(cfg.data_dir / bank.GENERATED)
         self.bank = {i["id"]: i for i in items}
         self.generated = collections.OrderedDict()
         self.tests = {}
@@ -132,7 +133,7 @@ class App:
         for c in self.index.chunks:
             chapters.setdefault((c["source"], c["chapter"]), 0)
             chapters[(c["source"], c["chapter"])] += 1
-        counts = collections.Counter(i["source"] for i in self.bank.values())
+        counts = collections.Counter(i.get("set", i["source"]) for i in self.bank.values())
         bank_ch = sorted({(i["source"], i["chapter"]) for i in self.bank.values()},
                          key=lambda t: (t[0], int(t[1]) if t[1].isdigit() else 0, t[1]))
         return {"sources": sorted(self.index.meta),
@@ -376,7 +377,7 @@ def serve(cfg, index, port=8765, say=print):
     httpd.daemon_threads = True
     say(f"study web: http://127.0.0.1:{httpd.server_address[1]}/  (Ctrl-C to stop)")
     say(f"  question bank: {len(app.bank)} fixed questions "
-        f"({', '.join(f'{k} {v}' for k, v in collections.Counter(i['source'] for i in app.bank.values()).items())})")
+        f"({', '.join(f'{k} {v}' for k, v in collections.Counter(i.get('set', i['source']) for i in app.bank.values()).items())})")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
