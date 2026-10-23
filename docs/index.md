@@ -2,6 +2,12 @@
 
 A CompTIA Project+ PK0-005 study guide for people who already know how to run projects and just need the cert. Every objective, the terms, the traps, nothing else.
 
+## Why this exists
+
+I have worked in the field for years, and I think the Project+ cert is dumb: it takes things people do every day and overcomplicates the language to seem more difficult than it is. I still need the paper, though, and the paper is gated by that vocabulary, so this guide translates it back into what the work actually is and says plainly where the objectives skip something the exam asks anyway.
+
+And yes, I see the irony. I built a study guide for an exam that tests Agile by running the repo like an Agile project, an issue for every change, small pull requests, a CI gate, and merge when green, so I practiced the thing the exam wants me to define while building the thing that helps me define it.
+
 - **Read:** the four domains in the sidebar, in order.
 - **See it whole:** the [mind map](mindmap.md) puts the entire exam on one screen.
 - **Memorize:** import [`anki/projectplus.csv`](https://github.com/ChiefGyk3D/ProjectPlus-Without-The-Bullshit/blob/main/anki/projectplus.csv) into Anki.
