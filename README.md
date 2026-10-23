@@ -14,6 +14,7 @@ nothing else.
 | Browse by objective | the [wiki](https://github.com/ChiefGyk3D/ProjectPlus-Without-The-Bullshit/wiki), one page per exam objective |
 | Print it | the [PDF](https://chiefgyk3d.github.io/ProjectPlus-Without-The-Bullshit/ProjectPlus-PK0-005.pdf), the whole guide on US Letter, rebuilt on every push to `main` |
 | Test yourself | [practice questions](docs/07-practice.md), forty scenarios with an answer key |
+| Ask, drill and practice-test against your own copy of a book, locally | the [study tool](study/README.md): `python3 -m study web` opens a page on your own machine |
 | Cram the night before | [cheat sheet](docs/06-cheatsheet.md) and [gaps from the book](docs/05-gaps.md) |
 
 ## Layout
@@ -31,6 +32,7 @@ docs/
   mindmap.md            embeds mindmap-full.html (generated)
 anki/projectplus.csv    flashcards (generated)
 scripts/                build_mindmap.py, build_anki.py, gen_wiki.py, build_pdf.py
+study/                  local study tool: cited Q&A, quizzes, practice tests, flashcards (see below)
 ```
 
 The domain pages are the source. The mind map, the flashcards and the wiki are
@@ -41,6 +43,29 @@ python3 scripts/build_mindmap.py
 python3 scripts/build_anki.py
 python3 scripts/gen_wiki.py --out wiki-out   # the wiki pages, for a look; CI publishes them
 pip install -r requirements.txt && mkdocs serve   # preview at http://127.0.0.1:8000
+```
+
+## Local study tool
+
+`study/` runs on your own machine against your own copy of a book (an epub you
+own) plus this guide, using a local Ollama server. Nothing from the book is ever
+committed: the index, quiz log and flashcards live in `~/.local/share/`, and the
+settings in a private env file.
+
+```sh
+python3 -m study index          # once: build the search index
+python3 -m study web            # http://127.0.0.1:8765/  (ask, drill, practice test, flashcards, progress)
+python3 -m study ask "what is a RACI chart?"   # or use it from the terminal
+```
+
+Setup, every command, the settings and what is checked in code are in
+[`study/README.md`](study/README.md). The published site and the PDF do not
+include it.
+
+## Preview the site locally
+
+```sh
+pip install -r requirements.txt && mkdocs serve   # http://127.0.0.1:8000
 ```
 
 ## CI

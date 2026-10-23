@@ -1,4 +1,4 @@
-"""python3 -m study {index,ask,quiz,cards,stats}"""
+"""python3 -m study {index,ask,quiz,cards,stats,web}"""
 import argparse
 import sys
 
@@ -26,6 +26,8 @@ def main(argv=None) -> int:
 
     sub.add_parser("index", help="(re)build the indexes")
     sub.add_parser("stats", help="show what is indexed and which models are configured")
+    w = sub.add_parser("web", help="local web page: ask, quiz, practice test, flashcards")
+    w.add_argument("--port", type=int, default=8765)
     a = sub.add_parser("ask", help="ask a question, get a cited answer")
     a.add_argument("question", nargs="+")
     a.add_argument("-k", type=int, default=6, help="passages to retrieve")
@@ -53,6 +55,10 @@ def main(argv=None) -> int:
             return 0
         names = _sources(cfg, getattr(args, "source", "both"))
         index = idx.load(cfg, names)
+        if args.cmd == "web":
+            from . import web
+            web.serve(cfg, index, args.port)
+            return 0
         if args.cmd == "stats":
             print(f"embed: {cfg.embed_model}   generate: {cfg.gen_model}")
             for n, m in index.meta.items():

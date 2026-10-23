@@ -24,7 +24,8 @@ QUIZ_SYSTEM = (
     "Give the one correct answer and three plausible but wrong distractors that are about "
     "the same topic and similar in length; no joke or absurd options. 'evidence' must be a "
     "sentence or phrase copied EXACTLY from the passage that proves the correct answer. "
-    "Use American English."
+    "Write it as a standalone exam question: never say 'the passage', 'the text' or "
+    "'according to'. Use American English."
 )
 QUIZ_SCHEMA = {
     "type": "object",
@@ -142,6 +143,7 @@ def make_question(cfg, chunk, tries=3, rng=random):
             "evidence": item["evidence"].strip(),
             "explanation": str(item.get("explanation", "")).strip(),
             "ref": chunk["ref"], "chunk": chunk["id"], "source": chunk["source"],
+            "chapter": chunk["chapter"],
         }
     return None
 
