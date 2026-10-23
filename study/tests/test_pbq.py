@@ -106,3 +106,45 @@ class Sheets(unittest.TestCase):
         self.assertTrue(all("answer" not in p and "tol" not in p for p in shown["parts"]))
         with self.assertRaises(ValueError):
             pbq.generate("nonsense")
+
+
+class Sorting(unittest.TestCase):
+    def test_sets_are_unambiguous(self):
+        from study.pbq_sets import MATCHINGS, ORDERINGS
+        for steps in ORDERINGS.values():
+            self.assertEqual(len(set(steps)), len(steps))
+        for pairs in MATCHINGS.values():
+            self.assertEqual(len(set(pairs.values())), len(pairs))
+
+    def test_ordering_keys_follow_the_source_and_options_are_shuffled(self):
+        from study.pbq_sets import ORDERINGS
+        rng = random.Random(3)
+        for i in range(200):
+            item = pbq.generate("ordering", rng) | {"id": f"o{i}"}
+            title = item["title"].split(": ", 1)[1]
+            answers = [p["answer"] for p in item["parts"]]
+            source = ORDERINGS[title]
+            self.assertEqual(answers, sorted(answers, key=source.index))
+            self.assertNotEqual(answers, item["parts"][0]["options"])
+            self.assertEqual(sorted(answers), sorted(item["parts"][0]["options"]))
+
+    def test_matching_keys_and_grading(self):
+        from study.pbq_sets import MATCHINGS
+        rng = random.Random(4)
+        for i in range(200):
+            item = pbq.generate("matching", rng) | {"id": f"m{i}"}
+            pairs = MATCHINGS[item["title"].split(": ", 1)[1]]
+            for p in item["parts"]:
+                self.assertEqual(p["answer"], pairs[p["label"]])
+            given = {p["key"]: p["answer"] for p in item["parts"]}
+            res = pbq.grade(item, given)
+            self.assertTrue(res["correct"])
+            given[item["parts"][0]["key"]] = ""
+            res = pbq.grade(item, given)
+            self.assertEqual((res["right"], res["total"]), (len(item["parts"]) - 1, len(item["parts"])))
+
+    def test_public_hides_answers(self):
+        item = pbq.generate("ordering", random.Random(1)) | {"id": "x"}
+        text = str(pbq.public(item))
+        self.assertNotIn("'answer'", text)
+        self.assertNotIn("working", text)
