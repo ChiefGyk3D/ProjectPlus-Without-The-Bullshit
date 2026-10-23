@@ -14,7 +14,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-from . import bank, llm, modes
+from . import bank, llm, modes, pbq
 
 STATIC = Path(__file__).resolve().parent / "static"
 FILES = {"/": ("index.html", "text/html; charset=utf-8"),
@@ -99,6 +99,7 @@ class App:
         self.bank = {i["id"]: i for i in items}
         self.generated = collections.OrderedDict()
         self.tests = {}
+        self.sheets = collections.OrderedDict()
         self.jobs = {}
         self.feeder = Feeder(cfg, index, self.weak_chunks)
         self.chapter_of = {c["id"]: c["chapter"] for c in index.chunks}
@@ -122,7 +123,7 @@ class App:
         return out
 
     def last_result(self) -> dict:
-        return {r["chunk"]: r["correct"] for r in self.history()}
+        return {r["chunk"]: r["correct"] for r in self.history() if r.get("kind") != "pbq"}
 
     def weak_chunks(self) -> set:
         return {k for k, ok in self.last_result().items() if not ok}
@@ -139,7 +140,7 @@ class App:
         return {"sources": sorted(self.index.meta),
                 "chapters": [{"source": s, "chapter": ch} for s, ch in chapters],
                 "bank_chapters": [{"source": s, "chapter": ch} for s, ch in bank_ch],
-                "bank": dict(counts), "models": {"embed": self.cfg.embed_model,
+                "bank": dict(counts), "sheet_types": pbq.KINDS, "models": {"embed": self.cfg.embed_model,
                                                  "generate": self.cfg.gen_model}}
 
     def ask(self, body):
@@ -255,6 +256,27 @@ class App:
                 "weak": sum(1 for ok in last.values() if not ok),
                 "answered": sum(a for a, _ in rows.values())}
 
+    def sheet_new(self, body):
+        item = pbq.generate(str(body.get("type", "any"))) | {"id": f"sheet-{uuid.uuid4().hex[:10]}"}
+        with self.lock:
+            self.sheets[item["id"]] = item
+            while len(self.sheets) > MAX_KEPT:
+                self.sheets.popitem(last=False)
+        return {"sheet": pbq.public(item)}
+
+    def sheet_check(self, body):
+        item = self.sheets.get(body.get("id"))
+        if item is None:
+            raise KeyError("unknown sheet - ask for a new one")
+        answers = body.get("answers", {})
+        if not isinstance(answers, dict):
+            raise TypeError("answers must be an object")
+        res = pbq.grade(item, answers)
+        self._log({"t": int(time.time()), "chunk": f"sheet-{item['type']}", "correct": res["correct"],
+                   "kind": "pbq", "chapter": item["title"], "source": "sheet",
+                   "parts": [res["right"], res["total"]]})
+        return res
+
     def cards_start(self, body):
         source, chapter = self._scope(body)
         limit = max(1, min(int(body.get("limit", 10)), 60))
@@ -283,7 +305,8 @@ class App:
 
 POST_ROUTES = {"/api/ask": "ask", "/api/quiz/next": "quiz_next", "/api/bank/next": "bank_next",
                "/api/answer": "answer", "/api/test/start": "test_start",
-               "/api/test/finish": "test_finish", "/api/cards": "cards_start"}
+               "/api/test/finish": "test_finish", "/api/cards": "cards_start",
+               "/api/sheet/new": "sheet_new", "/api/sheet/check": "sheet_check"}
 
 
 def make_handler(app: App):

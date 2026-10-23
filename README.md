@@ -54,7 +54,7 @@ settings in a private env file.
 
 ```sh
 python3 -m study index          # once: build the search index
-python3 -m study web            # http://127.0.0.1:8765/  (ask, drill, practice test, flashcards, progress)
+python3 -m study web            # http://127.0.0.1:8765/  (ask, drill, practice test, simulations, flashcards, progress)
 python3 -m study ask "what is a RACI chart?"   # or use it from the terminal
 ```
 

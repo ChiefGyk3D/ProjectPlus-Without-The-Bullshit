@@ -68,7 +68,7 @@ those questions are instant and count toward Progress like the rest.
 STUDY_ENV_FILE=~/.config/projectplus-study/env python3 -m study web   # http://127.0.0.1:8765/
 ```
 
-One page, five tabs, localhost only (`--port` changes the port):
+One page, six tabs, localhost only (`--port` changes the port):
 
 - **Ask:** a cited answer with the chapter and page of each source.
 - **Drill:** one question at a time with instant feedback. *Fixed* questions are the
@@ -78,6 +78,12 @@ One page, five tabs, localhost only (`--port` changes the port):
   the current one. Order can be random, not seen yet, or the ones you missed.
 - **Practice test:** pick a size, a chapter and an optional timer. Answers are held
   until you finish, then you get a score, a per-chapter breakdown and a review.
+- **Simulations:** hands-on calculation sheets, made up fresh each time with the answers
+  computed in code (no model, nothing from the book): earned value (CV, SV, CPI, SPI, EAC,
+  ETC, VAC, TCPI, including the "one-off variance" trap), critical path with float, PERT
+  expected duration and standard deviation, and risk EMV. One point per part, with the
+  working shown afterwards. The exam's performance-based formats are not published, so
+  these are our own practice versions.
 - **Flashcards:** pick a chapter and a size, download the Anki CSV.
 - **Progress:** accuracy by chapter from `quiz-log.jsonl`, and a one-click drill of the
   questions you missed last time.

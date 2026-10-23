@@ -13,6 +13,7 @@
     <button role="tab" data-tab="ask" aria-selected="true">Ask</button>
     <button role="tab" data-tab="drill" aria-selected="false">Drill</button>
     <button role="tab" data-tab="test" aria-selected="false">Practice test</button>
+    <button role="tab" data-tab="sim" aria-selected="false">Simulations</button>
     <button role="tab" data-tab="cards" aria-selected="false">Flashcards</button>
     <button role="tab" data-tab="progress" aria-selected="false">Progress</button>
   </nav>
@@ -61,6 +62,15 @@
     </form>
     <p class="muted">Answers are not shown until you finish. The real exam is 90 questions in 90 minutes.</p>
     <div id="test-out" aria-live="polite"></div>
+  </section>
+
+  <section id="sim" class="panel" hidden>
+    <form id="sim-form" class="row">
+      <label>Sheet <select id="sim-type"></select></label>
+      <button type="submit">New sheet</button>
+    </form>
+    <p class="muted">Hands-on practice: work the numbers, then check. Each sheet is made up fresh with its answers computed, so you can do as many as you like. The exam's own formats are not published; these are our practice versions.</p>
+    <div id="sim-out" aria-live="polite"></div>
   </section>
 
   <section id="cards" class="panel" hidden>

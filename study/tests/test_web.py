@@ -207,6 +207,22 @@ class Server(unittest.TestCase):
             urllib.request.urlopen(req)
         self.assertEqual(cm.exception.code, 403)
 
+    def test_sheets_are_checked_by_the_server_and_logged_apart_from_questions(self):
+        _, r = self.call("/api/sheet/new", {"type": "pert"})
+        sheet = r["sheet"]
+        self.assertNotIn("working", sheet)
+        item = self.app.sheets[sheet["id"]]
+        answers = {p["key"]: p["answer"] for p in item["parts"]}
+        _, res = self.call("/api/sheet/check", {"id": sheet["id"], "answers": answers})
+        self.assertTrue(res["correct"])
+        self.assertTrue(res["working"])
+        _, p = self.call("/api/progress")
+        self.assertEqual(p["weak"], 0)  # sheets do not count as missed questions
+        self.assertEqual(p["by_chapter"][0]["source"], "sheet")
+        self.assertEqual(self.call("/api/sheet/check", {"id": "nope", "answers": {}})[0], 404)
+        self.assertEqual(self.call("/api/sheet/check", {"id": sheet["id"], "answers": []})[0], 400)
+        self.assertEqual(self.call("/api/sheet/new", {"type": "nonsense"})[0], 400)
+
     def test_bad_input_is_a_400_not_a_crash(self):
         self.assertEqual(self.call("/api/bank/next", {"mode": "nonsense"})[0], 400)
         self.assertEqual(self.call("/api/ask", {"question": ""})[0], 400)
