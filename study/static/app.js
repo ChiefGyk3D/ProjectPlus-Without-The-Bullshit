@@ -34,6 +34,7 @@ $("tabs").addEventListener("click", (e) => { if (e.target.dataset.tab) showTab(e
 
 // ---- selects ---------------------------------------------------------------
 function label(src, ch) {
+  if (src === "sheet") return `Simulation: ${ch}`;
   if (src === "book") return /^\d+$/.test(ch) ? `Book chapter ${ch}` : `Book ${ch}`;
   return `Guide ${ch}`;
 }
@@ -217,6 +218,61 @@ function showResults(r) {
   });
 }
 
+// ---- simulations -------------------------------------------------------------
+const sim = {sheets: 0, perfect: 0, parts: [0, 0]};
+async function simNew() {
+  const out = $("sim-out");
+  clear(out);
+  let sheet;
+  try { ({sheet} = await api("/api/sheet/new", {type: $("sim-type").value})); }
+  catch (err) { out.append(errBox(err)); return; }
+  const inputs = {};
+  const rows = sheet.parts.map((p) => {
+    let control;
+    if (p.kind === "set") {
+      control = h("span", {}, p.options.map((o) => {
+        const box = h("input", {type: "checkbox", value: o});
+        inputs[p.key] = inputs[p.key] || [];
+        inputs[p.key].push(box);
+        return h("label", {class: "inline"}, box, o);
+      }));
+    } else {
+      const box = h("input", {type: "number", step: "any", inputmode: "decimal", "aria-label": p.label});
+      inputs[p.key] = box;
+      control = h("span", {}, p.unit === "$" ? "$ " : "", box, p.unit && p.unit !== "$" ? ` ${p.unit}` : "");
+    }
+    return h("div", {class: "part", "data-key": p.key}, h("div", {class: "part-label"}, p.label), control, h("div", {class: "part-fb"}));
+  });
+  const check = h("button", {type: "button", class: "primary"}, "Check");
+  out.append(h("div", {class: "card"}, h("p", {class: "q"}, sheet.title), h("p", {}, sheet.scenario),
+    sheetTable(sheet.table), rows, h("div", {class: "row"}, check)));
+  check.addEventListener("click", async () => {
+    const answers = {};
+    for (const p of sheet.parts)
+      answers[p.key] = p.kind === "set" ? inputs[p.key].filter((b) => b.checked).map((b) => b.value) : inputs[p.key].value;
+    check.disabled = true;
+    try {
+      const r = await api("/api/sheet/check", {id: sheet.id, answers});
+      for (const part of r.parts) {
+        const row = out.querySelector(`.part[data-key="${CSS.escape(part.key)}"]`);
+        const fb = row.querySelector(".part-fb");
+        fb.className = "part-fb " + (part.correct ? "ok" : "bad");
+        fb.textContent = part.correct ? "Correct." : `Not quite. Expected ${part.unit === "$" ? "$" : ""}${part.expected}${part.unit && part.unit !== "$" ? " " + part.unit : ""}${part.given ? `; you entered ${part.given}` : ""}.`;
+      }
+      for (const el of out.querySelectorAll("input")) el.disabled = true;
+      sim.sheets += 1; sim.perfect += r.correct ? 1 : 0; sim.parts[0] += r.right; sim.parts[1] += r.total;
+      out.append(h("div", {class: "card"}, h("p", {class: "verdict " + (r.correct ? "ok" : "bad")}, `${r.right} of ${r.total} parts correct.`),
+        h("p", {class: "src"}, "Working"), h("pre", {}, r.working.join("\n"))),
+        h("button", {type: "button", class: "primary", onclick: simNew}, "Another sheet"),
+        h("p", {class: "muted"}, `This session: ${sim.perfect} of ${sim.sheets} sheets fully right, ${sim.parts[0]} of ${sim.parts[1]} parts.`));
+    } catch (err) { out.append(errBox(err)); check.disabled = false; }
+  });
+}
+function sheetTable(t) {
+  return h("table", {}, h("thead", {}, h("tr", {}, t.columns.map((c) => h("th", {}, c)))),
+    h("tbody", {}, t.rows.map((row) => h("tr", {}, row.map((cell) => h("td", {}, cell))))));
+}
+
 // ---- cards -----------------------------------------------------------------
 async function onCards(e) {
   e.preventDefault();
@@ -281,6 +337,10 @@ async function init() {
   $("ask-form").addEventListener("submit", onAsk);
   $("drill-form").addEventListener("submit", (e) => { e.preventDefault(); drill.tally = [0, 0]; drill.last = null; drillNext(); });
   $("test-form").addEventListener("submit", onTest);
+  const types = $("sim-type");
+  types.append(h("option", {value: "any"}, "Any type"));
+  for (const [k, v] of Object.entries(INFO.sheet_types)) types.append(h("option", {value: k}, v));
+  $("sim-form").addEventListener("submit", (e) => { e.preventDefault(); simNew(); });
   $("cards-form").addEventListener("submit", onCards);
   const fromHash = () => {
     const wanted = location.hash.slice(1);

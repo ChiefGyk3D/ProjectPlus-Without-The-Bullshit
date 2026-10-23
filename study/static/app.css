@@ -39,3 +39,8 @@ footer{padding:24px 16px;color:var(--muted);font-size:.85rem}
 .timer{font-variant-numeric:tabular-nums;font-weight:700}
 @media (max-width:560px){.row{flex-direction:column;align-items:stretch}}
 [hidden]{display:none!important}
+.part{margin:12px 0;padding-top:8px;border-top:1px solid var(--line)}
+.part-label{font-weight:600;margin-bottom:4px}
+.part-fb{margin-top:4px;font-size:.9rem}.part-fb.ok{color:var(--ok)}.part-fb.bad{color:var(--bad)}
+label.inline{display:inline-flex;flex-direction:row;align-items:center;gap:4px;margin-right:12px;color:var(--fg);font-size:1rem}
+pre{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px;font-size:.85rem}
