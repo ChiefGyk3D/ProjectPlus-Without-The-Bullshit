@@ -29,13 +29,14 @@ The largest domain. It covers how projects are run (methodologies), controlled (
 | DevOps | Joins development and operations to shorten delivery with automation and shared ownership. | Continuous integration (CI), continuous delivery/deployment (CD), infrastructure as code (IaC), monitoring and feedback, breaking down silos. |
 | DevSecOps | DevOps with security built into every stage. | Shift left (test security early), security as code, automated security testing, threat modeling, continuous monitoring. |
 | PRINCE2 (PRojects IN Controlled Environments) | Process-based, stage-by-stage method with strong governance. | 7 principles (continued business justification, learn from experience, defined roles, manage by stages, manage by exception, focus on products, tailor to suit). 7 themes (business case, organization, quality, plans, risk, change, progress). 7 processes (starting up, initiating, directing, controlling a stage, managing product delivery, managing stage boundaries, closing). Project Board, product-based planning. |
-| Software Development Life Cycle (SDLC) | The phases software goes through, regardless of method. | Planning, analysis, design, implementation/coding, testing, deployment, maintenance and support. |
+| Software Development Life Cycle (SDLC) | The phases software goes through, regardless of method. | Planning, analysis, design, implementation/coding, testing, deployment, maintenance and support. Documentation, review and evaluation, and feedback and iteration run through every phase, and iterative models loop back to earlier phases. Closure ends it with a post-implementation review. |
 
 !!! tip "Exam tips"
     - Kanban is the only one listed that has no sprints and uses WIP limits. It is a *pull* system.
     - SAFe means *scaling* Agile. If the scenario has many teams and a large enterprise, think SAFe.
     - "Security built in early" points to DevSecOps. "Developers and operations collaborate" points to DevOps.
     - PRINCE2 questions use words like *stages*, *Project Board* or *business case*.
+    - The SDLC is the life cycle of the *software product*. The phases in objective 2.0 (discovery, initiation, planning, execution, closing) are the life cycle of the *project*. A question that lists coding and testing as phases means the SDLC.
 
 
 ### 1.2 Agile vs Waterfall
@@ -46,6 +47,7 @@ The largest domain. It covers how projects are run (methodologies), controlled (
 | Approach | Adaptive, iterative | Predictive, sequential |
 | Best when | Requirements are unclear or evolving | Requirements are stable and well understood |
 | Culture | Collaborative, transparent, empowered teams | Hierarchical, clear role boundaries |
+| Environmental factors (cultural, developmental, industry standards) | Fit when the culture trusts teams to self-direct and the product is still taking shape | Fit when the culture is rigid, the product and process are mature, and standards mandate sign-off at each step |
 | Industry fit | Software, product development, fast-moving markets | Construction, aerospace, defense, heavily regulated work |
 | Product ownership | Dedicated Product Owner prioritizes the backlog | Sponsor and stakeholders define scope up front |
 | Roles | Cross-functional, self-organizing (Scrum Master, Product Owner, Developers) | Specialized, separate teams (design, dev, test) with a PM directing |
@@ -189,6 +191,8 @@ An **issue** is a problem that is happening now and may affect the project. It n
 | Finish-to-finish (FF) | B cannot finish until A finishes | Documentation ends with the build |
 | Start-to-finish (SF) | B cannot finish until A starts | Rare (shift handover) |
 
+Read each pair as the predecessor's event first, then the successor's: in FS, A finishes and then B starts. In SF, A starts and then B can finish. SF is the one most often mistaken for FS. SS does not mean the two start at the same moment, only that B cannot start before A has.
+
 The task that must come first is the **predecessor**. The task that follows is the **successor**. **Lead** is overlap (successor starts early). **Lag** is a delay (waiting time, such as concrete curing).
 
 | Term | Definition |
@@ -259,7 +263,7 @@ CPI or SPI **below 1** is bad (over budget or behind). **Above 1** is good.
 | System | Complete system against requirements |
 | Smoke (build verification) | Quick high-level check that a build is stable enough to test further |
 | Regression | Re-test after a change to confirm nothing else broke |
-| Performance | Speed, response time and throughput under expected load |
+| Performance | The broad category: speed, response time, throughput and resource use under load. Stress testing is one kind of it. |
 | Stress | Push beyond normal limits to find the breaking point |
 | User acceptance (UAT) | Final test by real users or the customer to accept the product |
 
@@ -329,7 +333,7 @@ For example, 10 people = 45 channels. Adding people increases complexity fast.
 | Strong matrix | Mostly the project manager | High |
 | Projectized | Project manager, fully dedicated | Highest |
 
-**Matrix** structures have dual reporting. They can cause conflict over priorities and resource sharing.
+**Matrix** structures have dual reporting. The functional manager looks after the person's skills and career growth, and the project manager directs the project work. They can cause conflict over priorities and resource sharing. In a **functional** structure the organization is split into departments by specialty (marketing, finance, HR, operations, sales). In a **projectized** structure the project team is the core unit and has its own dedicated resources.
 
 **Resource life cycle:** acquisition (needs assessment), maintenance, hardware decommissioning, end-of-life software, and successor planning.
 
@@ -347,7 +351,7 @@ For example, 10 people = 45 channels. Adding people increases complexity fast.
 | Project manager (PM) | Plans, executes and closes the project; manages scope, schedule, budget and team |
 | Program manager | Coordinates multiple related projects |
 | Product manager | Owns product strategy and life cycle, market and launch |
-| Product owner | Agile role that prioritizes the backlog and maximizes value |
+| Product owner | Agile role that prioritizes the backlog and maximizes value, and stays with the product for its whole life cycle |
 | Scrum master | Coaches the team on Scrum, removes impediments |
 | Sponsor | Provides funding and authority, champions the project |
 | Stakeholders | Anyone affected by or able to affect the project |
