@@ -1,6 +1,6 @@
 # Practice questions
 
-Forty scenario questions in the style of the exam, spread across the four domains in roughly their exam weights. They are written for this guide, not taken from the exam or from any book. Answer first, then check the key at the bottom, which says why each answer is right and points back to the section that covers it.
+Forty-two scenario questions in the style of the exam, spread across the four domains in roughly their exam weights. They are written for this guide, not taken from the exam or from any book. Answer first, then check the key at the bottom, which says why each answer is right and points back to the section that covers it.
 
 Read for the word that decides it: *first*, *best*, *next*, *most likely*, *except*. Where a question says **choose two**, both answers are needed.
 
@@ -293,6 +293,22 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 - C. Continuous delivery
 - D. Waterfall release
 
+### 1.0 Project Management Concepts, continued
+
+**41.** A schedule note reads: "Task B cannot finish until Task A has started." Which dependency relationship is this?
+
+- A. Finish-to-start
+- B. Start-to-start
+- C. Finish-to-finish
+- D. Start-to-finish
+
+**42.** An engineer reports to the head of the network engineering department for training, reviews and career growth, and to a project manager for day-to-day project work. Which organizational structure is this?
+
+- A. Functional
+- B. Projectized
+- C. Matrix
+- D. Hybrid
+
 ### Answers
 
 **1. A.** Never implement first. A request for "one small addition" goes through change control, so submit a change request and assess its impact. Only approved changes update the plan and baseline. See [1.3](01-concepts.md#13-change-control-process).
@@ -374,3 +390,7 @@ Read for the word that decides it: *first*, *best*, *next*, *most likely*, *exce
 **39. C.** A change needs a tested rollback plan, an approval and a maintenance window, and is validated afterward. See [4.5](04-it-governance.md#45-operational-change-control-during-an-it-project).
 
 **40. B.** Continuous deployment releases every passing change to production automatically. Continuous delivery keeps the code always releasable but a person still decides to release. See [4.5](04-it-governance.md#45-operational-change-control-during-an-it-project).
+
+**41. D.** Start-to-finish: the successor cannot finish until the predecessor has started. It is rare, and it is the one most often mistaken for finish-to-start. See [1.6](01-concepts.md#16-schedule-development-and-management).
+
+**42. C.** Two reporting lines, one for skills and growth and one for project work, make this a matrix structure. In a functional structure the person reports only to the department, and in a projectized structure only to the project manager. See [1.10](01-concepts.md#110-team-and-resource-management).
