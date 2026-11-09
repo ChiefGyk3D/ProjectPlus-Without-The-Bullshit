@@ -34,7 +34,7 @@ Terms to know: Shift left (test security early), security as code, automated sec
 PRINCE2 (PRojects IN Controlled Environments),"Core idea: Process-based, stage-by-stage method with strong governance.
 Terms to know: 7 principles (continued business justification, learn from experience, defined roles, manage by stages, manage by exception, focus on products, tailor to suit). 7 themes (business case, organization, quality, plans, risk, change, progress). 7 processes (starting up, initiating, directing, controlling a stage, managing product delivery, managing stage boundaries, closing). Project Board, product-based planning.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks,f591392e38ce
 Software Development Life Cycle (SDLC),"Core idea: The phases software goes through, regardless of method.
-Terms to know: Planning, analysis, design, implementation/coding, testing, deployment, maintenance and support.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks,d9c605f07421
+Terms to know: Planning, analysis, design, implementation/coding, testing, deployment, maintenance and support. Documentation, review and evaluation, and feedback and iteration run through every phase, and iterative models loop back to earlier phases. Closure ends it with a post-implementation review.",ProjectPlus::1_1_Characteristics_of_a_project_methodologies_and_frameworks,d9c605f07421
 "Tolerance for change (requirements, budget, schedule)","Agile: High. Requirements change between sprints.
 Waterfall: Low. Changes are costly and may restart earlier phases.",ProjectPlus::1_2_Agile_vs_Waterfall,672e11fa0f2f
 Approach,"Agile: Adaptive, iterative
@@ -43,6 +43,8 @@ Best when,"Agile: Requirements are unclear or evolving
 Waterfall: Requirements are stable and well understood",ProjectPlus::1_2_Agile_vs_Waterfall,be31df4a3fee
 Culture,"Agile: Collaborative, transparent, empowered teams
 Waterfall: Hierarchical, clear role boundaries",ProjectPlus::1_2_Agile_vs_Waterfall,97760e635b33
+"Environmental factors (cultural, developmental, industry standards)","Agile: Fit when the culture trusts teams to self-direct and the product is still taking shape
+Waterfall: Fit when the culture is rigid, the product and process are mature, and standards mandate sign-off at each step",ProjectPlus::1_2_Agile_vs_Waterfall,f0c928048d3e
 Industry fit,"Agile: Software, product development, fast-moving markets
 Waterfall: Construction, aerospace, defense, heavily regulated work",ProjectPlus::1_2_Agile_vs_Waterfall,9f9feb240649
 Product ownership,"Agile: Dedicated Product Owner prioritizes the backlog
@@ -144,7 +146,7 @@ Integration,Combined components work together,ProjectPlus::1_7_Quality_managemen
 System,Complete system against requirements,ProjectPlus::1_7_Quality_management_vs_performance_management,235de823c8f0
 Smoke (build verification),Quick high-level check that a build is stable enough to test further,ProjectPlus::1_7_Quality_management_vs_performance_management,2edac7b15837
 Regression,Re-test after a change to confirm nothing else broke,ProjectPlus::1_7_Quality_management_vs_performance_management,d37ec71bef37
-Performance,"Speed, response time and throughput under expected load",ProjectPlus::1_7_Quality_management_vs_performance_management,836cc26b2122
+Performance,"The broad category: speed, response time, throughput and resource use under load. Stress testing is one kind of it.",ProjectPlus::1_7_Quality_management_vs_performance_management,836cc26b2122
 Stress,Push beyond normal limits to find the breaking point,ProjectPlus::1_7_Quality_management_vs_performance_management,0fedab806fc1
 User acceptance (UAT),Final test by real users or the customer to accept the product,ProjectPlus::1_7_Quality_management_vs_performance_management,d83dbf3af2d9
 Synchronous,"Real time, everyone present at once: phone call, video meeting, live chat",ProjectPlus::1_8_Communication_management,b119e5b921c8
@@ -189,7 +191,7 @@ Gap analysis,"Compare current state with needed state: feature/functionality, sk
 Project manager (PM),"Plans, executes and closes the project; manages scope, schedule, budget and team",ProjectPlus::1_10_Team_and_resource_management,ff26c50551cd
 Program manager,Coordinates multiple related projects,ProjectPlus::1_10_Team_and_resource_management,7482478ae1a2
 Product manager,"Owns product strategy and life cycle, market and launch",ProjectPlus::1_10_Team_and_resource_management,e1cbfdf3770a
-Product owner,Agile role that prioritizes the backlog and maximizes value,ProjectPlus::1_10_Team_and_resource_management,71123f9a8414
+Product owner,"Agile role that prioritizes the backlog and maximizes value, and stays with the product for its whole life cycle",ProjectPlus::1_10_Team_and_resource_management,71123f9a8414
 Scrum master,"Coaches the team on Scrum, removes impediments",ProjectPlus::1_10_Team_and_resource_management,058f47b1c9ae
 Sponsor,"Provides funding and authority, champions the project",ProjectPlus::1_10_Team_and_resource_management,a3f718a7f559
 Stakeholders,Anyone affected by or able to affect the project,ProjectPlus::1_10_Team_and_resource_management,bcc884f0940b
@@ -487,3 +489,5 @@ Burnup vs burndown,Work done with scope line vs work remaining,ProjectPlus::Easi
 Gantt vs network diagram,Schedule bars vs dependency logic,ProjectPlus::Easily_confused_pairs,546dbc7529f3
 CapEx vs OpEx,One-time asset vs ongoing running cost,ProjectPlus::Easily_confused_pairs,7361b39bab29
 Revise baseline vs rebaseline (cheat sheet),Update for approved change vs full reset,ProjectPlus::Easily_confused_pairs,2791ba24cc11
+Finish-to-start vs start-to-finish,B starts after A finishes vs B finishes only after A has started,ProjectPlus::Easily_confused_pairs,6df354e480a5
+SDLC vs project life cycle,"Phases of the software (design, code, test) vs phases of the project (initiation, planning, execution, closing)",ProjectPlus::Easily_confused_pairs,2b565c2c186c
