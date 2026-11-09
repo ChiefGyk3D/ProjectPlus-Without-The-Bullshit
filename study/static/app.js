@@ -236,6 +236,11 @@ async function simNew() {
         inputs[p.key].push(box);
         return h("label", {class: "inline"}, box, o);
       }));
+    } else if (p.kind === "choice") {
+      const box = h("select", {"aria-label": p.label}, h("option", {value: ""}, "Choose..."),
+        p.options.map((o) => h("option", {value: o}, o)));
+      inputs[p.key] = box;
+      control = h("span", {}, box);
     } else {
       const box = h("input", {type: "number", step: "any", inputmode: "decimal", "aria-label": p.label});
       inputs[p.key] = box;
@@ -245,7 +250,7 @@ async function simNew() {
   });
   const check = h("button", {type: "button", class: "primary"}, "Check");
   out.append(h("div", {class: "card"}, h("p", {class: "q"}, sheet.title), h("p", {}, sheet.scenario),
-    sheetTable(sheet.table), rows, h("div", {class: "row"}, check)));
+    sheet.table ? sheetTable(sheet.table) : null, rows, h("div", {class: "row"}, check)));
   check.addEventListener("click", async () => {
     const answers = {};
     for (const p of sheet.parts)
@@ -259,7 +264,7 @@ async function simNew() {
         fb.className = "part-fb " + (part.correct ? "ok" : "bad");
         fb.textContent = part.correct ? "Correct." : `Not quite. Expected ${part.unit === "$" ? "$" : ""}${part.expected}${part.unit && part.unit !== "$" ? " " + part.unit : ""}${part.given ? `; you entered ${part.given}` : ""}.`;
       }
-      for (const el of out.querySelectorAll("input")) el.disabled = true;
+      for (const el of out.querySelectorAll("input, select")) el.disabled = true;
       sim.sheets += 1; sim.perfect += r.correct ? 1 : 0; sim.parts[0] += r.right; sim.parts[1] += r.total;
       out.append(h("div", {class: "card"}, h("p", {class: "verdict " + (r.correct ? "ok" : "bad")}, `${r.right} of ${r.total} parts correct.`),
         h("p", {class: "src"}, "Working"), h("pre", {}, r.working.join("\n"))),
