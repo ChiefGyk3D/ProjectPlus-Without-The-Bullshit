@@ -90,3 +90,5 @@ Read the result: variance above 0 or index above 1 is *good*. Below 0 or below 1
 | Gantt vs network diagram | Schedule bars vs dependency logic |
 | CapEx vs OpEx | One-time asset vs ongoing running cost |
 | Revise baseline vs rebaseline | Update for approved change vs full reset |
+| Finish-to-start vs start-to-finish | B starts after A finishes vs B finishes only after A has started |
+| SDLC vs project life cycle | Phases of the software (design, code, test) vs phases of the project (initiation, planning, execution, closing) |

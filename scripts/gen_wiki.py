@@ -270,7 +270,7 @@ def main() -> None:
         f"| See the whole exam on one screen | [Mind map]({MINDMAP_PAGE}) |\n"
         f"| Drill terms with spaced repetition | [Flashcards]({ANKI_PAGE}) |\n"
         f"| Print it | [PDF]({SITE}/ProjectPlus-PK0-005.pdf), the whole guide on US Letter |\n"
-        f"| Test yourself | [Practice questions]({PRACTICE_PAGE}), forty scenarios with an answer key |\n"
+        f"| Test yourself | [Practice questions]({PRACTICE_PAGE}), forty-two scenarios with an answer key |\n"
         f"| Cram the night before | [Cheat sheet]({CHEAT_PAGE}) and [Gaps from the book]({GAPS_PAGE}) |\n\n"
         f"{index}\n\n"
         "## Every objective\n\n" + "\n".join(table) + "\n"
