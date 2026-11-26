@@ -82,8 +82,11 @@ One page, six tabs, localhost only (`--port` changes the port):
   computed in code (no model, nothing from the book): earned value (CV, SV, CPI, SPI, EAC,
   ETC, VAC, TCPI, including the "one-off variance" trap), critical path with float, PERT
   expected duration and standard deviation, and risk EMV. One point per part, with the
-  working shown afterwards. The exam's performance-based formats are not published, so
-  these are our own practice versions.
+  working shown afterwards. Two more kinds come from the guide's own lists and tables:
+  put steps in order (phases, Tuckman's stages, the change control process, sprint events)
+  and match terms to descriptions (conflict styles, methodologies, confused pairs, cost
+  types, phase activities, earned value formulas). The exam's performance-based formats
+  are not published, so these are our own practice versions.
 - **Flashcards:** pick a chapter and a size, download the Anki CSV.
 - **Progress:** accuracy by chapter from `quiz-log.jsonl`, and a one-click drill of the
   questions you missed last time.

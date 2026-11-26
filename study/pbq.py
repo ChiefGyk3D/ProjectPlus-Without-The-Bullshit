@@ -6,16 +6,20 @@ supply is unlimited. These are our own practice versions of the hands-on items;
 CompTIA does not publish the exam's formats.
 
 A sheet is {id, type, title, scenario, table, parts, working}. A part is
-{key, label, kind ('number' or 'set'), answer, tol, unit, options}.
+{key, label, kind ('number', 'set' or 'choice'), answer, tol, unit, options}.
 """
 import math
 import random
+
+from .pbq_sets import MATCHINGS, ORDERINGS
 
 KINDS = {
     "evm": "Earned value",
     "critical-path": "Critical path",
     "pert": "PERT estimate",
     "emv": "Risk exposure (EMV)",
+    "ordering": "Put in order",
+    "matching": "Match terms",
 }
 LETTERS = "ABCDEFG"
 
@@ -189,7 +193,41 @@ def emv(rng: random.Random) -> dict:
     }
 
 
-GENERATORS = {"evm": evm, "critical-path": critical_path, "pert": pert, "emv": emv}
+def ordering(rng: random.Random) -> dict:
+    title = rng.choice(list(ORDERINGS))
+    steps = ORDERINGS[title]
+    run = sorted(rng.sample(range(len(steps)), min(6, len(steps))))
+    chosen = [steps[i] for i in run]
+    shuffled = chosen[:]
+    while len(chosen) > 1 and shuffled == chosen:
+        rng.shuffle(shuffled)
+    parts = [_part(f"step-{i}", f"Step {i}", s, kind="choice", options=shuffled)
+             for i, s in enumerate(chosen, 1)]
+    return {
+        "title": f"{KINDS['ordering']}: {title}",
+        "scenario": "Pick what comes at each position, first to last. Every item is used once.",
+        "table": None, "parts": parts,
+        "working": [f"{i}. {s}" for i, s in enumerate(chosen, 1)],
+    }
+
+
+def matching(rng: random.Random) -> dict:
+    title = rng.choice(list(MATCHINGS))
+    pairs = MATCHINGS[title]
+    terms = rng.sample(list(pairs), min(5, len(pairs)))
+    options = [pairs[t] for t in terms]
+    rng.shuffle(options)
+    parts = [_part(f"term-{i}", t, pairs[t], kind="choice", options=options) for i, t in enumerate(terms)]
+    return {
+        "title": f"{KINDS['matching']}: {title}",
+        "scenario": "Pick the description that fits each term. Every description is used once.",
+        "table": None, "parts": parts,
+        "working": [f"{t}: {pairs[t]}" for t in terms],
+    }
+
+
+GENERATORS = {"evm": evm, "critical-path": critical_path, "pert": pert, "emv": emv,
+              "ordering": ordering, "matching": matching}
 
 
 def generate(kind: str | None = None, rng: random.Random | None = None) -> dict:
@@ -223,6 +261,8 @@ def grade(item: dict, given: dict) -> dict:
         if p["kind"] == "set":
             ok = isinstance(got, list) and sorted(map(str, got)) == sorted(p["answer"])
             shown, want = ", ".join(sorted(map(str, got))) if isinstance(got, list) else "", " > ".join(p["answer"])
+        elif p["kind"] == "choice":
+            ok, shown, want = got == p["answer"], str(got or ""), p["answer"]
         else:
             num = _number(got) if got not in (None, "") else None
             ok = num is not None and abs(num - p["answer"]) <= p["tol"] + 1e-9
